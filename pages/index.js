@@ -14,14 +14,24 @@ import {
 export default function Home() {
   return (
     <div className=" max-w-4xl ">
-      <div className=" bg-gray-400 opacity-80 p-4 mb-4 items-center text-white rounded-lg">
+      <div className=" bg-gray-700 opacity-80 p-4 mb-4 items-center text-white rounded-lg">
         Hello , I am a Full Stack Developer from India.
       </div>
 
       <div className="md:flex justify-center items-center ">
         <div className="flex-1">
-          <h2 className="font-normal text-2xl ">Itish Prasad</h2>
-          <p className="text-base">Front-End Developer </p>
+          <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-1 text-black dark:text-white">
+            Itish Prasad
+          </h1>
+
+          <p className="text-gray-700 dark:text-gray-200 mb-4">
+            FullStack Developer || Web Dev{" "}
+          </p>
+          <p className="text-gray-800 dark:text-gray-200 mb-16">
+            Believing Web Dev is the Future.So building a faster web. Exporing
+            about web development, serverless, and React / Next.js,Tailwind Css
+            & Apis.
+          </p>
         </div>
 
         <div className="mt-5">
@@ -36,7 +46,9 @@ export default function Home() {
       </div>
       <div>
         <Section>
-          <h2 className="font-semibold text-xl underline">Works</h2>
+          <h2 className="font-bold text-2xl md:text-3xl tracking-tight mb-6 text-black dark:text-white underline">
+            Works
+          </h2>
           <p className="text-justify indent-sm   break-words mt-3">
             {userData.about.description}
           </p>
@@ -51,7 +63,9 @@ export default function Home() {
         </Section>
 
         <Section delay={0.5}>
-          <h2 className="font-semibold text-xl underline  ">Bio</h2>
+          <h2 className="font-bold text-2xl md:text-3xl tracking-tight mt-6 text-black dark:text-white underline  ">
+            Bio
+          </h2>
           <div className="mr-2 mt-3 mb-2 flex space-x-4">
             <p className="font-bold ">2000 </p>
             <p className="font-medium">Born In Odisha, India</p>
@@ -72,7 +86,9 @@ export default function Home() {
             </p>
           </div>
 
-          <h2 className="font-semibold text-xl underline  ">I 🤍 </h2>
+          <h2 className="font-bold text-2xl md:text-3xl tracking-tight mt-6 text-black dark:text-white underline  ">
+            I 🤍{" "}
+          </h2>
           <p className="indent-sm mt-3">
             Coding , Music ,Watching Movies, Exploring New Technologies ,Gaming
             .
@@ -80,7 +96,9 @@ export default function Home() {
         </Section>
 
         <Section delay={0.3}>
-          <h2 className="font-semibold text-xl underline  ">Social Links </h2>
+          <h2 className="font-bold text-2xl md:text-3xl tracking-tight mt-6 text-black dark:text-white underline  ">
+            Social Links{" "}
+          </h2>
           <div className="mt-4 ml-4">
             <div className="flex flex-row justify-start items-center">
               <a

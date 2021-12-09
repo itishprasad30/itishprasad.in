@@ -124,7 +124,7 @@ const VoxelDog = () => {
 
   return (
     <div
-      className="bg-gray-100 mb-2 h-72 md:h-[350px] m-auto rounded-lg "
+      className="bg-gray-100 dark:bg-[#202023] mb-2 h-72 md:h-[350px] m-auto rounded-lg "
       ref={refContainer}
     >
       {loading && (

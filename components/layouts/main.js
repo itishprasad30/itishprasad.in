@@ -1,11 +1,12 @@
 import Head from "next/head";
+import Footer from "./Footer";
 import Navbar from "../navbar";
 import NoSsr from "../no-ssr";
 import VoxelDog from "../voxel-dog";
 
 const Main = ({ children, router }) => {
   return (
-    <div className="p-4 space-y-9">
+    <div className="p-4 space-y-9 bg-gray-100 dark:bg-[#202023]">
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Itish Prasad's homepage" />
@@ -30,6 +31,7 @@ const Main = ({ children, router }) => {
           <VoxelDog />
         </NoSsr>
         {children}
+        <Footer />
       </div>
     </div>
   );
