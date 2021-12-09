@@ -30,56 +30,32 @@ export default function Example() {
         <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="py-1">
             <Menu.Item>
-              {({ active }) => (
-                <a
-                  href="/about"
-                  className={classNames(
-                    active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                    "block px-4 py-2 text-sm"
-                  )}
-                >
+              <Link href="/about">
+                <p className="bg-white text-gray-700 hover:text-gray-900 hover:bg-gray-100 block px-4 py-2 text-sm cursor-pointer">
                   About
-                </a>
-              )}
+                </p>
+              </Link>
             </Menu.Item>
             <Menu.Item>
-              {({ active }) => (
-                <a
-                  href="/works"
-                  className={classNames(
-                    active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                    "block px-4 py-2 text-sm"
-                  )}
-                >
+              <Link href="/works">
+                <p className="bg-white text-gray-700 hover:text-gray-900 hover:bg-gray-100 block px-4 py-2 text-sm cursor-pointer">
                   Works
-                </a>
-              )}
+                </p>
+              </Link>
             </Menu.Item>
             <Menu.Item>
-              {({ active }) => (
-                <a
-                  href="/posts"
-                  className={classNames(
-                    active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                    "block px-4 py-2 text-sm"
-                  )}
-                >
+              <Link href="/posts">
+                <p className="bg-white text-gray-700 hover:text-gray-900 hover:bg-gray-100 block px-4 py-2 text-sm cursor-pointer">
                   Posts
-                </a>
-              )}
+                </p>
+              </Link>
             </Menu.Item>
             <Menu.Item>
-              {({ active }) => (
-                <a
-                  href="/dashboard"
-                  className={classNames(
-                    active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                    "block px-4 py-2 text-sm"
-                  )}
-                >
+              <Link href="/dashboard">
+                <p className="bg-white text-gray-700 hover:text-gray-900 hover:bg-gray-100 block px-4 py-2 text-sm cursor-pointer">
                   Dashboard
-                </a>
-              )}
+                </p>
+              </Link>
             </Menu.Item>
             <form method="POST" action="#">
               {/* <Menu.Item>

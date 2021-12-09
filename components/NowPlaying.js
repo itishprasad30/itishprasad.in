@@ -1,7 +1,7 @@
 import useSWR from "swr";
 import { useEffect } from "react";
 import { animate } from "motion";
-
+import Link from "next/link";
 import { SiSpotify } from "react-icons/si";
 
 function AnimatedBars() {
@@ -72,7 +72,7 @@ function AnimatedBars() {
 
 export default function NowPlaying() {
   const fetcher = (url) => fetch(url).then((r) => r.json());
-  const { data } = useSWR("/api/spotify", fetcher);
+  const { data } = useSWR("/api/now-playing", fetcher);
 
   return (
     <div className="flex flex-col mb-10 justify-center items-center">
@@ -113,7 +113,7 @@ export default function NowPlaying() {
       <div className="flex justify-center rounded-md bg-green-300 text-gray-700 dark:bg-green-500 dark:text-gray-900">
         <a
           target="_blank"
-          rel="noopener noreferer"
+          rel="noopener noreferrer"
           href={
             data?.isPlaying
               ? data.songUrl
