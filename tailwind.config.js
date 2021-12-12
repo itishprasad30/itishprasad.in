@@ -21,5 +21,5 @@ module.exports = {
     extend: {},
     textIndent: ["responsive"],
   },
-  plugins: [require("tailwindcss-text-indent")()],
+  plugins: [require("tailwindcss-text-indent")],
 };
