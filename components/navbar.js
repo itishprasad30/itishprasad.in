@@ -80,6 +80,9 @@ const Navbar = (props) => {
             <LinkItem href="/dashboard" path={path}>
               Dashboard
             </LinkItem>
+            <LinkItem href="/about" path={path}>
+              About
+            </LinkItem>
           </div>
           <button
             aria-label="Toggle Dark Mode"
