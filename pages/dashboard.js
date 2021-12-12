@@ -1,4 +1,6 @@
+import GitHub from "../components/metrics/Github";
 import TopTracks from "../components/TopTracks";
+import Repo from "../components/metrics/Repo";
 
 const dashboard = () => {
   return (
@@ -16,6 +18,10 @@ const dashboard = () => {
             build your own? Check out my&nbsp;
           </p>
         </div>
+        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full">
+          <GitHub />
+          <Repo />
+        </div>
         <h2 className="font-bold text-3xl tracking-tight mb-4 mt-16 text-black dark:text-white">
           Top Tracks
         </h2>
@@ -23,6 +29,7 @@ const dashboard = () => {
           Curious what I am currently jamming to? Here is my top tracks on
           Spotify updated daily.
         </p>
+
         <TopTracks />
       </div>
     </div>
