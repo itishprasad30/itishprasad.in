@@ -14,6 +14,7 @@ const about = () => {
             Itish Prasad Sahoo
           </h1>
           <div className="mt-4  ">
+            {" "}
             <Image
               src="https://avatars.githubusercontent.com/u/60768713?v=4"
               alt="Profile Image"
