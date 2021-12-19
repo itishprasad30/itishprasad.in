@@ -8,6 +8,11 @@ const userData = {
   address: "Cuttack, Odisha, India.",
   projects: [
     {
+      title: "Twitter-Responsive-app",
+      link: "https://twitter-app-responsive.vercel.app/",
+      imgUrl: "/images/twitter.png",
+    },
+    {
       title: "Instagram-clone App",
       link: "https://instagram-clone-responsive-app.vercel.app/",
       imgUrl: "/images/instagram.png",
