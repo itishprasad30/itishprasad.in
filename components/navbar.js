@@ -52,7 +52,7 @@ const Navbar = (props) => {
   // After mounting, we have access to the theme
   useEffect(() => setMounted(true), []);
   return (
-    <div className="sticky top-0 z-50 rounded-md  md:max-w-4xl md:flex flex flex-row md:justify-end  bg-gray-100 opacity-90 hover:opacity-100  ">
+    <div className=" mx-auto sticky top-0 z-50 rounded-md  md:max-w-3xl md:flex flex flex-row md:justify-end  bg-gray-100 opacity-90 hover:opacity-100  ">
       <div className="flex   items-center flex-wrap max-w-md p-2 justify-evenly flex-grow">
         <div className="mr-5 items-center">
           <h2 className="font-semibold text-lg leading-tight">
