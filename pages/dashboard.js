@@ -2,8 +2,11 @@ import GitHub from "../components/metrics/Github";
 import TopTracks from "../components/TopTracks";
 import Repo from "../components/metrics/Repo";
 import Section from "../components/section";
+import userData from "../Constants/data";
+import LatestCode from "../components/LatestCode";
+import getLatestRepos from "../lib/getLatestRepos";
 
-const dashboard = () => {
+const dashboard = ({ repositories }) => {
   return (
     <div>
       <Section>
@@ -24,6 +27,10 @@ const dashboard = () => {
             <GitHub />
             <Repo />
           </div>
+
+          <div className="mt-10">
+            <LatestCode repositories={repositories} />
+          </div>
           <h2 className="font-bold text-3xl tracking-tight mb-4 mt-16 text-black dark:text-white">
             Top Tracks
           </h2>
@@ -40,3 +47,13 @@ const dashboard = () => {
 };
 
 export default dashboard;
+
+export const getServerSideProps = async () => {
+  const repositories = await getLatestRepos(userData);
+
+  return {
+    props: {
+      repositories,
+    },
+  };
+};
