@@ -54,7 +54,7 @@ export default function Home() {
           </p>
           <div className="flex justify-center ">
             <NextLink href="/works" className="">
-              <button className="my-4 text-white  bg-indigo-600 hover:bg-indigo-700 rounded-lg px-3 py-2 ">
+              <button className="my-4 text-white  bg-green-400 hover:bg-green-600 rounded-lg px-3 py-2 ">
                 My PortFolio
                 <i className="ml-2 ">&gt;</i>
               </button>
