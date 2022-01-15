@@ -57,8 +57,8 @@ export default function Example() {
                 </p>
               </Link>
             </Menu.Item>
-            <form method="POST" action="#">
-              {/* <Menu.Item>
+            <form method="POST" action="/contact">
+              <Menu.Item>
                 {({ active }) => (
                   <button
                     type="submit"
@@ -67,10 +67,10 @@ export default function Example() {
                       "block w-full text-left px-4 py-2 text-sm"
                     )}
                   >
-                    
-                  </button>
+                    Contact
+                  </button> // after this it reload the page
                 )}
-              </Menu.Item> */}
+              </Menu.Item>
             </form>
           </div>
         </Menu.Items>

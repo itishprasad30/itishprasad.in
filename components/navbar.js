@@ -55,7 +55,7 @@ const Navbar = (props) => {
     <div className=" mx-auto sticky top-0 z-50 rounded-md  md:max-w-3xl md:flex flex flex-row md:justify-end  bg-gray-100 opacity-90 hover:opacity-100  ">
       <div className="flex   items-center flex-wrap max-w-md p-2 justify-evenly flex-grow">
         <div className="mr-5 items-center">
-          <h2 className="font-semibold text-lg leading-tight">
+          <h2 className="font-semibold text-lg leading-tight" title="Home Page">
             <Logo />
           </h2>
         </div>
@@ -85,6 +85,7 @@ const Navbar = (props) => {
             </LinkItem>
           </div>
           <button
+            title="Toggle Mode"
             aria-label="Toggle Dark Mode"
             type="button"
             className="w-9 h-9 bg-gray-200 rounded-lg dark:bg-gray-600 flex items-center justify-center  hover:ring-2 ring-gray-300  transition-all"
