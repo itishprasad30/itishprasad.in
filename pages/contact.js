@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { supabase } from "./client";
+import { supabase } from "../client";
 
 function Contact() {
   const [posts, setPosts] = useState([]);
@@ -29,13 +29,13 @@ function Contact() {
 
     setPost({ name: "", email: "", mobile: "" });
     fetchPosts();
-    // alert("Thank you !!! You information Stroed In Database.");
+    alert("Thank you !!! You information Stroed In Database.");
   };
 
   return (
     <div className="flex flex-col space-y-5 ">
       <h2>Contact Page </h2>
-      <form action="post" className="flex flex-col space-y-5">
+      <form action="#" className="flex flex-col space-y-5">
         <input
           className="w-full p-3 rounded-lg"
           placeholder="Name"
