@@ -53,7 +53,7 @@ export default function Footer() {
         <div className="flex flex-col space-y-4">
           <Link href="/contact">
             <a className="text-gray-500 hover:text-gray-600 transition">
-              Contact Page
+              Contact Form
             </a>
           </Link>
 
