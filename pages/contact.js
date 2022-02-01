@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { supabase } from "./client";
 
-const contact = () => {
+function Contact() {
   const [posts, setPosts] = useState([]);
   const [post, setPost] = useState({ name: "", email: "", mobile: "" });
   const { name, email, mobile } = post;
@@ -77,6 +77,6 @@ const contact = () => {
       ))} */}
     </div>
   );
-};
+}
 
-export default contact;
+export default Contact;
