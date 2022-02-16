@@ -1,11 +1,17 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { supabase } from "../client";
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
+// minified version is also included
+// import 'react-toastify/dist/ReactToastify.min.css';
 
 function Contact() {
   const [posts, setPosts] = useState([]);
   const [post, setPost] = useState({ name: "", email: "", mobile: "" });
   const { name, email, mobile } = post;
+  // const notify = () => toast("Wow so easy !");
 
   //useEffetct to load fetch data
   useEffect(() => {
@@ -29,13 +35,14 @@ function Contact() {
 
     setPost({ name: "", email: "", mobile: "" });
     fetchPosts();
-    alert("Thank you !!! You information Stroed In Database.");
+    // alert("Thank you !!! You information Stroed In Database.");
+    toast("Thank you ✌️ !!! Your infomation Stored in Database");
   };
 
   return (
     <div className="flex flex-col space-y-5 ">
       <h2>Contact Page </h2>
-      <form action="#" className="flex flex-col space-y-5">
+      <form className="flex flex-col space-y-5">
         <input
           className="w-full p-3 rounded-lg"
           placeholder="Name"
@@ -67,6 +74,8 @@ function Contact() {
           Create Post
         </button>
       </form>
+      {/* <button onClick={notify}>Notify !</button> */}
+      <ToastContainer />
 
       {/* {posts.map((post, id) => (
         <div key={post.id}>

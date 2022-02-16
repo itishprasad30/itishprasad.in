@@ -10,7 +10,11 @@ function classNames(...classes) {
 
 export default function Example() {
   return (
-    <Menu as="div" className="relative inline-block text-left">
+    <Menu
+      as="div"
+      className="relative inline-block text-left"
+      title="Expand to see all"
+    >
       <div>
         <Menu.Button className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-gray-400">
           More
@@ -57,7 +61,15 @@ export default function Example() {
                 </p>
               </Link>
             </Menu.Item>
-            <form method="POST" action="/contact">
+            <Menu.Item>
+              <Link href="/contact">
+                <p className="bg-white text-gray-700 hover:text-gray-900 hover:bg-gray-100 block px-4 py-2 text-sm cursor-pointer">
+                  Contact
+                </p>
+              </Link>
+            </Menu.Item>
+
+            {/* <form method="POST" action="/contact">
               <Menu.Item>
                 {({ active }) => (
                   <button
@@ -71,7 +83,7 @@ export default function Example() {
                   </button> // after this it reload the page
                 )}
               </Menu.Item>
-            </form>
+            </form> */}
           </div>
         </Menu.Items>
       </Transition>
