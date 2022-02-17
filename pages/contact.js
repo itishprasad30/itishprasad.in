@@ -11,7 +11,6 @@ function Contact() {
   const [posts, setPosts] = useState([]);
   const [post, setPost] = useState({ name: "", email: "", mobile: "" });
   const { name, email, mobile } = post;
-  // const notify = () => toast("Wow so easy !");
 
   //useEffetct to load fetch data
   useEffect(() => {
@@ -42,7 +41,7 @@ function Contact() {
   return (
     <div className="flex flex-col space-y-5 ">
       <h2>Contact Page </h2>
-      <form className="flex flex-col space-y-5">
+      <form action="#" className="flex flex-col space-y-5">
         <input
           className="w-full p-3 rounded-lg"
           placeholder="Name"
@@ -74,11 +73,14 @@ function Contact() {
           Create Post
         </button>
       </form>
-      {/* <button onClick={notify}>Notify !</button> */}
+
       <ToastContainer />
 
       {/* {posts.map((post, id) => (
-        <div key={post.id}>
+        <div
+          className="border-2 bg-gray-700 p-4 w-auto max-w-sm "
+          key={post.id}
+        >
           <h2>Name: {post.name}</h2>
           <p>Email: {post.email}</p>
           <p>Mobile No: {post.mobile}</p>
