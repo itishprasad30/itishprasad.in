@@ -15,7 +15,7 @@ import {
 const tweets = () => {
   return (
     <div className="mx-auto sm:ml-0 md:ml-5 lg:ml-12 flex flex-col justify-center  ">
-      <h2 className="font-bold text-2xl ">Here is my Some Favorite Tweets</h2>
+      <h2 className="font-bold text-2xl ">Here is my some Favourite Tweets</h2>
       <TwitterTweetEmbed tweetId={"1494315637744623616"} />
       <TwitterTweetEmbed tweetId={"1491806412745621504"} />
       <TwitterTweetEmbed tweetId={"1468882457827045379"} />

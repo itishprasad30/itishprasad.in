@@ -74,7 +74,7 @@ const Navbar = (props) => {
             <LinkItem href="/works" path={path}>
               Works
             </LinkItem>
-            <LinkItem href="/posts" path={path}>
+            <LinkItem href="/tweets" path={path}>
               Posts
             </LinkItem>
             <LinkItem href="/dashboard" path={path}>
