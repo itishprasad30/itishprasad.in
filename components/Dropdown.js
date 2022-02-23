@@ -16,7 +16,7 @@ export default function Example() {
       title="Expand to see all"
     >
       <div>
-        <Menu.Button className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-gray-400">
+        <Menu.Button className="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-100">
           More
           <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
         </Menu.Button>
@@ -31,39 +31,39 @@ export default function Example() {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+        <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="py-1">
             <Menu.Item>
               <Link href="/about">
-                <p className="bg-white text-gray-700 hover:text-gray-900 hover:bg-gray-100 block px-4 py-2 text-sm cursor-pointer">
+                <p className="block cursor-pointer bg-white px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
                   About
                 </p>
               </Link>
             </Menu.Item>
             <Menu.Item>
               <Link href="/works">
-                <p className="bg-white text-gray-700 hover:text-gray-900 hover:bg-gray-100 block px-4 py-2 text-sm cursor-pointer">
+                <p className="block cursor-pointer bg-white px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
                   Works
                 </p>
               </Link>
             </Menu.Item>
             <Menu.Item>
               <Link href="/posts">
-                <p className="bg-white text-gray-700 hover:text-gray-900 hover:bg-gray-100 block px-4 py-2 text-sm cursor-pointer">
+                <p className="block cursor-pointer bg-white px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
                   Posts
                 </p>
               </Link>
             </Menu.Item>
             <Menu.Item>
               <Link href="/dashboard">
-                <p className="bg-white text-gray-700 hover:text-gray-900 hover:bg-gray-100 block px-4 py-2 text-sm cursor-pointer">
+                <p className="block cursor-pointer bg-white px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
                   Dashboard
                 </p>
               </Link>
             </Menu.Item>
             <Menu.Item>
               <Link href="/contact">
-                <p className="bg-white text-gray-700 hover:text-gray-900 hover:bg-gray-100 block px-4 py-2 text-sm cursor-pointer">
+                <p className="block cursor-pointer bg-white px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
                   Contact
                 </p>
               </Link>

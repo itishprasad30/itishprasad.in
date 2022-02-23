@@ -43,7 +43,7 @@ function Contact() {
       <h2>Contact Page </h2>
       <form action="#" className="flex flex-col space-y-5">
         <input
-          className="w-full p-3 rounded-lg"
+          className="w-full rounded-lg p-3"
           placeholder="Name"
           value={name}
           onChange={(e) => setPost({ ...post, name: e.target.value })}
@@ -51,7 +51,7 @@ function Contact() {
         />
 
         <input
-          className="w-full p-3 rounded-lg"
+          className="w-full rounded-lg p-3"
           type="email"
           placeholder="Email id"
           value={email}
@@ -59,7 +59,7 @@ function Contact() {
           required
         />
         <input
-          className="w-full p-3 rounded-lg"
+          className="w-full rounded-lg p-3"
           type="text"
           placeholder="Mobile No."
           value={mobile}
@@ -67,7 +67,7 @@ function Contact() {
           required
         />
         <button
-          className="bg-green-500  hover:bg-green-600 p-3 rounded-lg w-auto justify-center flex items-center"
+          className="flex  w-auto items-center justify-center rounded-lg bg-green-500 p-3 hover:bg-green-600"
           onClick={createPost}
         >
           Create Post

@@ -31,9 +31,9 @@ const LinkItem = ({ href, path, _target, children, ...props }) => {
       <a
         className={cn(
           active
-            ? "font-bold bg-green-200 text-base text-gray-800 "
+            ? "bg-green-200 text-base font-bold text-gray-800 "
             : "font-normal text-gray-600 ",
-          "hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 transition-all"
+          "hidden rounded-lg p-1 transition-all hover:bg-gray-200 sm:px-3 sm:py-2 md:inline-block"
         )}
         {...props}
         target={_target}
@@ -52,15 +52,15 @@ const Navbar = (props) => {
   // After mounting, we have access to the theme
   useEffect(() => setMounted(true), []);
   return (
-    <div className=" mx-auto sticky top-0 z-50 rounded-md  md:max-w-3xl md:flex flex flex-row md:justify-end  bg-gray-100 opacity-90 hover:opacity-100  ">
-      <div className="flex   items-center flex-wrap max-w-md p-2 justify-evenly flex-grow">
+    <div className=" sticky top-0 z-50 mx-auto flex  flex-row rounded-md bg-gray-100 opacity-90 hover:opacity-100  md:flex md:max-w-3xl md:justify-end  ">
+      <div className="flex   max-w-md flex-grow flex-wrap items-center justify-evenly p-2">
         <div className="mr-5 items-center">
-          <h2 className="font-semibold text-lg leading-tight" title="Home Page">
+          <h2 className="text-lg font-semibold leading-tight" title="Home Page">
             <Logo />
           </h2>
         </div>
       </div>
-      <div className="flex   items-center flex-wrap max-w-md p-2 justify-evenly flex-grow">
+      <div className="flex   max-w-md flex-grow flex-wrap items-center justify-evenly p-2">
         {/*  displaying the logo and name  */}
         {/* <div className="mr-5 items-center">
           <h2 className="font-semibold text-lg leading-tight">
@@ -70,11 +70,11 @@ const Navbar = (props) => {
         {/* nav items here */}
 
         <div className="flex flex-row space-x-4">
-          <div className="flex space-x-1  md:flex-row md:w-auto md:flex-1  ">
+          <div className="flex space-x-1  md:w-auto md:flex-1 md:flex-row  ">
             <LinkItem href="/works" path={path}>
               Works
             </LinkItem>
-            <LinkItem href="/tweets" path={path}>
+            <LinkItem href="/tweetss" path={path}>
               Posts
             </LinkItem>
             <LinkItem href="/dashboard" path={path}>
@@ -88,7 +88,7 @@ const Navbar = (props) => {
             title="Toggle Mode"
             aria-label="Toggle Dark Mode"
             type="button"
-            className="w-9 h-9 bg-gray-200 rounded-lg dark:bg-gray-600 flex items-center justify-center  hover:ring-2 ring-gray-300  transition-all"
+            className="flex h-9 w-9 items-center justify-center rounded-lg bg-gray-200 ring-gray-300  transition-all hover:ring-2  dark:bg-gray-600"
             onClick={() =>
               setTheme(resolvedTheme === "dark" ? "light" : "dark")
             }
@@ -99,7 +99,7 @@ const Navbar = (props) => {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                className="w-5 h-5  text-gray-800 dark:text-gray-200"
+                className="h-5 w-5  text-gray-800 dark:text-gray-200"
               >
                 {resolvedTheme === "dark" ? (
                   <path

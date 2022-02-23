@@ -14,14 +14,14 @@ export default function LatestCode({ repositories }) {
   return (
     <div>
       <div>
-        <div className="flex flex-col md:flex-row justify-between items-center ">
-          <h1 className="text-4xl  md:text-4xl font-bold py-20  md:text-left">
+        <div className="flex flex-col items-center justify-between md:flex-row ">
+          <h1 className="py-20  text-4xl font-bold md:text-left  md:text-4xl">
             Latest Code
           </h1>
 
           <a
             href={`https://github.com/${userData.githubUsername}`}
-            className="mb-20 md:mb-0 px-8 py-4 rounded-lg bg-gray-50 shadow-lg text-lg font-semibold flex flex-row space-x-4 items-center hover:bg-gray-200 dark:text-gray-700"
+            className="mb-20 flex flex-row items-center space-x-4 rounded-lg bg-gray-50 px-8 py-4 text-lg font-semibold shadow-lg hover:bg-gray-200 dark:text-gray-700 md:mb-0"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +42,7 @@ export default function LatestCode({ repositories }) {
           </a>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto px-10 lg:-mt-10 gap-y-20">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 gap-y-20 px-10 md:grid-cols-2 lg:-mt-10 lg:grid-cols-3">
         {/* Single github Repo */}
 
         {repos &&
@@ -57,18 +57,18 @@ export default function LatestCode({ repositories }) {
 const GithubRepoCard = ({ latestRepo }) => {
   return (
     <div className="github-repo">
-      <h1 className="font-semibold text-xl dark:text-gray-200 text-gray-700">
+      <h1 className="text-xl font-semibold text-gray-700 dark:text-gray-200">
         {latestRepo.name}
       </h1>
-      <p className="text-base font-normal my-4 text-gray-500">
+      <p className="my-4 text-base font-normal text-gray-500">
         {latestRepo.description}
       </p>
       <a
         href={latestRepo.clone_url}
-        className="font-semibold group flex flex-row space-x-2 w-full items-center"
+        className="group flex w-full flex-row items-center space-x-2 font-semibold"
       >
         <p>View Repository </p>
-        <div className="transform  group-hover:translate-x-2 transition duration-300">
+        <div className="transform  transition duration-300 group-hover:translate-x-2">
           &rarr;
         </div>
       </a>
