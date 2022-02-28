@@ -6,7 +6,7 @@ import VoxelDog from "../voxel-dog";
 
 const Main = ({ children, router }) => {
   return (
-    <div className="p-4 space-y-9 bg-gray-100 dark:bg-[#202023]">
+    <div className="space-y-9 bg-gray-100 p-4 dark:bg-[#202023]">
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Itish Prasad's homepage" />
@@ -26,7 +26,7 @@ const Main = ({ children, router }) => {
 
       <Navbar path={router.asPath} />
 
-      <div className="max-w-4xl mx-auto  px-4 md:px-20 pt-4">
+      <div className="mx-auto max-w-4xl  px-4 pt-4 md:px-20">
         <NoSsr>
           <VoxelDog />
         </NoSsr>

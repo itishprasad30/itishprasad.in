@@ -34,35 +34,35 @@ export default function Example() {
         <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="py-1">
             <Menu.Item>
-              <Link href="/about">
+              <Link href="/about" passHref>
                 <p className="block cursor-pointer bg-white px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
                   About
                 </p>
               </Link>
             </Menu.Item>
             <Menu.Item>
-              <Link href="/works">
+              <Link href="/works" passHref>
                 <p className="block cursor-pointer bg-white px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
                   Works
                 </p>
               </Link>
             </Menu.Item>
             <Menu.Item>
-              <Link href="/posts">
+              <Link href="/posts" passHref>
                 <p className="block cursor-pointer bg-white px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
                   Posts
                 </p>
               </Link>
             </Menu.Item>
             <Menu.Item>
-              <Link href="/dashboard">
+              <Link href="/dashboard" passHref>
                 <p className="block cursor-pointer bg-white px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
                   Dashboard
                 </p>
               </Link>
             </Menu.Item>
             <Menu.Item>
-              <Link href="/contact">
+              <Link href="/contact" passHref>
                 <p className="block cursor-pointer bg-white px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
                   Contact
                 </p>

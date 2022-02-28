@@ -19,9 +19,9 @@ const tweets = () => {
       <TwitterTweetEmbed tweetId={"1494315637744623616"} />
       <TwitterTweetEmbed tweetId={"1491806412745621504"} />
       <TwitterTweetEmbed tweetId={"1468882457827045379"} />
+      <TwitterTweetEmbed tweetId={"1496491053196931073"} />
       <TwitterTweetEmbed tweetId={"1468113723273269255"} />
       <TwitterTweetEmbed tweetId={"1494400631712501764"} />
-      <TwitterTweetEmbed tweetId={"1496491053196931073"} />
     </div>
   );
 };
