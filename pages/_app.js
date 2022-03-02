@@ -7,7 +7,7 @@ import { ThemeProvider } from "next-themes";
 
 function MyApp({ Component, pageProps, router }) {
   return (
-    <ThemeProvider attribute="class">
+    <ThemeProvider defaultTheme="system" attribute="class">
       <Fonts />
       <AnimatePresence exitBeforeEnter initial={true}>
         <Layout router={router}>
