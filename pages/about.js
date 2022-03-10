@@ -12,7 +12,7 @@ const about = () => {
             <h2 className="mb-4 text-center text-3xl font-bold md:text-left md:text-4xl ">
               About
             </h2>
-            <h1 className=" mt-1 cursor-pointer text-center text-2xl font-semibold text-green-500 hover:underline md:text-left md:text-4xl">
+            <h1 className=" mt-1 cursor-pointer text-center text-2xl font-semibold text-green-500 selection:bg-green-200 selection:text-white hover:underline md:text-left md:text-4xl">
               Itish Prasad Sahoo
             </h1>
             <div className="mt-4 flex flex-col items-center justify-center space-y-10 md:items-start md:justify-start ">
@@ -25,7 +25,7 @@ const about = () => {
                 className="mb-5 rounded-xl md:rounded-xl "
               />
               <article className="mb-3  text-base">
-                <p className="mb-2">
+                <p className="mb-2  selection:bg-yellow-400">
                   Hello! I am Itish. I started learning web development in May
                   2020, which is the start of the pandemic. I have nothing much
                   to do so I decided to learn web development from a udemy
@@ -34,13 +34,13 @@ const about = () => {
                   development.
                 </p>
 
-                <p className="mb-2">
+                <p className="mb-2 selection:bg-purple-400">
                   There are a lot of things and technologies to learn in
                   frontend development and I am motivated to learn as much as
                   possible. I enjoy learning something new and getting feedback
                   to make myself better and improve.
                 </p>
-                <p className="mb-2">
+                <p className="mb-2 selection:bg-red-400">
                   In this website I will be writing some blogs and showcase my
                   projects. I believe that writing what I have learned is the
                   best way to remember things, and I can share my knowledge
