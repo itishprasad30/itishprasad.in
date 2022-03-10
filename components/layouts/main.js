@@ -6,7 +6,7 @@ import VoxelDog from "../voxel-dog";
 
 const Main = ({ children, router }) => {
   return (
-    <div className="space-y-9 bg-gray-100 p-4 dark:bg-[#202023]">
+    <div className="space-y-9 bg-[#F0E7DB] p-4 dark:bg-[#202023]">
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Itish Prasad's homepage" />

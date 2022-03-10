@@ -52,7 +52,7 @@ const Navbar = (props) => {
   // After mounting, we have access to the theme
   useEffect(() => setMounted(true), []);
   return (
-    <div className=" sticky top-0 z-50 mx-auto flex  flex-row rounded-md bg-gray-100 opacity-90 hover:opacity-100  md:flex md:max-w-3xl md:justify-end  ">
+    <div className=" dark sticky top-0 z-50 mx-auto  flex flex-row rounded-md bg-[#F0E7DB] opacity-90 hover:opacity-100  md:flex md:max-w-3xl md:justify-end  ">
       <div className="flex   max-w-md flex-grow flex-wrap items-center justify-evenly p-2">
         <div className="mr-5 items-center">
           <h2 className="text-lg font-semibold leading-tight" title="Home Page">
@@ -76,6 +76,9 @@ const Navbar = (props) => {
             </LinkItem>
             <LinkItem href="/tweets" path={path}>
               Posts
+            </LinkItem>
+            <LinkItem href="/blog" path={path}>
+              Blog
             </LinkItem>
             <LinkItem href="/dashboard" path={path}>
               Dashboard

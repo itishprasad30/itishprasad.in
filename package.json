@@ -14,6 +14,8 @@
     "@emotion/styled": "^11.6.0",
     "@headlessui/react": "^1.4.2",
     "@heroicons/react": "^1.0.5",
+    "@mdx-js/loader": "^2.0.0",
+    "@next/mdx": "^12.1.0",
     "@supabase/supabase-js": "^1.29.4",
     "@tailwindcss/typography": "^0.5.0",
     "axios": "^0.24.0",
@@ -21,9 +23,13 @@
     "clsx": "^1.1.1",
     "comma-number": "^2.1.0",
     "framer-motion": "^5.3.2",
+    "fs": "^0.0.1-security",
+    "gray-matter": "^4.0.3",
     "motion": "^10.4.0",
     "next": "12.0.4",
+    "next-mdx-remote": "^4.0.0",
     "next-themes": "0.0.15",
+    "path": "^0.12.7",
     "query-string": "^7.0.1",
     "querystring": "^0.2.1",
     "react": "17.0.2",
@@ -42,7 +48,7 @@
     "postcss": "^8.3.11",
     "prettier": "^2.5.1",
     "prettier-plugin-tailwindcss": "^0.1.7",
-    "tailwindcss": "^2.2.19",
+    "tailwindcss": "^3.0.23",
     "tailwindcss-text-indent": "^1.0.2"
   }
 }

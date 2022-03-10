@@ -40,6 +40,17 @@ const dashboard = ({ repositories }) => {
           </p>
 
           <TopTracks />
+          <div className="relative w-full   rounded-xl  p-3">
+            <h3 className="text-2xl font-semibold ">Favorite music Video </h3>
+            <iframe
+              className="aspect-video h-96 w-full  rounded-lg shadow-lg"
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
         </div>
       </Section>
     </div>

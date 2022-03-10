@@ -11,56 +11,90 @@ const userData = {
       title: "Twitter-Responsive-app",
       link: "https://twitter-app-responsive.vercel.app/",
       imgUrl: "/images/twitter.png",
+      githubLink: "https://github.com/itishprasad30/Twitter-app-responsive",
+      description: "A social Media app like Twitter .",
     },
     {
       title: "Instagram-clone App",
       link: "https://instagram-clone-responsive-app.vercel.app/",
       imgUrl: "/images/instagram.png",
+      githubLink:
+        "https://github.com/itishprasad30/Instagram-Clone-responsive_app",
+      description:
+        "A photo sharing social media app , made useing Nextjs ,tailwind ,firebase for the backend",
     },
     {
       title: "Spotify-redesign App",
       link: "https://spotify-web-app-redesign.vercel.app/",
       imgUrl: "/images/spotify.png",
+      githubLink: "https://github.com/itishprasad30/spotify-web-app-redesign",
+      description:
+        "Fetching Spotify api data and redesign the app using the json that gives from spotify. Note-only Premium accout can contol the playback state.",
     },
     {
       title: "Airbnb-Web app",
       link: "https://airbnb-web-app.vercel.app/",
       imgUrl: "/images/abn.png",
+      githubLink: "https://github.com/itishprasad30/Airbnb-Web-App",
+      description: "A hotel booking system like airbnb app.",
     },
     {
       title: "Hulu-App",
       link: "https://hulu-app-1.vercel.app/",
       imgUrl: "/images/Hulu.png",
+      githubLink: "https://github.com/itishprasad30/Hulu-App-",
+      description:
+        "A Movie list display app, where you can find all the top rated movie list according to the genre.",
     },
     {
       title: "Amazon-Web-App using React js",
       link: "https://github.com/itishprasad30/Amazon-Clone",
       imgUrl: "/images/amazon.png",
+      githubLink: "https://github.com/itishprasad30/Amazon-Clone",
+      description:
+        "A fullstack application , where you can you can buy the product and payment will integrated with this application,",
     },
     {
       title: "Covid19 Tracker",
       link: "https://covid19-tracker-4231d.firebaseapp.com",
       imgUrl: "/images/Covid.png",
+      githubLink: "https://github.com/itishprasad30/Covid-19-Tracker-",
+      description:
+        "This app will dispaly how much people affected in Covid 19 .",
     },
     {
       title: "Google-App using Next js",
       link: "https://google-app-delta.vercel.app/",
       imgUrl: "/images/Google.png",
+      githubLink: "https://github.com/itishprasad30/Google-app",
+      description:
+        "A search box where you can find the list of information what you search.",
     },
     {
       title: "My Portfolio App",
       link: "https://my-protfolio-app.vercel.app/",
       imgUrl: "/images/portfolio.png",
+      githubLink: "https://github.com/itishprasad30/My-protfolio-app",
+      description:
+        "A simple portfolio app of mine, but later i updated to This site.🤩",
     },
     {
       title: "Signal-app using ReactNative [Mobile app]",
       link: "https://github.com/itishprasad30",
       imgUrl: "/images/signal.png",
+      githubLink:
+        "https://github.com/itishprasad30/Signal-Messaging-app-using-React-Native",
+      description:
+        "A reactnative app , you can use both android and ios application. a message delivering application",
     },
     {
       title: "Expense Tracker",
       link: "https://github.com/itishprasad30",
       imgUrl: "/images/ExpenseTracker.png",
+      githubLink:
+        "https://github.com/itishprasad30/Expense_Tracker_Using-ReactJs",
+      description:
+        "Exprence tracker app , where you can moniter the income and outcome in this.",
     },
   ],
   about: {

@@ -124,11 +124,11 @@ const VoxelDog = () => {
 
   return (
     <div
-      className="bg-gray-100 dark:bg-[#202023] mb-2 h-72 md:h-[350px] m-auto rounded-lg "
+      className="m-auto mb-2 h-72 rounded-lg bg-[#F0E7DB] dark:bg-[#202023] md:h-[350px] "
       ref={refContainer}
     >
       {loading && (
-        <Spinner className="text-green-500  mx-56 my-40 justify-center items-center text-5xl  h-20 w-20 " />
+        <Spinner className="mx-56  my-40 h-20 w-20 items-center justify-center  text-5xl text-green-500 " />
       )}
     </div>
   );
