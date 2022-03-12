@@ -1,0 +1,666 @@
+---
+title: Javascript Interview Questions
+publishedAt: "2022-03-11"
+summary: "Some main javascript Interview Question that asks during interviews "
+image: https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80
+---
+
+# ⏳ JavaScript Interview Questions
+
+## Q.1 Hosting in JavaScript ?
+
+- Var - funtion scoped
+- Let - Es 6 block scoped
+- Const - Es6 block scoped
+
+```jsx
+function abc() {
+  console.log(a); // undefined
+
+  var a = 10; // then value of a becames 10
+}
+
+abc(); // output : undefined
+```
+
+Let and Const
+
+```jsx
+function abc() {
+  console.log(a, b, c);
+
+  var a = 10;
+  let b = 20;
+  const c = 30;
+}
+
+abc(); // Uncaught ReferenceError: Cannot access 'b' before initialization
+
+// This is called Temporal Deadzone hosted.
+```
+
+- **Temperal dead zone** is the term to describe the state where variables are in scope but they are not yet declared.
+
+## Q2. Implicit and Explicit Binding
+
+normal funtion and arrow funtion
+
+- **Note**:
+  **_Call is refering to the_** **Calls a method of an object, substituting another object for the current object.**
+
+```jsx
+// implicit binding and explicit binding
+
+var obj1 = {
+  name: "Itish",
+  display: function () {
+    console.log(this.name);
+  },
+};
+
+var obj2 = {
+  name: " The Weeknd",
+};
+
+obj1.display(); // Itish
+
+obj1.display.call(obj2); // weeknd
+```
+
+But in same code in arrow funtion behaves different
+
+```jsx
+var obj1 = {
+  name: "Itish",
+  display: () => {
+    console.log(this.name);
+  },
+};
+
+var obj2 = {
+  name: " The Weeknd",
+};
+
+obj1.display(); // empty
+
+obj1.display.call(obj2); // empty
+
+// Empty because it refers to the window obj
+// so there is not name obj in window so it display empty
+```
+
+## Q3. Implementing Caching / memoize Function
+
+```jsx
+const clumsySqure = (num1, num2) => {
+  for (let i = 0; i < 100000000; i++) {}
+  return num1 * num2;
+};
+
+console.time("First call");
+console.log(clumsySqure(203002, 394995));
+console.timeEnd("First call");
+
+console.time("Second call");
+console.log(clumsySqure(203002, 394995));
+console.timeEnd("Second call");
+
+// output will be
+80184774990
+First call: 91.933837890625 ms
+80184774990
+Second call: 93.0341796875 ms
+
+```
+
+to store in memory we have to wrap the clumsySqure in the function that will return the funtion with arg and context
+
+here the code how it works
+
+```jsx
+// Implimenting caching and memorization
+
+function memory(fn, context) {
+  const res = {}; // it stores the obj
+
+  return function (...args) {
+    var argsCache = JSON.stringify(args);
+
+    if (!res[argsCache]) {
+      res[argsCache] = fn.call(context || this, ...args);
+    }
+    return res[argsCache];
+  };
+}
+
+const clumsySqure = (num1, num2) => {
+  for (let i = 0; i < 100000000; i++) {}
+  return num1 * num2;
+};
+
+const myCustomMem = memory(clumsySqure);// this is wrap around the a funtion
+
+console.time("First call");
+console.log(myCustomMem(203002, 394995));
+console.timeEnd("First call");
+
+console.time("Second call");
+console.log(myCustomMem(203002, 394995));
+console.timeEnd("Second call");
+
+// output value below
+80184774990
+First call: 90.466064453125 ms
+80184774990
+Second call: 0.087158203125 ms
+```
+
+see the difference in time
+
+## Q4. Output Based Code which will return first
+
+```jsx
+console.log("a");
+setTimeout(() => console.log("timeout with 0s delay"), 0);
+Promise.resolve(() => console.log("Promise ")).then((res) => res());
+console.log("b");
+
+// output will this order
+a
+b
+Promise
+timeout with 0s delay
+```
+
+because it happes Event Loops In Javascript
+
+[https://www.jsv9000.app/](https://www.jsv9000.app/)
+
+1 - Call Stack will 1st exhicute
+
+2 - Micro task queue will then exhicute
+
+3 - task queue last exhicute
+
+all setTimeout will goes under the task queue
+
+all promise based will under micro task queue
+
+- _The **Event Loop** processes Tasks and Microtasks. It places them into the Call Stack for execution one at a time. It also controls when rerendering occurs._
+
+**Evaluate Script**
+
+**Run a Task**
+
+**Run all Microtasks**
+
+**Rerender**
+
+Rerender the UI. Then, return to step 2. (This step only applies to browsers, not NodeJS).
+
+- _The **Microtask Queue** was added in ES6 to handle Promises. It's a lot like the Call Stack. The main difference is how Microtasks are enqueued and when they are processed._
+- _The **Task Queue** is a FIFO queue of Tasks that are going to be executed by the Event Loop. Tasks are synchronous blocks of code that can enqueue other Tasks while they're running._
+
+![Page 1 (1).jpeg](<https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ecf4e8e6-f4e9-4eec-9e42-ac3522fa3e3b/Page_1_(1).jpeg>)
+
+## Q5. infinite Curing
+
+```jsx
+// infinte curring
+
+function add(a) {
+  return function (b) {
+    return a + b;
+  };
+}
+
+console.log(add(5)(2)); // 7
+```
+
+out put will be 7 because , fun add() first runs then it returns another function
+
+it runs and returns a+b and argument comming from function calls()
+
+this is normal ways
+
+```jsx
+function add(a) {
+  return function (b) {
+    if (b) return add(a + b);
+    return a;
+  };
+}
+
+console.log(add(5)(2)(1)(10)());
+
+// OutPut:
+// 18
+```
+
+## Q6. Write The Following Code based on Function ?
+
+**const result = calc.add(10).multiply(5).sub(30).add(10);**
+
+```jsx
+const calc = {
+  total: 0,
+  add(a) {
+    this.total += a;
+    return this;
+  },
+  multiply(m) {
+    this.total *= m;
+    return this;
+  },
+  sub(s) {
+    this.total -= s;
+    return this;
+  },
+};
+
+const result = calc.add(10).multiply(5).sub(30).add(10);
+
+console.log(result.total); // 30
+```
+
+## Q7. Difference Between map and forEach in array?
+
+**What is map and foreach in JS , these are both functions in array to loop through each item in the array.**
+
+Map function takes a callback function and return the value . it did not change the orginal array
+
+value.
+
+where as the foreach function didnot return any thing ,but it changes the orginal array
+
+and in map you can chain like you can use filter method
+
+where as in foreach it can happens
+
+```jsx
+// map and foreach function
+
+let arr = [1, 2, 3, 4, 5, 423, 1234, 5, 34, 56, 234];
+
+const mapResult = arr.map((x, i) => x + 2);
+console.log(mapResult);
+
+const foreachResult = arr.forEach((x, i) => {
+  arr[i] = x + 10;
+});
+console.log(foreachResult); // undefined
+
+console.log(arr); // changes in this arr is modified
+```
+
+## Q8. Difference Between Null and Undefined ?
+
+```jsx
+console.log(typeof null); // object
+console.log(typeof undefined); // undefined
+
+// follow up
+
+let a;
+console.log(a); // undefined
+
+let b = null;
+console.log(b); // null
+
+console.log(c); // not defined or undeclred
+
+// follow up questions
+
+console.log(null == undefined); // true
+
+console.log(null === undefined); // false
+```
+
+**Null : null is the actual value**
+
+**undefined: undefined is the variable is declared but not initialize.**
+
+**console.log(null == undefined) // true** because == compares both entity without matching there types.
+
+**console.log(null === undefined ) // false** because === compares strict equality comapres types as well
+
+## Q9 . Event Delegation ?
+
+```html
+<div id="products">
+  <li id="shirts">shirts</li>
+  <li id="wallets">wallets</li>
+  <li id="pants">pants</li>
+</div>
+```
+
+```jsx
+const product = document.querySelector("#products");
+
+product.addEventListener("click", (event) => {
+  console.log(event);
+  if (event.target.tagName === "LI") {
+    window.location.href += "#" + event.target.id;
+  }
+});
+```
+
+**_Def =_** Event delegation refers to **the process of using event propagation (bubbling) to handle events at a higher level in the DOM than the element**
+ on which the event originated. It allows us to attach a single event listener for elements that exist now or in the future. Inside the Event Handling Function.
+
+Event delegation **allows you to avoid adding event listeners to specific nodes**; instead, the event listener is added to one parent. That event listener analyzes bubbled events to find a match on child elements. Let's also say that something needs to happen when each child element is clicked.
+
+**Simple Way**
+
+- JavaScript event delegation is **a simple technique by which you add a single event handler to a parent element**
+   in order to avoid having to add event handlers to multiple child elements
+
+## Q10 : Flattened The Array
+
+In this given an array like depth of 2,3,4 you have to merge into one array.
+
+Ex - below is given
+
+```jsx
+// flated array
+
+const arr = [
+  [1, 2, 3, 4, 5],
+  [6, 7, [8, [9, 10]], 11],
+  [12, 13, 14],
+];
+
+// this is simple to create a array with concat and spread operater
+
+const flatarr = [].concat(...arr);
+
+// console.log(flatarr);
+
+// this is the simpliest way using flat funtion using array
+
+console.log(arr.flat(2)); // in the args it passes the depth of recusion
+
+// manual mode to create the funtion flattened arraty
+function manualFlat(arr, depth = 1) {
+  const result = [];
+
+  arr.forEach((el) => {
+    if (Array.isArray(el) && depth > 0) {
+      result.push(...manualFlat(el, depth - 1));
+    } else {
+      result.push(el);
+    }
+  });
+
+  return result;
+}
+
+console.log(manualFlat(arr, 3));
+```
+
+## Q 11: Difference Between [ Var, Let ,Const ]
+
+- Var is function based scope
+- let , const are block based scope
+
+```jsx
+{
+	var a= 12
+}
+console.log(a) // 12   no error
+// but
+{
+	let a = 22
+	const b =21
+}
+console.log(a,b) // error you a ,b not defined
+
+// 2nd row
+
+{
+	var a = 'helo'
+	a = 'some'
+ var a = 'new' // updated ,redeclared
+
+ let b = 'the weeknd'
+ b = 'able' // updated
+ let b = 'doja cat' // error it can't be redecalred
+
+ const c = 11
+ c = 22 // error
+ const c = 33 // error it can't redecalre or updated
+
+}
+
+// 3rd row
+{
+ var a ;  // it can declare without initlization
+ let b ;  // it can declare without initlization
+ const c ; //error
+}
+
+// 4th row
+{
+ var a ;
+console.log(a) //default value undefined
+
+}
+```
+
+| var                                                                            | let                                                                   | const                                                                                          |
+| ------------------------------------------------------------------------------ | --------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| The scope of a var variable is functional scope.                               | The scope of a let variable is block scope.                           | The scope of a const variable is block scope.                                                  |
+| It can be updated and re-declared into the scope.                              | It can be updated but cannot be re-declared into the scope.           | It cannot be updated or re-declared into the scope.                                            |
+| It can be declared without initialization.                                     | It can be declared without initialization.                            | It cannot be declared without initialization.                                                  |
+| It can be accessed without initialization as its default value is “undefined”. | It cannot be accessed without initialization, as it returns an error. | It cannot be accessed without initialization, as it cannot be declared without initialization. |
+
+## Q11 : Output based Questions Related to SetTimeout()
+
+```jsx
+function a() {
+  for (var i = 0; i < 3; i++) {
+    setTimeout(function log() {
+      console.log(i);
+    }, i * 1000);
+  }
+}
+
+a(); // 3 3 3     after delay of 1sec it give 3 of 3 times
+```
+
+In the above function ,
+
+when first loads the function, for loop will enter into this.
+
+setTimeout will go to the Task queue ,so it will exhucute that after the all excution is finished.
+
+in that time the value of i becames, i = 3 , so it will print 3 3 3 delay of 1sec
+
+so solution to this is
+
+use of Let key word instead of var
+
+```jsx
+function a() {
+  for (let i = 0; i < 3; i++) {
+    setTimeout(function log() {
+      console.log(i);
+    }, i * 1000);
+  }
+}
+
+a(); //  0 1 2    after delay of 1sec it give 1 2 3
+```
+
+## Q12 : Explain Call , Apply , Bind In JS ?
+
+```jsx
+const user = {
+  name: "Itish Prasad Sahoo",
+  display: function (data) {
+    console.log(this.name + " says " + data);
+  },
+};
+
+const user1 = {
+  name: "The weeknd",
+};
+
+//normal fun call
+user.display("all good"); // itish prasad sahoo says all good
+
+// Call --
+// what call does , it takes a object for particuar function display ,and other parameter
+// takes  argument for the function ,
+
+user.display.call(user1, "Good Morning"); // the weeknd says Good morning
+
+// apply -- same as call but the argument should be inside the array
+user.display.apply(user1, ["xo family welcome"]);
+
+// Bind -- creates a new object ,it does not take the 2nd param,it takes context and
+//return a new function with this context
+const newUser = user.display.bind(user1);
+
+newUser("he"); // the weeknd says he
+```
+
+## Q13 : Compose all function into one?
+
+```jsx
+function addFive(a) {
+  return a + 5;
+}
+
+function substractTwo(a) {
+  return a - 2;
+}
+
+function multiplyFive(a) {
+  return a * 5;
+}
+
+const compose = (...funs) => {
+  return (args) => {
+    return funs.reduceRight((arg, fn) => fn(arg), args);
+  };
+};
+
+const result = compose(addFive, substractTwo, multiplyFive);
+console.log(result(5)); // 28   it performs from right to left  - pipe also there
+```
+
+## Q14 : Implementation OF Promise.all
+
+```jsx
+// Normal ways
+function showText(text, time) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(text);
+    }, time);
+  });
+}
+
+Promise.all([
+  showText("hello world", 1000),
+  Promise.resolve("pintu sahoo"),
+  Promise.resolve("itish"),
+]).then((res) => console.log(res));
+
+// output will be
+["hello world", "pintu sahoo", "itish"];
+```
+
+so we have to impliment the logic behind this
+
+```jsx
+// implement promise.all  manual function
+
+function showText(text, time) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(text);
+    }, time);
+  });
+}
+
+function myPromiseAll(promises) {
+  let result = [];
+  return new Promise((resolve, reject) => {
+    promises.forEach((p, index) => {
+      p.then((res) => {
+        result.push(res);
+        if (index === promises.length - 1) {
+          resolve(result);
+        }
+      }).catch((err) => reject(err));
+    });
+  });
+}
+
+myPromiseAll([
+  showText("hello world", 1000),
+  Promise.resolve("pintu sahoo"),
+  Promise.resolve("itish"),
+]).then((val) => console.log(val));
+
+// output
+(2) ['pintu sahoo', 'itish']
+0: "pintu sahoo"
+1: "itish"
+2: "hello world"
+```
+
+## Q15 : How To Center a DIV ?
+
+There is 3 ways to center a div .
+
+- **Using Flex :**
+
+```css
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+```
+
+- Using Normal Top and left
+
+```css
+.App {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+```
+
+- Grid
+
+```css
+.App {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+```
+
+## Q16: What is CSS Box Model ?
+
+```css
+div {
+  width: 400px;
+  padding: 15px;
+  border: 1px solid black;
+  margin: 20px;
+}
+```
+
+These Four property combined to form the Box model
+
+## Q 17: What is Debounce in React js ?
+
+when you seach something in search bar after few milisecond result will show , this is callded debouncing ..

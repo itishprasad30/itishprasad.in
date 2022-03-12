@@ -107,8 +107,8 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="group flex flex-row items-center space-x-4"
               >
-                <div className="my-4">&rarr;</div>
-                <IoLogoTwitter />
+                <div className="my-4 ">&rarr;</div>
+                <IoLogoTwitter className="transition-colors group-hover:text-indigo-500  dark:hover:text-indigo-600" />
 
                 <p className="relative overflow-hidden font-mono text-lg text-gray-500 dark:text-gray-300">
                   <div className="absolute bottom-0 h-0.5 w-full -translate-x-28 transform bg-gray-400 transition duration-300 group-hover:translate-x-0"></div>
@@ -124,7 +124,7 @@ export default function Home() {
                 className="group flex flex-row items-center space-x-4"
               >
                 <div className="my-4">&rarr;</div>
-                <IoLogoGithub />
+                <IoLogoGithub className="transition-colors group-hover:text-gray-600 dark:text-gray-300 dark:hover:text-gray-600" />
                 <p className="relative overflow-hidden font-mono text-lg text-gray-500 dark:text-gray-300">
                   <div className="absolute bottom-0 h-0.5 w-full -translate-x-24 transform bg-gray-400 transition duration-300 group-hover:translate-x-0"></div>
                   GitHub
@@ -139,7 +139,7 @@ export default function Home() {
                 className="group flex flex-row items-center space-x-4"
               >
                 <div className="my-4">&rarr;</div>
-                <IoLogoLinkedin />
+                <IoLogoLinkedin className="transition-colors group-hover:text-blue-800 " />
                 <p className="relative overflow-hidden font-mono text-lg text-gray-500 dark:text-gray-300">
                   <div className="absolute bottom-0 h-0.5 w-full -translate-x-24 transform bg-gray-400 transition duration-300 group-hover:translate-x-0"></div>
                   LinkedIn
@@ -154,7 +154,7 @@ export default function Home() {
                 className="group flex flex-row items-center space-x-4"
               >
                 <div className="my-4">&rarr;</div>
-                <IoLogoInstagram />
+                <IoLogoInstagram className="transition-colors group-hover:text-pink-500 " />
                 <p className="relative overflow-hidden font-mono text-lg text-gray-500 dark:text-gray-300">
                   <div className="absolute bottom-0 h-0.5 w-full -translate-x-28 transform bg-gray-400 transition duration-300 group-hover:translate-x-0"></div>
                   Instagram
@@ -169,7 +169,7 @@ export default function Home() {
                 className="group flex flex-row items-center space-x-4"
               >
                 <div className="my-4">&rarr;</div>
-                <IoLogoFacebook />
+                <IoLogoFacebook className="transition-colors group-hover:text-indigo-700 " />
                 <p className="relative overflow-hidden font-mono text-lg text-gray-500 dark:text-gray-300">
                   <div className="absolute bottom-0 h-0.5 w-full -translate-x-24 transform bg-gray-400 transition duration-300 group-hover:translate-x-0"></div>
                   Facebook

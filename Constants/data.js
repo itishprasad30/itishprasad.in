@@ -136,7 +136,7 @@ const userData = {
   socialLinks: {
     instagram: "https://instagram.com/itishprasad30",
     twitter: "https://twitter.com/itish_prasad",
-    linkedin: "https://www.linkedin.com/in/itish-prasad-sahoo-2155b7218/",
+    linkedin: "https://www.linkedin.com/in/itishprasad",
     github: "https://github.com/itishprasad30",
     facebook: "https://facebook.com/itishprasad",
   },
