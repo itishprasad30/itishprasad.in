@@ -8,6 +8,7 @@ import { ThemeProvider } from "next-themes";
 import nProgress from "nprogress";
 import Router from "next/router";
 import "../styles/nprogress.css";
+// import "../styles/dracula.css";
 
 Router.events.on("routeChangeStart", nProgress.start);
 Router.events.on("routeChangeError", nProgress.done);

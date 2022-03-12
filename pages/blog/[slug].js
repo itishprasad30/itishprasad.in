@@ -7,9 +7,11 @@ import { serialize } from "next-mdx-remote/serialize";
 import { format } from "date-fns";
 import readingTime from "reading-time";
 import { HiOutlineClock, HiOutlineEye } from "react-icons/hi";
+import rehypePrism from "rehype-prism-plus";
+import rehypeSlug from "rehype-slug";
+import remarkGfm from "remark-gfm";
 
 const Blogpost = ({ frontMatter, slug, mdxSource }) => {
-  console.log(frontMatter);
   return (
     <div>
       <div>
