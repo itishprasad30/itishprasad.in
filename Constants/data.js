@@ -132,7 +132,7 @@ const userData = {
     },
   ],
   resumeUrl:
-    "https://drive.google.com/file/d/1Pbdz3EtRta71JrsqkGz8PaclZP8lLVVM/view?usp=sharing",
+    "https://drive.google.com/file/d/14-mvHFniYgweMRcFi95Uj9KNxcbI0kLE/view?usp=sharing",
   socialLinks: {
     instagram: "https://instagram.com/itishprasad30",
     twitter: "https://twitter.com/itish_prasad",

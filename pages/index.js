@@ -2,6 +2,7 @@ import Image from "next/image";
 import Section from "../components/section";
 import NextLink from "next/link";
 import userData from "../Constants/data";
+
 import {
   IoLogoTwitter,
   IoLogoGithub,
@@ -9,7 +10,10 @@ import {
   IoLogoFacebook,
   IoLogoDiscord,
   IoLogoInstagram,
+  IoArrowDownOutline,
+  IoNewspaperSharp,
 } from "react-icons/io5";
+import ViewCounter from "../components/ViewCounter";
 
 export default function Home() {
   return (
@@ -18,19 +22,20 @@ export default function Home() {
         Hello , I am a Full Stack Developer from India.
       </div>
 
-      <div className="items-center justify-center md:flex ">
+      <div className=" items-center justify-center md:flex">
         <div className="flex-1">
           <h1 className="mb-1 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
             Itish Prasad
           </h1>
 
           <p className="mb-4 text-gray-700 dark:text-gray-200">
-            FullStack Developer || Web Dev{" "}
+            FullStack Developer || Web Developer{" "}
           </p>
           <p className="mb-16 text-gray-800 dark:text-gray-200">
-            Believing Web Dev is the Future.So building a faster web. Exporing
-            about web development, serverless, and React / Next.js,Tailwind Css
-            & Apis.
+            I work with React Ecosystem, and write blog how to rebuild and
+            redefine fundametal concepts through mental models. Believing Web
+            Dev is the Future.So building a faster web. Exporing about web
+            development, serverless, and React / Next.js,Tailwind Css & Apis.
           </p>
         </div>
 
@@ -45,7 +50,7 @@ export default function Home() {
         </div>
       </div>
       <div>
-        <Section>
+        <Section delay={0.5}>
           <h2 className="mb-6 text-2xl font-bold tracking-tight text-black underline dark:text-white md:text-3xl">
             Works
           </h2>
@@ -62,7 +67,7 @@ export default function Home() {
           </div>
         </Section>
 
-        <Section delay={0.5}>
+        <Section delay={0.9}>
           <h2 className="mt-6 text-2xl font-bold tracking-tight text-black underline dark:text-white md:text-3xl  ">
             Bio
           </h2>
@@ -95,7 +100,7 @@ export default function Home() {
           </p>
         </Section>
 
-        <Section delay={0.3}>
+        <Section delay={0.8}>
           <h2 className="mt-6 text-2xl font-bold tracking-tight text-black underline dark:text-white md:text-3xl  ">
             Social Links{" "}
           </h2>
@@ -110,9 +115,25 @@ export default function Home() {
                 <div className="my-4 ">&rarr;</div>
                 <IoLogoTwitter className="transition-colors group-hover:text-indigo-500  dark:hover:text-indigo-600" />
 
-                <p className="relative overflow-hidden font-mono text-lg text-gray-500 dark:text-gray-300">
+                <p className="relative overflow-hidden font-mono  text-lg text-gray-500 hover:text-indigo-500 dark:text-gray-300">
                   <div className="absolute bottom-0 h-0.5 w-full -translate-x-28 transform bg-gray-400 transition duration-300 group-hover:translate-x-0"></div>
                   Twitter
+                </p>
+              </a>
+            </div>
+            <div className="flex flex-row items-center justify-start">
+              <a
+                href={userData.resumeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-row items-center space-x-4"
+              >
+                <div className="my-4 ">&rarr;</div>
+                <IoNewspaperSharp className="transition-colors group-hover:text-green-500  dark:hover:text-green-600" />
+
+                <p className="relative overflow-hidden font-mono text-lg text-gray-500 hover:text-green-600 dark:text-gray-300">
+                  <div className="absolute bottom-0 h-0.5 w-full -translate-x-28 transform bg-gray-400 transition duration-300 group-hover:translate-x-0"></div>
+                  Resume
                 </p>
               </a>
             </div>
@@ -125,7 +146,7 @@ export default function Home() {
               >
                 <div className="my-4">&rarr;</div>
                 <IoLogoGithub className="transition-colors group-hover:text-gray-600 dark:text-gray-300 dark:hover:text-gray-600" />
-                <p className="relative overflow-hidden font-mono text-lg text-gray-500 dark:text-gray-300">
+                <p className="relative overflow-hidden font-mono text-lg text-gray-500 hover:text-gray-600 dark:text-gray-300">
                   <div className="absolute bottom-0 h-0.5 w-full -translate-x-24 transform bg-gray-400 transition duration-300 group-hover:translate-x-0"></div>
                   GitHub
                 </p>
@@ -140,7 +161,7 @@ export default function Home() {
               >
                 <div className="my-4">&rarr;</div>
                 <IoLogoLinkedin className="transition-colors group-hover:text-blue-800 " />
-                <p className="relative overflow-hidden font-mono text-lg text-gray-500 dark:text-gray-300">
+                <p className=" relative overflow-hidden font-mono text-lg text-gray-500 hover:text-blue-800 dark:text-gray-300">
                   <div className="absolute bottom-0 h-0.5 w-full -translate-x-24 transform bg-gray-400 transition duration-300 group-hover:translate-x-0"></div>
                   LinkedIn
                 </p>
@@ -155,7 +176,7 @@ export default function Home() {
               >
                 <div className="my-4">&rarr;</div>
                 <IoLogoInstagram className="transition-colors group-hover:text-pink-500 " />
-                <p className="relative overflow-hidden font-mono text-lg text-gray-500 dark:text-gray-300">
+                <p className="relative overflow-hidden font-mono text-lg text-gray-500 hover:text-pink-500 dark:text-gray-300">
                   <div className="absolute bottom-0 h-0.5 w-full -translate-x-28 transform bg-gray-400 transition duration-300 group-hover:translate-x-0"></div>
                   Instagram
                 </p>
@@ -170,7 +191,7 @@ export default function Home() {
               >
                 <div className="my-4">&rarr;</div>
                 <IoLogoFacebook className="transition-colors group-hover:text-indigo-700 " />
-                <p className="relative overflow-hidden font-mono text-lg text-gray-500 dark:text-gray-300">
+                <p className="relative overflow-hidden font-mono text-lg text-gray-500 hover:text-blue-800 dark:text-gray-300">
                   <div className="absolute bottom-0 h-0.5 w-full -translate-x-24 transform bg-gray-400 transition duration-300 group-hover:translate-x-0"></div>
                   Facebook
                 </p>
