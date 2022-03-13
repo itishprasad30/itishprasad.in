@@ -15,6 +15,21 @@ const userData = {
       description: "A social Media app like Twitter .",
     },
     {
+      title: "Wordle Game ",
+      link: "https://github.com/itishprasad30/50daysOfJs/tree/master/wordle-javascript-game",
+      imgUrl: "wordle.png",
+      githubLink:
+        "https://github.com/itishprasad30/50daysOfJs/tree/master/wordle-javascript-game",
+      description: "A guessing Word Game. ",
+    },
+    {
+      title: " Joke Teller ",
+      link: "https://itishprasad30.github.io/joke-teller/",
+      imgUrl: "/images/joke-teller.png",
+      githubLink: "https://github.com/itishprasad30/joke-teller",
+      description: "funny joke teller by a robot, fetch from a api. ",
+    },
+    {
       title: "Instagram-clone App",
       link: "https://instagram-clone-responsive-app.vercel.app/",
       imgUrl: "/images/instagram.png",
