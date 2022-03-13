@@ -13,7 +13,6 @@ import {
   IoArrowDownOutline,
   IoNewspaperSharp,
 } from "react-icons/io5";
-import ViewCounter from "../components/ViewCounter";
 
 export default function Home() {
   return (
