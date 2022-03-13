@@ -17,7 +17,7 @@ const userData = {
     {
       title: "Wordle Game ",
       link: "https://github.com/itishprasad30/50daysOfJs/tree/master/wordle-javascript-game",
-      imgUrl: "wordle.png",
+      imgUrl: "/images/wordle.png",
       githubLink:
         "https://github.com/itishprasad30/50daysOfJs/tree/master/wordle-javascript-game",
       description: "A guessing Word Game. ",
