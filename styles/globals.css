@@ -20,3 +20,6 @@ a {
 * {
   box-sizing: border-box;
 } */
+.yt-lite::before {
+  content: none !important;
+}

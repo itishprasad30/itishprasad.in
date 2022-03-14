@@ -110,7 +110,7 @@ export default function NowPlaying() {
           </p>
         </div>
       </div>
-      <div className="flex justify-center rounded-md bg-green-300 text-gray-700 dark:bg-green-500 dark:text-gray-900">
+      <div className="flex justify-center rounded-md ">
         <a
           target="_blank"
           rel="noopener noreferrer"

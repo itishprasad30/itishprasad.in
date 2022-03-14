@@ -7,11 +7,10 @@ import { serialize } from "next-mdx-remote/serialize";
 import { format } from "date-fns";
 import readingTime from "reading-time";
 import { HiOutlineClock, HiOutlineEye } from "react-icons/hi";
-import rehypePrism from "rehype-prism-plus";
-import rehypeSlug from "rehype-slug";
-import remarkGfm from "remark-gfm";
+import MDXComponents from "../../components/content/MdxComponents";
 
 const Blogpost = ({ frontMatter, slug, mdxSource }) => {
+  const components = MDXComponents;
   return (
     <div>
       <div>
@@ -45,7 +44,7 @@ const Blogpost = ({ frontMatter, slug, mdxSource }) => {
           <hr className="mt-2 border-gray-700 dark:border-gray-600" />
           <section>
             <article className="prose dark:prose-invert  mx-auto mt-4 w-full min-w-full transition-colors">
-              <MDXRemote {...mdxSource} />
+              <MDXRemote {...mdxSource} components={components} />
             </article>
           </section>
         </div>
