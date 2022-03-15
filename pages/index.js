@@ -57,7 +57,7 @@ export default function Home() {
             {userData.about.description}
           </p>
           <div className="flex justify-center ">
-            <NextLink href="/works" className="">
+            <NextLink href="/projects" className="">
               <button className="my-4 rounded-lg  bg-green-400 px-3  py-2 text-white transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-green-500  ">
                 My PortFolio
                 <i className="ml-2 ">&gt;</i>

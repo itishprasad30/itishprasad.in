@@ -1,7 +1,7 @@
 import userData from "../Constants/data";
 import Image from "next/image";
 import Link from "next/link";
-const Works = () => {
+const Projects = () => {
   return (
     <section className=" ">
       <div className="mx-auto h-48 max-w-xl  ">
@@ -32,7 +32,7 @@ const Works = () => {
   );
 };
 
-export default Works;
+export default Projects;
 
 const ProjectCard = ({
   title,

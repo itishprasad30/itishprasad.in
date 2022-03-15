@@ -1,14 +1,14 @@
 import Section from "../components/section";
-import Works from "../components/Works";
+import Projects from "../components/Projects";
 
-const works = () => {
+const projects = () => {
   return (
     <div>
       <Section>
-        <Works />
+        <Projects />
       </Section>
     </div>
   );
 };
 
-export default works;
+export default projects;

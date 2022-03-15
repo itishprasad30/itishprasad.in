@@ -1,29 +1,155 @@
+import clsx from "clsx";
 import { format } from "date-fns";
-import React from "react";
-import { HiOutlineClock } from "react-icons/hi";
+import * as React from "react";
+import { HiOutlineClock, HiOutlineEye } from "react-icons/hi";
+import CloudinaryImg from "../components/images/CloudinaryImg";
 
 const BlogCard = ({ post }) => {
   return (
-    <div className="mx-auto w-72 max-w-2xl cursor-pointer  rounded-md border transition-all duration-300 hover:scale-105 hover:text-green-700 hover:shadow-lg">
-      <img
-        className="aspect-video"
-        src={post.frontMatter.image}
-        alt="Cover Image"
-      />
-      <div className="mt-2 p-2">
-        <h2 className="text-xl font-semibold">{post.frontMatter.title}</h2>
-        <div className="flex items-center gap-1">
-          <HiOutlineClock className="inline-block text-base" />
-          <span>{post.frontMatter.readingTime.text}</span>
+    <div
+      className={clsx(
+        " h-[370px] w-full rounded-md border border-gray-300   dark:border-gray-600",
+        "scale-100 hover:scale-[1.02] active:scale-[0.97] motion-safe:transform-gpu",
+        "transition duration-100",
+        "motion-reduce:hover:scale-100",
+        "animate-shadow"
+      )}
+    >
+      <div className="block h-full rounded-md focus:outline-none focus-visible:ring focus-visible:ring-gray-500">
+        <div className="relative">
+          <CloudinaryImg
+            noStyle
+            className="pointer-events-none overflow-hidden rounded-t-md"
+            publicId={post.frontMatter.image}
+            alt="Photo taken from unsplash"
+            width={1200}
+            height={(1200 * 2) / 5}
+            aspect={{ height: 2, width: 5 }}
+            preview={false}
+          />
         </div>
-        <p className="mt-4 mb-2 text-sm text-gray-600 dark:text-gray-100">
-          <span className="font-bold text-gray-800 dark:text-gray-100">
-            {format(new Date(post.frontMatter.publishedAt), "MMMM dd,yyyy")}
-          </span>
-        </p>
+        <div className="p-4">
+          <h4 className="text-lg font-bold text-gray-800 dark:text-gray-100 md:text-2xl">
+            {post.frontMatter.title}
+          </h4>
+          <div className="mt-2 flex items-center justify-start gap-2 text-sm font-medium text-gray-600 dark:text-gray-300">
+            <div className="flex items-center gap-1">
+              <HiOutlineClock className="inline-block text-base" />
+              <p>{post.frontMatter.readingTime.text}</p>
+            </div>
+            <div className="flex items-center gap-1">
+              <HiOutlineEye className="inline-block text-base" />
+              <p>{post?.views ?? "–––"} views</p>
+            </div>
+          </div>
+          <p className="mt-4 mb-2 text-sm text-gray-600 dark:text-gray-300">
+            <span className="font-bold text-gray-800 dark:text-gray-100">
+              {format(new Date(post.frontMatter.publishedAt), "MMMM dd,yyyy")}
+            </span>
+          </p>
+          <p className="text-sm text-gray-700 dark:text-gray-300">
+            {post.frontMatter.description}
+          </p>
+        </div>
       </div>
     </div>
   );
 };
 
 export default BlogCard;
+
+// import clsx from 'clsx';
+// import { format } from 'date-fns';
+// import * as React from 'react';
+// import { HiOutlineClock, HiOutlineEye } from 'react-icons/hi';
+
+// import p from '@/components/p';
+// import Tag from '@/components/content/Tag';
+// import CloudinaryImg from '@/components/images/CloudinaryImg';
+// import UnstyledLink from '@/components/links/UnstyledLink';
+
+// import { BlogFrontmatter, InjectedMeta } from '@/types/frontmatters';
+
+// type BlogCardProps = {
+//   post: BlogFrontmatter & InjectedMeta;
+//   checkTagged?: (tag: string) => boolean;
+// } & React.ComponentPropsWithoutRef<'li'>;
+
+// export default function BlogCard({
+//   post,
+//   className,
+//   checkTagged,
+//   onClick,
+// }: BlogCardProps) {
+//   return (
+// <li
+//   className={clsx(
+//     'w-full rounded-md border border-gray-300 bg-white dark:border-gray-600 dark:bg-dark',
+//     'scale-100 hover:scale-[1.02] active:scale-[0.97] motion-safe:transform-gpu',
+//     'transition duration-100',
+//     'motion-reduce:hover:scale-100',
+//     'animate-shadow',
+//     className
+//   )}
+//   onClick={onClick}
+// >
+//   <UnstyledLink
+//     className='block h-full rounded-md focus:outline-none focus-visible:ring focus-visible:ring-primary-300'
+//     href={`/blog/${post.slug}`}
+//   >
+//     <div className='relative'>
+//       <CloudinaryImg
+//         noStyle
+//         className='pointer-events-none overflow-hidden rounded-t-md'
+//         publicId={`theodorusclarence/banner/${post.banner}`}
+//         alt='Photo taken from unsplash'
+//         width={1200}
+//         height={(1200 * 2) / 5}
+//         aspect={{ height: 2, width: 5 }}
+//         preview={false}
+//       />
+//       <div
+//         className={clsx(
+//           'absolute bottom-0 w-full px-4 py-2',
+//           'mt-2 flex flex-wrap justify-end gap-y-1 gap-x-2 text-sm text-black dark:text-gray-100'
+//         )}
+//       >
+//         {post.tags.split(',').map((tag) => (
+//           <Tag
+//             tabIndex={-1}
+//             className='bg-opacity-80 dark:!bg-opacity-60'
+//             key={tag}
+//           >
+//             {checkTagged?.(tag) ? <p>{tag}</p> : tag}
+//           </Tag>
+//         ))}
+//       </div>
+//     </div>
+//     <div className='p-4'>
+//       <h4 className='text-gray-800 dark:text-gray-100'>{post.title}</h4>
+//       <div className='mt-2 flex items-center justify-start gap-2 text-sm font-medium text-gray-600 dark:text-gray-300'>
+//         <div className='flex items-center gap-1'>
+//           <HiOutlineClock className='inline-block text-base' />
+//           <p>{post.readingTime.text}</p>
+//         </div>
+//         <div className='flex items-center gap-1'>
+//           <HiOutlineEye className='inline-block text-base' />
+//           <p>{post?.views ?? '–––'} views</p>
+//         </div>
+//       </div>
+//       <p className='mt-4 mb-2 text-sm text-gray-600 dark:text-gray-300'>
+//         <span className='font-bold text-gray-800 dark:text-gray-100'>
+//           {format(
+//             new Date(post.lastUpdated ?? post.publishedAt),
+//             'MMMM dd, yyyy'
+//           )}
+//         </span>
+//       </p>
+//       <p className='text-sm text-gray-700 dark:text-gray-300'>
+//         {post.description}
+//       </p>
+//     </div>
+//   </UnstyledLink>
+// </li>
+//   );
+// }

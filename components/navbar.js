@@ -71,8 +71,8 @@ const Navbar = (props) => {
 
         <div className="flex flex-row space-x-4">
           <div className="flex space-x-1  md:w-auto md:flex-1 md:flex-row  ">
-            <LinkItem href="/works" path={path}>
-              Works
+            <LinkItem href="/projects" path={path}>
+              Projects
             </LinkItem>
             <LinkItem href="/tweets" path={path}>
               Posts

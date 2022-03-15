@@ -8,6 +8,9 @@ import { format } from "date-fns";
 import readingTime from "reading-time";
 import { HiOutlineClock, HiOutlineEye } from "react-icons/hi";
 import MDXComponents from "../../components/content/MdxComponents";
+import CloudinaryImg from "../../components/images/CloudinaryImg";
+import Link from "next/link";
+import CustomLink from "../../components/links/CustomLink";
 
 const Blogpost = ({ frontMatter, slug, mdxSource }) => {
   const components = MDXComponents;
@@ -15,11 +18,12 @@ const Blogpost = ({ frontMatter, slug, mdxSource }) => {
     <div>
       <div>
         <div className="pb-4   dark:border-gray-500">
-          <img
-            src={frontMatter.image}
+          <CloudinaryImg
+            publicId={frontMatter.image}
             alt="image"
             height={(1200 * 2) / 5}
             width={1200}
+            aspect={{ height: 2, width: 5 }}
           />
 
           <h1 className="mt-4  text-2xl font-bold md:text-3xl ">
@@ -47,6 +51,9 @@ const Blogpost = ({ frontMatter, slug, mdxSource }) => {
               <MDXRemote {...mdxSource} components={components} />
             </article>
           </section>
+          <div className="mt-8 flex transform transition-all duration-300 hover:text-xl hover:text-green-800">
+            <CustomLink href="/blog"> ← Back to Blog</CustomLink>
+          </div>
         </div>
       </div>
     </div>

@@ -42,9 +42,9 @@ export default function Footer() {
               About
             </a>
           </Link>
-          <Link href="/works">
+          <Link href="/projects">
             <a className="text-gray-500 transition hover:text-gray-600">
-              Works
+              Projects
             </a>
           </Link>
         </div>
@@ -68,7 +68,7 @@ export default function Footer() {
 
           <Link href="/tweets">
             <a className="text-gray-500 transition hover:text-gray-600">
-              Tweets
+              Tweets Posts
             </a>
           </Link>
         </div>

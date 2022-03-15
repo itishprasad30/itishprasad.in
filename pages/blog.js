@@ -9,6 +9,7 @@ import readingTime from "reading-time";
 const blog = ({ posts }) => {
   //   eslint-disable-next-line react-hooks/rules-of-hooks
   const [searchValue, setSearchValue] = useState("");
+  // console.log(posts);
 
   const filteredBlogPosts = posts.filter((post) =>
     post.frontMatter.title.toLowerCase().includes(searchValue.toLowerCase())
@@ -19,11 +20,11 @@ const blog = ({ posts }) => {
       <h1 className="mb-4 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
         Blog
       </h1>
+
       <p className="mb-4 text-gray-600 dark:text-gray-400">
         {`I have been writing Blog about Thoughts, mental models, and tutorials about front-end development.
          Use the search box below to filter by title.`}
       </p>
-
       {/* Seaching the file by its Name containing its name */}
       <div className="relative mb-4 w-full">
         <input
@@ -49,11 +50,9 @@ const blog = ({ posts }) => {
           />
         </svg>
       </div>
-
       <h3 className="mt-8  mb-4 text-3xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
         All Posts
       </h3>
-
       <div className=" flex flex-col  justify-center gap-8 md:grid md:grid-cols-2  ">
         {!filteredBlogPosts.length && (
           <p className="mb-4 text-gray-600 dark:text-gray-400">
