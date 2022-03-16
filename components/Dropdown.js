@@ -62,6 +62,13 @@ export default function Example() {
               </Link>
             </Menu.Item>
             <Menu.Item>
+              <Link href="/library" passHref>
+                <p className="block cursor-pointer bg-white px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900  ">
+                  Library
+                </p>
+              </Link>
+            </Menu.Item>
+            <Menu.Item>
               <Link href="/dashboard" passHref>
                 <p className="block cursor-pointer bg-white px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
                   Dashboard

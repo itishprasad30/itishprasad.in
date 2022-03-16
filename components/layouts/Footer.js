@@ -55,7 +55,7 @@ export default function Footer() {
           <ExternalLink href="https://github.com/itishprasad30">
             GitHub
           </ExternalLink>
-          <ExternalLink href="https://www.youtube.com/channel/UCteuq-OGmgRDo6HJk0bPBsg">
+          <ExternalLink href="https://www.youtube.com/channel/UCUgpCmLh5k4Sna9azJ269MA">
             YouTube
           </ExternalLink>
         </div>
@@ -131,7 +131,7 @@ function SocialLinks() {
       {socials.map((social) => (
         <Tooltip interactive={true} key={social.href} content={social.text}>
           <UnstyledLink
-            className="focus-visible:ring-primary-300 inline-flex items-center justify-center rounded-sm focus:outline-none focus-visible:ring"
+            className="inline-flex items-center justify-center rounded-sm focus:outline-none focus-visible:ring focus-visible:ring-green-300"
             href={social.href}
             onClick={() => {
               `Footer Link: ${social.id}`, "link";

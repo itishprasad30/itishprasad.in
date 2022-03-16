@@ -1,24 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 
-// import styled from "@emotion/styled";
-
-// const LogoBox = styled.span`
-//   font-weight: bold;
-//   font-size: 18px;
-//   display: inline-flex;
-//   align-items: center;
-//   height: 30px;
-//   line-height: 20px;
-//   padding: 10px;
-//   img {
-//     transition: 200ms ease;
-//   }
-//   &:hover img {
-//     transform: rotate(20deg);
-//   }
-// `;
-
 const Logo = () => {
   const footPrintImg = `/images/Logo.png`;
 
@@ -33,7 +15,7 @@ const Logo = () => {
             alt="logo"
             className="rounded"
           />
-          <p className="font-bold rounded-lg font-serif ml-3 text-gray-700 ">
+          <p className="ml-3 rounded-lg font-serif font-bold text-gray-700 ">
             Itish Prasad
           </p>
         </div>

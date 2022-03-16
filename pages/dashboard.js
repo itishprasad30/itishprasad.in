@@ -1,21 +1,27 @@
 import GitHub from "../components/metrics/Github";
 import TopTracks from "../components/TopTracks";
 import Repo from "../components/metrics/Repo";
-import Section from "../components/section";
 import userData from "../Constants/data";
 import LatestCode from "../components/LatestCode";
 import getLatestRepos from "../lib/getLatestRepos";
+import useLoaded from "../hooks/useLoaded";
+import clsx from "clsx";
 
 const dashboard = ({ repositories }) => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const isLoaded = useLoaded();
   return (
     <div>
-      <Section>
+      <section className={clsx(isLoaded && "fade-in-start")}>
         <div className="mx-auto mb-16 flex max-w-2xl flex-col items-start justify-center ">
-          <h1 className="mb-5 text-3xl font-bold tracking-tight md:text-4xl">
+          <h1
+            data-fade="1"
+            className="mb-5 text-3xl font-bold tracking-tight md:text-4xl"
+          >
             Dashboard
           </h1>
 
-          <div className="mb-8">
+          <div data-fade="2" className="mb-8">
             <p className="mb-4 text-gray-600 dark:text-gray-400">
               This is my personal dashboard, built with Next.js API routes
               deployed as serverless functions. I use this dashboard to track
@@ -23,24 +29,30 @@ const dashboard = ({ repositories }) => {
               build your own? Check out my&nbsp;
             </p>
           </div>
-          <div className="my-2 grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
+          <div
+            data-fade="3"
+            className="my-2 grid w-full grid-cols-1 gap-4 sm:grid-cols-2"
+          >
             <GitHub />
             <Repo />
           </div>
 
-          <div className="mt-10">
+          <div className="mt-10" data-fade="4">
             <LatestCode repositories={repositories} />
           </div>
-          <h2 className="mb-4 mt-16 text-3xl font-bold tracking-tight text-black dark:text-white">
+          <h2
+            data-fade="5"
+            className="mb-4 mt-16 text-3xl font-bold tracking-tight text-black dark:text-white"
+          >
             Top Tracks
           </h2>
-          <p className="mb-4 text-gray-600 dark:text-gray-400">
+          <p data-fade="6" className="mb-4 text-gray-600 dark:text-gray-400">
             Curious what I am currently jamming to? Here is my top tracks on
             Spotify updated daily.
           </p>
 
           <TopTracks />
-          <div className="relative w-full   rounded-xl  p-3">
+          <div data-fade="7" className="relative w-full   rounded-xl  p-3">
             <h3 className="text-2xl font-semibold ">Favorite music Video </h3>
             <iframe
               className="aspect-video h-96 w-full  rounded-lg shadow-lg"
@@ -52,7 +64,7 @@ const dashboard = ({ repositories }) => {
             ></iframe>
           </div>
         </div>
-      </Section>
+      </section>
     </div>
   );
 };
