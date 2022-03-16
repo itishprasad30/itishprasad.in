@@ -25,7 +25,6 @@ const Main = ({ children, router }) => {
       </Head>
 
       <Navbar path={router.asPath} />
-
       <div className="mx-auto max-w-5xl  px-4 pt-4 md:px-20">
         {/* <NoSsr>
           <VoxelDog />
