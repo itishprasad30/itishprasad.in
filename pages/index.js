@@ -14,6 +14,8 @@ import {
 } from "react-icons/io5";
 import useLoaded from "../hooks/useLoaded";
 import clsx from "clsx";
+import NoSsr from "../components/no-ssr";
+import VoxelDog from "../components/voxel-dog";
 
 export default function Home() {
   const isLoaded = useLoaded();
@@ -21,6 +23,9 @@ export default function Home() {
   return (
     <div className=" max-w-4xl ">
       <section className={clsx(isLoaded && "fade-in-start")}>
+        <NoSsr>
+          <VoxelDog />
+        </NoSsr>
         <div
           data-fade="1"
           className=" mb-4 items-center rounded-lg bg-gray-700 p-4 text-white opacity-80"
