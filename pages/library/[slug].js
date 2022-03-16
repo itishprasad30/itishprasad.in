@@ -4,6 +4,7 @@ import { getFileBySlug, getFiles } from "../../lib/mdx";
 import * as React from "react";
 import { getMDXComponent } from "mdx-bundler/client";
 import MDXComponents from "../../components/content/MdxComponents";
+import CustomLink from "../../components/links/CustomLink";
 
 export default function SingleLibraryPage({ code, frontmatter }) {
   const Component = React.useMemo(() => getMDXComponent(code), [code]);
@@ -42,6 +43,9 @@ export default function SingleLibraryPage({ code, frontmatter }) {
                 />
               </article>
             </section>
+          </div>
+          <div>
+            <CustomLink href="/library"> ← Back to Library</CustomLink>
           </div>
         </section>
       </main>

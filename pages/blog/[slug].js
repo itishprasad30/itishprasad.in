@@ -1,19 +1,21 @@
-import React from "react";
-import fs from "fs";
-import path from "path";
+import * as React from "react";
+// import fs from "fs";
+// import path from "path";
 import { MDXRemote } from "next-mdx-remote";
-import matter from "gray-matter";
-import { serialize } from "next-mdx-remote/serialize";
+// import matter from "gray-matter";
+// import { serialize } from "next-mdx-remote/serialize";
 import { format } from "date-fns";
-import readingTime from "reading-time";
+// import readingTime from "reading-time";
 import { HiOutlineClock, HiOutlineEye } from "react-icons/hi";
-import MDXComponents from "../../components/content/MdxComponents";
+// import MDXComponents from "../../components/content/MdxComponents";
 import CloudinaryImg from "../../components/images/CloudinaryImg";
-import Link from "next/link";
 import CustomLink from "../../components/links/CustomLink";
+import { getFileBySlug, getFiles } from "../../lib/mdx";
+import { getMDXComponent } from "mdx-bundler/client";
+import MDXComponents from "../../components/content/MdxComponents";
 
-const Blogpost = ({ frontMatter, slug, mdxSource }) => {
-  const components = MDXComponents;
+const Blogpost = ({ code, frontMatter }) => {
+  const Component = React.useMemo(() => getMDXComponent(code), [code]);
   return (
     <div>
       <div>
@@ -48,10 +50,14 @@ const Blogpost = ({ frontMatter, slug, mdxSource }) => {
           <hr className="mt-2 border-gray-700 dark:border-gray-600" />
           <section>
             <article className="prose dark:prose-invert  mx-auto mt-4 w-full min-w-full transition-colors">
-              <MDXRemote {...mdxSource} components={components} />
+              <Component
+                components={{
+                  ...MDXComponents,
+                }}
+              />
             </article>
           </section>
-          <div className="mt-8 flex transform transition-all duration-300 hover:text-xl hover:text-green-800">
+          <div className="mt-8 flex max-w-[150px] transform transition-all duration-300 hover:text-xl hover:text-green-800">
             <CustomLink href="/blog"> ← Back to Blog</CustomLink>
           </div>
         </div>
@@ -62,45 +68,67 @@ const Blogpost = ({ frontMatter, slug, mdxSource }) => {
 
 export default Blogpost;
 
-export async function getStaticPaths() {
-  // Read the files inside the data/blog dir
-  const files = fs.readdirSync(path.join("data/blog"));
-
-  // Generate path for each file
-  const paths = files.map((file) => {
-    return {
-      params: {
-        slug: file.replace(".mdx", ""),
-      },
-    };
-  });
-
+export const getStaticPaths = async () => {
+  const posts = await getFiles("blog");
   return {
-    paths,
+    paths: posts.map((p) => ({
+      params: {
+        slug: p.replace(/\.mdx/, ""),
+      },
+    })),
     fallback: false,
   };
-}
+};
 
-export async function getStaticProps({ params: { slug } }) {
-  // read each file
-  const markdown = fs.readFileSync(
-    path.join("data/blog", slug + ".mdx"),
-    "utf-8"
-  );
-
-  // Extract front matter
-  const { data: frontMatter, content } = matter(markdown);
-
-  const mdxSource = await serialize(content);
-
+export const getStaticProps = async ({ params }) => {
+  const post = await getFileBySlug("blog", params?.slug);
   return {
     props: {
-      frontMatter: {
-        readingTime: readingTime(markdown),
-        ...frontMatter,
-      },
-      slug,
-      mdxSource,
+      frontMatter: post.frontmatter,
+      code: post.code,
     },
   };
-}
+};
+
+// export async function getStaticPaths() {
+//   // Read the files inside the data/blog dir
+//   const files = fs.readdirSync(path.join("data/blog"));
+
+//   // Generate path for each file
+//   const paths = files.map((file) => {
+//     return {
+//       params: {
+//         slug: file.replace(".mdx", ""),
+//       },
+//     };
+//   });
+
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// }
+
+// export async function getStaticProps({ params: { slug } }) {
+//   // read each file
+//   const markdown = fs.readFileSync(
+//     path.join("data/blog", slug + ".mdx"),
+//     "utf-8"
+//   );
+
+//   // Extract front matter
+//   const { data: frontMatter, content } = matter(markdown);
+
+//   const mdxSource = await serialize(content);
+
+//   return {
+//     props: {
+//       frontMatter: {
+//         readingTime: readingTime(markdown),
+//         ...frontMatter,
+//       },
+//       slug,
+//       mdxSource,
+//     },
+//   };
+// }

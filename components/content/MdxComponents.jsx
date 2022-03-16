@@ -16,7 +16,6 @@ const MDXComponents = {
   CloudinaryImg: CloudinaryImg,
   pre: Pre,
   code: CustomCode,
-
   LiteYouTubeEmbed,
 };
 
