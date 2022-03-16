@@ -34,13 +34,6 @@ export default function Example() {
         <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="py-1">
             <Menu.Item>
-              <Link href="/about" passHref>
-                <p className="block cursor-pointer bg-white px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
-                  About
-                </p>
-              </Link>
-            </Menu.Item>
-            <Menu.Item>
               <Link href="/projects" passHref>
                 <p className="block cursor-pointer bg-white px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
                   Projects
@@ -48,9 +41,9 @@ export default function Example() {
               </Link>
             </Menu.Item>
             <Menu.Item>
-              <Link href="/posts" passHref>
+              <Link href="/tweets" passHref>
                 <p className="block cursor-pointer bg-white px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
-                  Posts
+                  Tweets Post
                 </p>
               </Link>
             </Menu.Item>
@@ -79,6 +72,13 @@ export default function Example() {
               <Link href="/contact" passHref>
                 <p className="block cursor-pointer bg-white px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
                   Contact
+                </p>
+              </Link>
+            </Menu.Item>
+            <Menu.Item>
+              <Link href="/about" passHref>
+                <p className="block cursor-pointer bg-white px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
+                  About
                 </p>
               </Link>
             </Menu.Item>
