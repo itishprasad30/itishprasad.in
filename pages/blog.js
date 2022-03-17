@@ -7,6 +7,7 @@ import Link from "next/link";
 import readingTime from "reading-time";
 import useLoaded from "../hooks/useLoaded";
 import clsx from "clsx";
+import ViewCounter from "../components/ViewCounter";
 
 const blog = ({ posts }) => {
   //   eslint-disable-next-line react-hooks/rules-of-hooks
@@ -34,6 +35,9 @@ const blog = ({ posts }) => {
         >
           Blog
         </h1>
+        <span className="hidden">
+          <ViewCounter slug="blog" />
+        </span>
 
         <p data-fade="1" className="mb-4 text-gray-600 dark:text-gray-400">
           {`I have been writing Blog about Thoughts, mental models, and tutorials about front-end development.
