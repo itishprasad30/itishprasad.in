@@ -2,6 +2,7 @@ import clsx from "clsx";
 import React, { useEffect, useState } from "react";
 import Accent from "../components/fonts/Accent";
 import LibraryCard from "../components/LibraryCard";
+import ViewCounter from "../components/ViewCounter";
 import useLoaded from "../hooks/useLoaded";
 import { getAllFilesFrontmatter } from "../lib/mdx";
 import { sortByTitle } from "../lib/mdx-client";
@@ -23,6 +24,10 @@ export default function LibraryPage({ snippets }) {
           <div className="layout py-12">
             <h1 className="text-3xl font-bold md:text-5xl  " data-fade="1">
               <h1 className="text-3xl font-bold md:text-5xl"> Library</h1>
+              <p className="hidden">
+                {" "}
+                <ViewCounter slug="library" />
+              </p>
             </h1>
             <p className="mt-2 text-gray-600 dark:text-gray-300 " data-fade="2">
               Some collection of code snippets that I put for easy access, feel

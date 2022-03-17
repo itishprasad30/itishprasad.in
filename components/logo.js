@@ -15,7 +15,7 @@ const Logo = () => {
             alt="logo"
             className="rounded"
           />
-          <p className="ml-3 rounded-lg font-serif font-bold text-gray-700 underline underline-offset-4 transition-colors dark:text-white  ">
+          <p className="ml-3 rounded-lg font-serif font-bold text-gray-700 underline-offset-4 transition-colors hover:underline dark:text-white  ">
             Itish Prasad
           </p>
         </div>
