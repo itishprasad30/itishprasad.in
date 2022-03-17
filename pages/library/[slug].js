@@ -5,9 +5,36 @@ import * as React from "react";
 import { getMDXComponent } from "mdx-bundler/client";
 import MDXComponents from "../../components/content/MdxComponents";
 import CustomLink from "../../components/links/CustomLink";
+import ViewCounter from "../../components/ViewCounter";
+// import TableOfContents from "../../components/content/TableOfContents";
+// import useScrollSpy from "../../hooks/useScrollspy";
 
 export default function SingleLibraryPage({ code, frontmatter }) {
   const Component = React.useMemo(() => getMDXComponent(code), [code]);
+
+  // //#region  //*=========== Scrollspy ===========
+  // const activeSection = useScrollSpy();
+
+  // const [toc, setToc] = React.useState();
+  // const minLevel =
+  //   toc?.reduce((min, item) => (item.level < min ? item.level : min), 10) ?? 0;
+
+  // React.useEffect(() => {
+  //   const headings = document.querySelectorAll(".mdx h1, .mdx h2, .mdx h3");
+
+  //   const headingArr = [];
+  //   headings.forEach((heading) => {
+  //     const id = heading.id;
+  //     const level = +heading.tagName.replace("H", "");
+  //     const text = heading.textContent + "";
+
+  //     headingArr.push({ id, level, text });
+  //   });
+
+  //   setToc(headingArr);
+  // }, [frontmatter.slug]);
+  // //#endregion  //*======== Scrollspy ===========
+
   return (
     <div>
       <main>
@@ -23,7 +50,9 @@ export default function SingleLibraryPage({ code, frontmatter }) {
               <div className="mt-2 flex items-center justify-start gap-3 text-sm font-medium text-gray-600 dark:text-gray-300">
                 <div className="flex items-center gap-1">
                   <HiOutlineEye className="inline-block text-base" />
-                  <p>{"---"}</p>
+                  <p>
+                    <ViewCounter slug={frontmatter.slug} />
+                  </p>
                 </div>
 
                 <span>•</span>
@@ -42,6 +71,18 @@ export default function SingleLibraryPage({ code, frontmatter }) {
                   }}
                 />
               </article>
+              {/* <aside className="py-4">
+                <div className="sticky top-36">
+                  <TableOfContents
+                    toc={toc}
+                    minLevel={minLevel}
+                    activeSection={activeSection}
+                  />
+                  <div className="flex items-center justify-center py-8">
+                    <LikeButton slug={contentSlug} />
+                  </div>
+                </div>
+              </aside> */}
             </section>
           </div>
           <div>

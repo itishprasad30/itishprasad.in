@@ -1,6 +1,6 @@
 import { db } from "../../../lib/firebase";
 
-export default async (req, res) => {
+export default async function handler(req, res) {
   if (req.method === "POST") {
     const ref = db.ref("views").child(req.query.slug);
     const { snapshot } = await ref.transaction((currentViews) => {
@@ -15,4 +15,11 @@ export default async (req, res) => {
       total: snapshot.val(),
     });
   }
-};
+
+  if (req.method === "GET") {
+    const snapshot = await db.ref("views").child(req.query.slug).once("value");
+    const views = snapshot.val();
+
+    return res.status(200).json({ total: views });
+  }
+}

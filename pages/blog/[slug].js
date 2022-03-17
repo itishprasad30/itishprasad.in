@@ -13,6 +13,7 @@ import CustomLink from "../../components/links/CustomLink";
 import { getFileBySlug, getFiles } from "../../lib/mdx";
 import { getMDXComponent } from "mdx-bundler/client";
 import MDXComponents from "../../components/content/MdxComponents";
+import ViewCounter from "../../components/ViewCounter";
 
 const Blogpost = ({ code, frontMatter }) => {
   const Component = React.useMemo(() => getMDXComponent(code), [code]);
@@ -44,7 +45,9 @@ const Blogpost = ({ code, frontMatter }) => {
 
             <div className="flex items-center gap-1">
               <HiOutlineEye className="inline-block text-base" />
-              <span>{"–––"} views</span>
+              <span>
+                <ViewCounter slug={frontMatter.slug} />
+              </span>
             </div>
           </div>
           <hr className="mt-2 border-gray-700 dark:border-gray-600" />

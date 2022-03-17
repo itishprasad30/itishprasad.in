@@ -15,7 +15,7 @@ export default function LibraryPage({ snippets }) {
       snippet.title.toLowerCase().includes(searchValue.toLowerCase()) ||
       snippet.description.toLowerCase().includes(searchValue.toLowerCase())
   );
-  console.log(snippets);
+  // console.log(snippets);
   return (
     <div>
       <main>

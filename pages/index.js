@@ -16,6 +16,7 @@ import useLoaded from "../hooks/useLoaded";
 import clsx from "clsx";
 import NoSsr from "../components/no-ssr";
 import VoxelDog from "../components/voxel-dog";
+import ViewCounter from "../components/ViewCounter";
 
 export default function Home() {
   const isLoaded = useLoaded();
@@ -32,6 +33,9 @@ export default function Home() {
         >
           Hello , I am a Full Stack Developer from India.
         </div>
+        <p className="hidden">
+          <ViewCounter slug="landing-page" />
+        </p>
 
         <div data-fade="2" className=" items-center justify-center md:flex">
           <div className="flex-1">
