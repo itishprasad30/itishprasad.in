@@ -2,9 +2,19 @@ import clsx from "clsx";
 import { format } from "date-fns";
 import * as React from "react";
 import { HiOutlineClock, HiOutlineEye } from "react-icons/hi";
+import useSWR from "swr";
 import CloudinaryImg from "../components/images/CloudinaryImg";
+import Accent from "./fonts/Accent";
+
+async function fetcher(...args) {
+  const res = await fetch(...args);
+
+  return res.json();
+}
 
 const BlogCard = ({ post }) => {
+  const { data } = useSWR(`/api/views/${post.slug}`, fetcher);
+  const views = data?.total;
   return (
     <div
       className={clsx(
@@ -35,11 +45,13 @@ const BlogCard = ({ post }) => {
           <div className="mt-2 flex items-center justify-start gap-2 text-sm font-medium text-gray-600 dark:text-gray-300">
             <div className="flex items-center gap-1">
               <HiOutlineClock className="inline-block text-base" />
-              <p>{post.frontMatter.readingTime.text}</p>
+              <Accent>{post.frontMatter.readingTime.text}</Accent>
             </div>
             <div className="flex items-center gap-1">
               <HiOutlineEye className="inline-block text-base" />
-              <p>{post?.views ?? "–––"} views</p>
+              <Accent>
+                {views ? new Number(views).toLocaleString() : "–––"} views
+              </Accent>
             </div>
           </div>
           <p className="mt-4 mb-2 text-sm text-gray-600 dark:text-gray-300">

@@ -1,6 +1,7 @@
 import userData from "../Constants/data";
 import Image from "next/image";
 import Link from "next/link";
+import ViewCounter from "./ViewCounter";
 const Projects = () => {
   return (
     <section className=" ">
@@ -8,6 +9,9 @@ const Projects = () => {
         <h1 className=" py-20 text-center text-4xl font-bold md:text-left md:text-6xl">
           Works
         </h1>
+        <p className="hidden">
+          <ViewCounter slug="projects" />
+        </p>
         <p className="mb-1 text-xl font-normal tracking-tight text-black dark:text-white md:text-xl">
           Showcase of my works on frontend development.
         </p>

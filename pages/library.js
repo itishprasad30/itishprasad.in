@@ -9,7 +9,7 @@ import { sortByTitle } from "../lib/mdx-client";
 export default function LibraryPage({ snippets }) {
   const isLoaded = useLoaded();
   const [searchValue, setSearchValue] = useState("");
-  console.log(isLoaded);
+  // console.log(isLoaded);
   const filteredValue = snippets.filter(
     (snippet) =>
       snippet.title.toLowerCase().includes(searchValue.toLowerCase()) ||

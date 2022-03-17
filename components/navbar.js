@@ -13,9 +13,9 @@ const LinkItem = ({ href, path, _target, children, ...props }) => {
       <a
         className={cn(
           active
-            ? "bg-green-200 text-base font-bold text-gray-800 "
+            ? "bg-gradient-to-r from-pink-500 to-yellow-500 text-gray-50 "
             : "font-normal text-gray-600 ",
-          "hidden rounded-lg p-1 transition-all hover:bg-gray-200 sm:px-3 sm:py-2 md:inline-block"
+          "hidden rounded-lg p-1 transition-all hover:bg-slate-700 hover:text-gray-200 dark:text-white  dark:hover:text-gray-100 sm:px-3 sm:py-2 md:inline-block"
         )}
         {...props}
         target={_target}
@@ -34,7 +34,7 @@ const Navbar = (props) => {
   // After mounting, we have access to the theme
   useEffect(() => setMounted(true), []);
   return (
-    <div className="sticky top-0  z-50 mx-auto  mb-4  flex flex-row rounded-md bg-[#F0E7DB] opacity-90 hover:opacity-100  md:flex md:max-w-4xl md:justify-end  ">
+    <div className="sticky top-0  z-50 mx-auto  mb-4  flex flex-row rounded-md bg-[#F0E7DB]  opacity-90 hover:opacity-100 dark:bg-[#202023]  md:flex md:max-w-4xl md:justify-end  ">
       <div className="flex flex-grow  items-center justify-evenly p-2">
         <div className="mx-auto items-center">
           <h2 className="text-lg font-semibold leading-tight" title="Home Page">
@@ -44,7 +44,7 @@ const Navbar = (props) => {
       </div>
       <div className="flex  flex-grow flex-wrap items-center justify-evenly p-2">
         <div className="flex flex-row items-center space-x-4">
-          <div className="flex space-x-1  md:w-auto md:flex-1 md:flex-row  ">
+          <div className="flex space-x-1 dark:text-white  md:w-auto md:flex-1 md:flex-row  ">
             <LinkItem href="/projects" path={path}>
               Projects
             </LinkItem>

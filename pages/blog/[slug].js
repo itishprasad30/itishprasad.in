@@ -14,6 +14,7 @@ import { getFileBySlug, getFiles } from "../../lib/mdx";
 import { getMDXComponent } from "mdx-bundler/client";
 import MDXComponents from "../../components/content/MdxComponents";
 import ViewCounter from "../../components/ViewCounter";
+import Accent from "../../components/fonts/Accent";
 
 const Blogpost = ({ code, frontMatter }) => {
   const Component = React.useMemo(() => getMDXComponent(code), [code]);
@@ -40,14 +41,14 @@ const Blogpost = ({ code, frontMatter }) => {
           <div className="mt-6 flex items-center justify-start gap-2 text-sm font-medium text-gray-600 dark:text-gray-300">
             <div className="flex items-center gap-1">
               <HiOutlineClock className="inline-block text-base" />
-              <span>{frontMatter.readingTime.text}</span>
+              <Accent>{frontMatter.readingTime.text}</Accent>
             </div>
 
             <div className="flex items-center gap-1">
               <HiOutlineEye className="inline-block text-base" />
-              <span>
+              <Accent>
                 <ViewCounter slug={frontMatter.slug} />
-              </span>
+              </Accent>
             </div>
           </div>
           <hr className="mt-2 border-gray-700 dark:border-gray-600" />

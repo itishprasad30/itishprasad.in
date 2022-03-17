@@ -6,9 +6,17 @@ import Link from "next/link";
 // import UnstyledLink from "@/components/links/UnstyledLink";
 import Accent from "./fonts/Accent";
 import TechIcons from "./TechIcons";
+import useSWR from "swr";
 // import TechIcons, { TechListType } from '@/components/TechIcons';
 
+async function fetcher(...args) {
+  const res = await fetch(...args);
+  return res.json();
+}
+
 export default function LibraryCard({ className, snippet }) {
+  const { data } = useSWR(`/api/views/${snippet.slug}`, fetcher);
+  const views = data?.total;
   return (
     <div
       className={clsx(
@@ -33,7 +41,9 @@ export default function LibraryCard({ className, snippet }) {
           <div className="mt-1 flex items-center justify-start gap-3 text-sm font-medium text-gray-600 dark:text-gray-300">
             <div className="flex items-center gap-1">
               <GiTechnoHeart className="inline-block text-base" />
-              <p>{snippet?.likes ?? "–––"} likes</p>
+              <Accent>
+                {views ? new Number(views).toLocaleString() : "–––"} views
+              </Accent>
             </div>
             <span>•</span>
             <TechIcons techs={snippet.tags.split(",")} />

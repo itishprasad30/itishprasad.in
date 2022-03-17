@@ -2,6 +2,7 @@ import clsx from "clsx";
 import TechStack from "../components/Techstack";
 import Image from "next/image";
 import useLoaded from "../hooks/useLoaded";
+import ViewCounter from "../components/ViewCounter";
 
 const about = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -10,6 +11,9 @@ const about = () => {
     <div>
       <section className={clsx(isLoaded && "fade-in-start")}>
         <div className="layout min-h-main py-20">
+          <div className="hidden">
+            <ViewCounter slug="about" />
+          </div>
           <h2
             className="mb-4 text-center text-3xl font-bold md:text-left md:text-4xl "
             data-fade="1"

@@ -6,6 +6,7 @@ import { getMDXComponent } from "mdx-bundler/client";
 import MDXComponents from "../../components/content/MdxComponents";
 import CustomLink from "../../components/links/CustomLink";
 import ViewCounter from "../../components/ViewCounter";
+import Accent from "../../components/fonts/Accent";
 // import TableOfContents from "../../components/content/TableOfContents";
 // import useScrollSpy from "../../hooks/useScrollspy";
 
@@ -50,9 +51,9 @@ export default function SingleLibraryPage({ code, frontmatter }) {
               <div className="mt-2 flex items-center justify-start gap-3 text-sm font-medium text-gray-600 dark:text-gray-300">
                 <div className="flex items-center gap-1">
                   <HiOutlineEye className="inline-block text-base" />
-                  <p>
+                  <Accent>
                     <ViewCounter slug={frontmatter.slug} />
-                  </p>
+                  </Accent>
                 </div>
 
                 <span>•</span>

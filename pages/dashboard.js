@@ -6,6 +6,7 @@ import LatestCode from "../components/LatestCode";
 import getLatestRepos from "../lib/getLatestRepos";
 import useLoaded from "../hooks/useLoaded";
 import clsx from "clsx";
+import ViewCounter from "../components/ViewCounter";
 
 const dashboard = ({ repositories }) => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -20,6 +21,9 @@ const dashboard = ({ repositories }) => {
           >
             Dashboard
           </h1>
+          <div className="hidden">
+            <ViewCounter slug="dashboard" />
+          </div>
 
           <div data-fade="2" className="mb-8">
             <p className="mb-4 text-gray-600 dark:text-gray-400">
