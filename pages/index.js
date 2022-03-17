@@ -39,7 +39,7 @@ export default function Home() {
 
         <div data-fade="2" className=" items-center justify-center md:flex">
           <div className="flex-1">
-            <h1 className="mb-1 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
+            <h1 className="mb-1 w-fit rounded bg-gradient-to-r from-pink-400 to-yellow-500 px-2 text-3xl font-bold tracking-tight text-gray-200 hover:from-green-500 hover:to-blue-500 md:text-5xl">
               Itish Prasad
             </h1>
 
@@ -74,7 +74,7 @@ export default function Home() {
             </p>
             <div className="flex justify-center ">
               <NextLink href="/projects" className="">
-                <button className="my-4 rounded-lg  bg-green-400 px-3  py-2 text-white transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-green-500  ">
+                <button className="my-4 rounded-lg   bg-gradient-to-r  from-pink-400 to-yellow-500 px-3 py-2 text-white transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:from-green-400 hover:to-blue-400  ">
                   My PortFolio
                   <i className="ml-2 ">&gt;</i>
                 </button>

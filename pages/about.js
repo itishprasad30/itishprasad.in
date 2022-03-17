@@ -15,14 +15,14 @@ const about = () => {
             <ViewCounter slug="about" />
           </div>
           <h2
-            className="mb-4 text-center text-3xl font-bold md:text-left md:text-4xl "
+            className="mb-4  text-center text-3xl font-bold md:text-left md:text-4xl "
             data-fade="1"
           >
             About
           </h2>
           <h1
             data-fade="2"
-            className=" mt-1 cursor-pointer text-center text-2xl font-semibold text-green-500 selection:bg-green-200 selection:text-white hover:underline md:text-left md:text-4xl"
+            className="mt-1 w-fit cursor-pointer rounded bg-gradient-to-r from-pink-500 to-yellow-500 px-2 text-center text-2xl font-semibold text-white  hover:from-green-500 hover:to-blue-500  md:text-left md:text-4xl"
           >
             Itish Prasad Sahoo
           </h1>

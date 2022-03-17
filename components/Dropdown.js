@@ -12,7 +12,7 @@ export default function Example() {
   return (
     <Menu
       as="div"
-      className="relative inline-block text-left"
+      className="relative inline-block text-left "
       title="Expand to see all"
     >
       <div>
@@ -32,10 +32,10 @@ export default function Example() {
         leaveTo="transform opacity-0 scale-95"
       >
         <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-          <div className="py-1">
+          <div className="bg-gradient-to-r  from-pink-500 to-yellow-500 py-1">
             <Menu.Item>
               <Link href="/projects" passHref>
-                <p className="block cursor-pointer bg-white px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
+                <p className="block cursor-pointer  bg-white px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
                   Projects
                 </p>
               </Link>
