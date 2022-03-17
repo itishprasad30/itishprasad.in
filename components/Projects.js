@@ -7,7 +7,7 @@ const Projects = () => {
     <section className=" ">
       <div className="mx-auto h-48 max-w-xl  ">
         <h1 className=" py-20 text-center text-4xl font-bold md:text-left md:text-6xl">
-          Works
+          Projects
         </h1>
         <p className="hidden">
           <ViewCounter slug="projects" />
@@ -75,7 +75,7 @@ const ProjectCard = ({
           <button className="flex-auto rounded-xl bg-red-500 p-2 font-mono text-white hover:bg-red-600">
             <Link href={link}>Live Demo</Link>
           </button>
-          <button className="flex-auto rounded-xl bg-gray-600 p-2 font-mono text-white hover:bg-slate-700">
+          <button className="hover:bg-slate-700 flex-auto rounded-xl bg-gray-600 p-2 font-mono text-white">
             <Link href={sourceCode}>Source Code</Link>
           </button>
         </div>
