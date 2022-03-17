@@ -9,14 +9,3 @@ npm run dev
 # or
 yarn dev
 ```
-
-
-```
-console.log('hello javascript lover')
-let hello ='hello world'
-export async function getSort(data) {
-  data.sort()
-}
-```
-
-## Preparing a Blog Post article sysyem 
