@@ -7,7 +7,10 @@ import Seo from "../components/layouts/Seo";
 const statistics = ({ files, library }) => {
   return (
     <div>
-      <Seo templateTitle="Statistics " />
+      <Seo
+        templateTitle="Statistics "
+        description="some firebase pulling data from server"
+      />
       <main>
         <section>
           <div className="layout py-12">
