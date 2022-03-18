@@ -1,0 +1,101 @@
+---
+title: "SetTimeout and SetInterval In Javascript"
+description: "Explaning about what is setTimeout and setInterval native function in javascript ."
+image: "https://res.cloudinary.com/itish22/image/upload/v1647588584/itishprasad/blogImage/photo-1542995470-870e12e7e14f_jdohvm.avif"
+publishedAt: 2022-03-18
+---
+
+# **Javascript Scheduling: setTimeout and setInterval**
+
+A block of JavaScript code is generally executed synchronously. But there are some JavaScript native functions (**_timers_**) which allow us to delay the execution of arbitrary instructions.
+
+- `[setTimeout()](https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout)`
+- `[setInterval()](https://developer.mozilla.org/en-US/docs/Web/API/Window/setInterval)`
+
+These let you run a piece of JavaScript code at some point in the future. That’s called “**scheduling a call**”. In this tutorial I’ll explain how these two methods work, and give some practical examples.
+
+# **`setTimeout()`**
+
+The `setTimeout()` function is commonly used if you wish to run your function a specified number of milliseconds from when the `setTimeout()` method was called. The general syntax of the method is:
+
+```js
+setTimeout(expression, timeout);
+```
+
+where `expression` is the JavaScript code to run after `timeout` milliseconds have elapsed.
+
+> To track the timeout, setTimeout() also returns a numeric timeout ID. This is most commonly used with the clearTimeout() method.
+
+Here’s a simple example:
+
+```html
+<input
+  type="button"
+  name="sayHello"
+  value="Wait for my Hello!"
+  onclick="setTimeout('alert(\'Hello!\')', 4000)"
+/>
+```
+
+When you click the button, the `setTimeout()` method is called. The expression that you want to run after certain time delay and the time delay itself(4,000 ms or 4 seconds) is passed.
+
+A point to note here is that `setTimeout()` doesn't stop the execution of the further script during the timeout period. It merely schedules the specified javascript code to be run at the specified time. After calling the `setTimeout()` function, the script continues normally, with the timer running in the background.
+
+Above is the very basic example with the entire code for our JavaScript alert box in the `setTimeout()` call. You would instead call a function more often. Next example will give you a better idea about calling a function with `setTimeout()`.
+
+For instance, below code calls `sayHello()` after one second:
+
+```js
+function sayHello() {
+  alert("Hello");
+}
+setTimeout(sayHello, 1000);
+```
+
+You can also pass arguments along with the function, like this:
+
+```js
+function sayHello(message, person) {
+  alert(message + ", " + person);
+}
+setTimeout(sayHello, 1000, "Hi", "Monica"); // Hi, Monica
+```
+
+If the first argument is a string, then JavaScript creates a function from it. So, this will also work:
+
+```js
+setTimeout("alert('Hello')", 1000);
+```
+
+But using strings is not recommended, use functions instead of them, like this:
+
+```js
+setTimeout(() => alert("Hello"), 1000);
+```
+
+# **`setInterval()`**
+
+The `setInterval()` function, as the name suggests is commonly used to set a delay for functions that are executed again and again like animations. The `setInterval()` function is very closely related to `setTimeout()` - they even have same syntax:
+
+```js
+setInterval(expression, interval);
+```
+
+The only difference is ,
+
+> setTimeout() triggers the expression only once whilesetInterval() keeps triggering expressionregularly after the given interval of time. (unless you tell it to stop).
+
+To stop further calls, we should call `[clearInterval(timerId](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/clearInterval))`.
+
+```js
+// Hello is alerted repeatedly after every 3 seconds
+let timerId = setInterval(() => alert("Hello"), 3000);
+
+// Clear intervals after 6 sec with the timer id
+setTimeout(() => {
+  clearInterval(timerId);
+  alert("Bye");
+}, 6000);
+```
+
+When should I use `setInterval()`? Well, you don’t need to keep remembering to call `setTimeout()` at the end of your timed function. Also, when using `setInterval()` there's virtually no delay between one triggering of the expression and the next. With `setTimeout()`, there's a relatively long delay while the expression is evaluated, the function called, and the new `setTimeout()` being set up. So if regular, precise timing is needed or something needs to be done repeatedly after certain time intervals, then `setInterval()` is your best choice.
