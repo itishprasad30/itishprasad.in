@@ -1,11 +1,27 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+  <h1 >Itishprasad-in.vercel.app</h1>
+  <p>💠 Personal website and blog made using Next.js, React.js, Tailwind CSS, MDX Bundler, Firebase, and SWR.</p>
+</div>
 
-## Getting Started
+## Want To Run In Your Local Sysyem Please Follow these Steps
 
-First, run the development server:
+- git clone https://github.com/itishprasad30/itishprasad.in.git
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- then in your terminal
+
+  ```bash
+  # installing all dependencies what i use
+  $ npm install
+  $ cd itishprasad.in
+
+  # to run on development server
+  $ npm run dev
+  ```
+
+## Notable Features
+
+This website was first initialized in October 2021, went through numerous changes and refactors, resulted to some notable features
+
+# Constantly andd New Fetures to Website
+
+Planning To update this to Typescript ways. it will be great to learn also tyoescript.
