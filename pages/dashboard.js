@@ -7,12 +7,14 @@ import getLatestRepos from "../lib/getLatestRepos";
 import useLoaded from "../hooks/useLoaded";
 import clsx from "clsx";
 import ViewCounter from "../components/ViewCounter";
+import Seo from "../components/layouts/Seo";
 
 const dashboard = ({ repositories }) => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const isLoaded = useLoaded();
   return (
     <div>
+      <Seo templateTitle="Dashboard " description=" github and spotify data" />
       <section className={clsx(isLoaded && "fade-in-start")}>
         <div className="mx-auto mb-16 flex max-w-2xl flex-col items-start justify-center ">
           <h1

@@ -7,6 +7,7 @@ import MDXComponents from "../../components/content/MdxComponents";
 import CustomLink from "../../components/links/CustomLink";
 import ViewCounter from "../../components/ViewCounter";
 import Accent from "../../components/fonts/Accent";
+import Seo from "../../components/layouts/Seo";
 // import TableOfContents from "../../components/content/TableOfContents";
 // import useScrollSpy from "../../hooks/useScrollspy";
 
@@ -38,6 +39,10 @@ export default function SingleLibraryPage({ code, frontmatter }) {
 
   return (
     <div>
+      <Seo
+        templateTitle={frontmatter.title}
+        description={frontmatter.description}
+      />
       <main>
         <section className="">
           <div className="layout">

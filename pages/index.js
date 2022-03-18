@@ -17,12 +17,14 @@ import clsx from "clsx";
 import NoSsr from "../components/no-ssr";
 import VoxelDog from "../components/voxel-dog";
 import ViewCounter from "../components/ViewCounter";
+import Seo from "../components/layouts/Seo";
 
 export default function Home() {
   const isLoaded = useLoaded();
 
   return (
     <div className=" max-w-4xl ">
+      <Seo templateTitle="Home Page " />
       <section className={clsx(isLoaded && "fade-in-start")}>
         <NoSsr>
           <VoxelDog />
@@ -39,7 +41,7 @@ export default function Home() {
 
         <div data-fade="2" className=" items-center justify-center md:flex">
           <div className="flex-1">
-            <h1 className="mb-1 w-fit rounded bg-gradient-to-r from-pink-400 to-yellow-500 px-2 text-3xl font-bold tracking-tight text-gray-200 hover:from-green-500 hover:to-blue-500 md:text-5xl">
+            <h1 className="w-fit mb-1 rounded bg-gradient-to-r from-pink-400 to-yellow-500 px-2 text-3xl font-bold tracking-tight text-gray-200 hover:from-green-500 hover:to-blue-500 md:text-5xl">
               Itish Prasad
             </h1>
 

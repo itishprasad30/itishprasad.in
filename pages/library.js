@@ -4,8 +4,9 @@ import Accent from "../components/fonts/Accent";
 import LibraryCard from "../components/LibraryCard";
 import ViewCounter from "../components/ViewCounter";
 import useLoaded from "../hooks/useLoaded";
-import { getAllFilesFrontmatter } from "../lib/mdx";
 import { sortByTitle } from "../lib/mdx-client";
+import { getAllFilesFrontmatter } from "../lib/mdx";
+import Seo from "../components/layouts/Seo";
 
 export default function LibraryPage({ snippets }) {
   const isLoaded = useLoaded();
@@ -19,6 +20,7 @@ export default function LibraryPage({ snippets }) {
   // console.log(snippets);
   return (
     <div>
+      <Seo templateTitle="Library" description="all snippets of my Code" />
       <main>
         <section className={clsx(isLoaded && "fade-in-start")}>
           <div className="layout py-12">

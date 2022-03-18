@@ -8,6 +8,7 @@ import readingTime from "reading-time";
 import useLoaded from "../hooks/useLoaded";
 import clsx from "clsx";
 import ViewCounter from "../components/ViewCounter";
+import Seo from "../components/layouts/Seo";
 
 const blog = ({ posts }) => {
   //   eslint-disable-next-line react-hooks/rules-of-hooks
@@ -28,6 +29,10 @@ const blog = ({ posts }) => {
 
   return (
     <div className="mx-auto mb-16 flex max-w-3xl flex-col items-start justify-center">
+      <Seo
+        templateTitle="Blog"
+        description="some blog post about web development"
+      />
       <section className={clsx(isLoaded && "fade-in-start")}>
         <h1
           data-fade="0"

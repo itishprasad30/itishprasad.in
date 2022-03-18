@@ -15,11 +15,16 @@ import { getMDXComponent } from "mdx-bundler/client";
 import MDXComponents from "../../components/content/MdxComponents";
 import ViewCounter from "../../components/ViewCounter";
 import Accent from "../../components/fonts/Accent";
+import Seo from "../../components/layouts/Seo";
 
 const Blogpost = ({ code, frontMatter }) => {
   const Component = React.useMemo(() => getMDXComponent(code), [code]);
   return (
     <div>
+      <Seo
+        templateTitle={frontMatter.title}
+        description={frontMatter.description}
+      />
       <div>
         <div className="pb-4   dark:border-gray-500">
           <CloudinaryImg
