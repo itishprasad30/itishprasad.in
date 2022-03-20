@@ -49,20 +49,25 @@ export default function Footer() {
           </Link>
         </div>
         <div className="flex flex-col space-y-4">
-          <ExternalLink href="https://twitter.com/itish_prasad">
-            Twitter
+          <ExternalLink href="https://itish-umami.herokuapp.com/share/l6tJGuIl/Itishprasad">
+            Analytics
           </ExternalLink>
-          <ExternalLink href="https://github.com/itishprasad30">
-            GitHub
+          <ExternalLink href="https://github.com/itishprasad30/itishprasad.in">
+            Source Code
           </ExternalLink>
           <ExternalLink href="https://www.youtube.com/channel/UCUgpCmLh5k4Sna9azJ269MA">
             YouTube
           </ExternalLink>
         </div>
         <div className="flex flex-col space-y-4">
+          <Link href="/statistics">
+            <a className="text-gray-500 transition hover:text-gray-600">
+              Statistics
+            </a>
+          </Link>
           <Link href="/contact">
             <a className="text-gray-500 transition hover:text-gray-600">
-              Contact Form
+              Contact Me
             </a>
           </Link>
 
