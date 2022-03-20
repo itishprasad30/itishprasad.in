@@ -55,6 +55,8 @@ const ProjectCard = ({
               src={imgUrl}
               alt="portfolio"
               layout="fill"
+              placeholder="blur"
+              blurDataURL={imgUrl}
               className="h-full w-full transform rounded-xl object-cover transition duration-1000 ease-out hover:scale-125"
             />
           </div>
@@ -75,7 +77,7 @@ const ProjectCard = ({
           <button className="flex-auto rounded-xl bg-red-500 p-2 font-mono text-white hover:bg-red-600">
             <Link href={link}>Live Demo</Link>
           </button>
-          <button className="hover:bg-slate-700 flex-auto rounded-xl bg-gray-600 p-2 font-mono text-white">
+          <button className="flex-auto rounded-xl bg-gray-600 p-2 font-mono text-white hover:bg-slate-700">
             <Link href={sourceCode}>Source Code</Link>
           </button>
         </div>

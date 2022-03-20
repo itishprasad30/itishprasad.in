@@ -24,7 +24,7 @@ const about = () => {
           </h2>
           <h1
             data-fade="2"
-            className="w-fit mt-1 cursor-pointer rounded bg-gradient-to-r from-pink-500 to-yellow-500 px-2 text-center text-2xl font-semibold text-white  hover:from-green-500 hover:to-blue-500  md:text-left md:text-4xl"
+            className="mt-1 w-fit cursor-pointer rounded bg-gradient-to-r from-pink-500 to-yellow-500 px-2 text-center text-2xl font-semibold text-white  hover:from-green-500 hover:to-blue-500  md:text-left md:text-4xl"
           >
             Itish Prasad Sahoo
           </h1>
@@ -36,6 +36,8 @@ const about = () => {
             <Image
               src="https://avatars.githubusercontent.com/u/60768713?v=4"
               alt="Profile Image"
+              placeholder="blur"
+              blurDataURL="https://avatars.githubusercontent.com/u/60768713?v=4"
               height={160}
               width={160}
               className="mb-5 rounded-xl md:rounded-xl "

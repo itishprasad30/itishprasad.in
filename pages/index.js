@@ -41,7 +41,7 @@ export default function Home() {
 
         <div data-fade="2" className=" items-center justify-center md:flex">
           <div className="flex-1">
-            <h1 className="w-fit mb-1 rounded bg-gradient-to-r from-pink-400 to-yellow-500 px-2 text-3xl font-bold tracking-tight text-gray-200 hover:from-green-500 hover:to-blue-500 md:text-5xl">
+            <h1 className="mb-1 w-fit rounded bg-gradient-to-r from-pink-400 to-yellow-500 px-2 text-3xl font-bold tracking-tight text-gray-200 hover:from-green-500 hover:to-blue-500 md:text-5xl">
               Itish Prasad
             </h1>
 
@@ -60,6 +60,8 @@ export default function Home() {
             <Image
               src="https://avatars.githubusercontent.com/u/60768713?v=4"
               alt="Profile Image"
+              placeholder="blur"
+              blurDataURL="https://avatars.githubusercontent.com/u/60768713?v=4"
               height={130}
               width={130}
               className="rounded-full md:rounded-2xl"
