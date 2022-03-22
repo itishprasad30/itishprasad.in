@@ -18,7 +18,7 @@ const Projects = () => {
       </div>
       {/* Grid starts here */}
       <div className="bg-[#F0E7DB] dark:bg-[#202023]">
-        <div className="mx-auto  grid max-w-3xl grid-cols-1 gap-8 py-20 pb-20 md:grid-cols-2 lg:grid-cols-3 ">
+        <div className="mx-auto  grid max-w-4xl grid-cols-1 gap-8 py-20 pb-20 md:grid-cols-2 lg:grid-cols-3 ">
           {userData.projects.map((proj, idx) => (
             <ProjectCard
               key={idx}
@@ -57,13 +57,13 @@ const ProjectCard = ({
               layout="fill"
               placeholder="blur"
               blurDataURL={imgUrl}
-              className="h-full w-full transform rounded-xl object-cover transition duration-1000 ease-out hover:scale-125"
+              className="h-full w-full transform rounded-xl object-cover  "
             />
           </div>
           <h1 className="absolute top-10 left-10 rounded-md  bg-blue-900 px-2 text-xl font-bold text-gray-50">
             {title}
           </h1>
-          <h1 className="absolute bottom-10 left-10 text-xl font-bold text-white">
+          <h1 className="absolute bottom-10 left-10 text-xl font-bold text-yellow-600">
             {number.length === 1 ? "0" + number : number}
           </h1>
         </div>
