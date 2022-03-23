@@ -24,4 +24,8 @@ This website was first initialized in October 2021, went through numerous change
 
 # Constantly andd New Fetures to Website
 
-Planning To update this to Typescript ways. it will be great to learn also tyoescript.
+Planning To update this to Typescript ways. it will be great to learn also typescript.
+
+## Here is the Home Page image
+
+![image](https://user-images.githubusercontent.com/60768713/159739689-4c3e7dfe-b443-482c-b08b-579ae3c91a92.png)
