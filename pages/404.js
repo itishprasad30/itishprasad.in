@@ -1,13 +1,15 @@
 import React from "react";
 import NextLink from "next/link";
 import { RiAlarmWarningFill } from "react-icons/ri";
+import Seo from "../components/layouts/Seo";
 
 const NotFound = () => {
   return (
     <div className="flex min-h-[480px]  flex-col items-center justify-center gap-8">
+      <Seo templateTitle="404 Not Found" />
       <RiAlarmWarningFill
         size={60}
-        className="drop-shadow-glow animate-pulse text-red-500"
+        className="drop-shadow-glow animate-flicker text-red-500"
       />
       <div>
         <div className="mx-auto flex flex-col justify-center text-center ">
