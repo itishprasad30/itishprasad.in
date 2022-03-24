@@ -7,15 +7,13 @@ export default function CustomLink({ children, className = "", ...rest }) {
     <UnstyledLink
       {...rest}
       className={clsx(
-        "custom-link animated-underlined inline-flex items-center font-medium",
-        "focus:outline-none focus-visible:ring focus-visible:ring-green-300",
-        "border-dark border-b border-dotted hover:border-black/0",
+        "mt-3 inline-flex items-center",
+        "font-medium text-green-600 hover:text-green-500",
+        "focus:outline-none focus-visible:rounded focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-offset-2",
         className
       )}
     >
-      <span className="dark:bg-gradient-to-tr dark:from-green-300 dark:to-green-400 dark:bg-clip-text dark:text-transparent">
-        {children}
-      </span>
+      {children}
     </UnstyledLink>
   );
 }

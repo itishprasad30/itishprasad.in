@@ -66,9 +66,8 @@ const Blogpost = ({ code, frontMatter }) => {
               />
             </article>
           </section>
-          <div className="mt-8 flex max-w-[150px] transform transition-all duration-300 hover:text-xl hover:text-green-800">
-            <CustomLink href="/blog"> ← Back to Blog</CustomLink>
-          </div>
+
+          <CustomLink href="/blog"> ← Back to Blog</CustomLink>
         </div>
       </div>
     </div>
