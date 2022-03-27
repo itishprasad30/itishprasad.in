@@ -5,9 +5,10 @@ import useLoaded from "../hooks/useLoaded";
 import ViewCounter from "../components/ViewCounter";
 import Seo from "../components/layouts/Seo";
 
-const about = () => {
+const AboutPage = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const isLoaded = useLoaded();
+
   return (
     <div>
       <Seo templateTitle="About" description="about my work" />
@@ -77,4 +78,4 @@ const about = () => {
   );
 };
 
-export default about;
+export default AboutPage;
