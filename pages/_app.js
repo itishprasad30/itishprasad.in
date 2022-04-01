@@ -12,6 +12,7 @@ import "../styles/nprogress.css";
 import "../styles/mdx.css";
 import "../styles/dracula.css";
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
+import ScrollToTop from "../components/ScrollToTop";
 
 Router.events.on("routeChangeStart", nProgress.start);
 Router.events.on("routeChangeError", nProgress.done);
@@ -23,6 +24,7 @@ function MyApp({ Component, pageProps, router }) {
       <Fonts />
       <AnimatePresence exitBeforeEnter initial={true}>
         <Layout router={router}>
+          <ScrollToTop smooth />
           <Component {...pageProps} key={router.route} />
         </Layout>
       </AnimatePresence>
