@@ -8,6 +8,7 @@ import CustomLink from "../../components/links/CustomLink";
 import ViewCounter from "../../components/ViewCounter";
 import Accent from "../../components/fonts/Accent";
 import Seo from "../../components/layouts/Seo";
+import ScrollToTop from "../../components/ScrollToTop";
 // import TableOfContents from "../../components/content/TableOfContents";
 // import useScrollSpy from "../../hooks/useScrollspy";
 
@@ -44,6 +45,7 @@ export default function SingleLibraryPage({ code, frontmatter }) {
         description={frontmatter.description}
       />
       <main>
+        <ScrollToTop smooth />
         <section className="">
           <div className="layout">
             <div className="border-b-2 pb-4 dark:border-gray-600">
@@ -69,7 +71,7 @@ export default function SingleLibraryPage({ code, frontmatter }) {
             <hr className="dark:border-gray-600" />
 
             <section className="lg:grid lg:grid-cols-[auto,250px] lg:gap-8">
-              <article className="prose dark:prose-invert mx-auto mt-4 w-full transition-colors">
+              <article className="prose mx-auto mt-4 w-full transition-colors dark:prose-invert">
                 {/* mdx compoonets */}
                 <Component
                   components={{

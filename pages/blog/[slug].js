@@ -16,11 +16,13 @@ import MDXComponents from "../../components/content/MdxComponents";
 import ViewCounter from "../../components/ViewCounter";
 import Accent from "../../components/fonts/Accent";
 import Seo from "../../components/layouts/Seo";
+import ScrollToTop from "../../components/ScrollToTop";
 
 const Blogpost = ({ code, frontMatter }) => {
   const Component = React.useMemo(() => getMDXComponent(code), [code]);
   return (
     <div>
+      <ScrollToTop smooth />
       <Seo
         templateTitle={frontMatter.title}
         description={frontMatter.description}
@@ -58,7 +60,7 @@ const Blogpost = ({ code, frontMatter }) => {
           </div>
           <hr className="mt-2 border-gray-700 dark:border-gray-600" />
           <section>
-            <article className="prose dark:prose-invert  mx-auto mt-4 w-full min-w-full transition-colors">
+            <article className="prose mx-auto  mt-4 w-full min-w-full transition-colors dark:prose-invert">
               <Component
                 components={{
                   ...MDXComponents,

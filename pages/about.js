@@ -4,6 +4,7 @@ import Image from "next/image";
 import useLoaded from "../hooks/useLoaded";
 import ViewCounter from "../components/ViewCounter";
 import Seo from "../components/layouts/Seo";
+import ScrollToTop from "../components/ScrollToTop";
 
 const AboutPage = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -11,6 +12,7 @@ const AboutPage = () => {
 
   return (
     <div>
+      <ScrollToTop smooth />
       <Seo templateTitle="About" description="about my work" />
       <section className={clsx(isLoaded && "fade-in-start")}>
         <div className="layout min-h-main py-20">
