@@ -1,0 +1,241 @@
+---
+title: "Basic Fundamentals of Javascript"
+description: "some of the note i take from learning javascript fundamental"
+publishedAt: "2022-04-01"
+image: "https://res.cloudinary.com/itish22/image/upload/v1648825897/itishprasad/blogImage/andrea-de-santis-hh3jNMEV7XY-unsplash_hy3isx.jpg"
+---
+
+## Introduction
+
+---
+
+<aside>
+💡 Do you Know The most Loved Programming Language is Javascript, It Also the weirdest programming Language also.
+
+</aside>
+
+## How JavaScript Works & Execution Context ?
+
+<aside>
+📢 Everything In JavaScript happens inside the Execution Context.
+
+</aside>
+
+Execution Context is a box which consist of two table
+
+variable Environment Thread of Execution
+
+| Memory     | Code        |
+| ---------- | ----------- |
+| key: value | ——- 0——, —- |
+
+- memory part also called as variable env,where it stores the variable,function etc
+- Code part where all codes are runs line by line at a time.
+
+<aside>
+📌 Javascript Is  **Synchronous-Single-threaded** language.
+
+</aside>
+
+###
+
+## How JavaScript Code is executed? and CallStack?
+
+What is a browser JavaScript engine?
+
+A JavaScript engine is **a software component that executes JavaScript code**.
+
+[ECMAScript](https://en.wikipedia.org/wiki/ECMAScript)
+ is the standardized specification of JavaScript, **ECMAScript engine**
+ is another name for these engines.
+
+Which Engine used by most popular browser ?
+
+Google chrome → V8
+
+firefox → spidermonkey
+
+safari → **javascript core** apple engine
+
+Chakra → internet Explore
+
+```jsx
+var n = 2;
+function square(num) {
+  var ans = num * num;
+  return ans;
+}
+
+var square2 = square(n);
+var square = square(4);
+```
+
+When the code runs Global Execution context is created:
+
+it has two-part
+
+- Memory allocated phase
+- Code creation phase
+
+→ 1st Phase
+
+memory allocating to all variables and functions
+
+![phase 1 ](https://res.cloudinary.com/itish22/image/upload/v1648826304/itishprasad/blogImage/Untitled_3_cqfbed.png)
+
+2nd phase →
+
+code execution phase
+
+![phase 2](https://res.cloudinary.com/itish22/image/upload/v1648826406/itishprasad/blogImage/Untitled_4_b8isdn.png)
+
+when a function is invocation happens
+
+it will create a new execution context
+
+- memory
+- code
+
+![code](https://res.cloudinary.com/itish22/image/upload/v1648826631/itishprasad/blogImage/Untitled_5_xmx3za.png)
+
+then again new function invocation another exhicution context is created
+
+![Untitled](https://res.cloudinary.com/itish22/image/upload/v1648826622/itishprasad/blogImage/Untitled_6_ugoypx.png)
+
+The whole thing managed by Stack is called Callstack
+
+GEC → Global Execution Context
+
+Ec1 → function is invoked and one execution context is created
+
+after it complete the job it popped out
+
+Ec2 → it will push into the call stack
+
+after it done it gets popped out
+
+at last call, stack will be empty
+
+![Untitled](https://res.cloudinary.com/itish22/image/upload/v1648826613/itishprasad/blogImage/Untitled_7_edf1pk.png)
+
+![Untitled](https://res.cloudinary.com/itish22/image/upload/v1648826610/itishprasad/blogImage/Untitled_8_bdokxw.png)
+
+> callstack maintains the order of the execution of execution context
+
+So call stack is also known as :
+
+- Execution context stack
+- program stack
+- control stack
+- runtime stack
+- machine stack
+
+## Hosting In Javascript ? [variables and functions ]
+
+Hosting is the Phenomenon in javascript by which we can access the variable and function even before we initialized it.
+
+we can access it without any error.
+
+```jsx
+getName(); // javascript basic
+console.log(x); // undefined
+
+console.log(getName); // prints the actual code
+
+var x = 13;
+
+function getName() {
+  console.log("Javascript basic");
+}
+```
+
+```jsx
+getName(); // javascript basic
+console.log(x); // undefined
+
+console.log(getName); // prints the actual code
+// getName2(); // error is not a funtion
+getName3(); // error is not a funtion
+var x = 13;
+
+function getName() {
+  console.log("Javascript basic");
+}
+
+var getName2 = () => {
+  console.log("arrow funtion ");
+};
+
+var getName3 = function () {
+  console.log("funtion another way to defined");
+};
+```
+
+on the memory allocation phase getName2 and getName3 will allocate as **undefined so the function is not invoked.**
+
+## How function works in Javascript and variable environment?
+
+```jsx
+var x = 1;
+
+a(); // 10
+b(); // 100
+console.log(x); // 1
+
+function a() {
+  var x = 10;
+  console.log(x);
+}
+function b() {
+  var x = 100;
+  console.log(x);
+}
+```
+
+![Untitled](https://res.cloudinary.com/itish22/image/upload/v1648826602/itishprasad/blogImage/Untitled_9_ckrfub.png)
+
+## Shortest Javascript Program & Window and This keyword ...
+
+### Window
+
+so in javascript, the window is a Global object is created along with the Global execution context.
+
+also, this variable is created. which is refers to the window object.
+
+```jsx
+window === this; // true
+```
+
+```jsx
+var a = 33;
+function sbs() {
+  var d = 88;
+  console.log(d);
+}
+
+console.log(window.a); //10 this is global object
+//  console.log(d);// error
+console.log(this.a); // 10
+// every thing inside this is global obj but inside function is local
+```
+
+## What is Undefined and not defined?
+
+**undefined** → just like a placeholder to any variable
+
+- when the program runs js engine allocates all variable in memory allocation phase.
+
+  all as undefined.
+
+```jsx
+console.log(a); // undefined
+var a;
+```
+
+**not defined →** if it is not defined in the program then an error will give
+
+which has not been allocated memory
+
+```jsx
+console.log(d); // error not defined
+```
