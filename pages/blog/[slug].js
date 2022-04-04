@@ -28,7 +28,34 @@ const Blogpost = ({ code, frontMatter }) => {
         description={frontMatter.description}
       />
       <div>
-        <div className="pb-4   dark:border-gray-500">
+        <CustomLink
+          className="flex  space-x-4 text-sm focus:outline-none"
+          href="/blog"
+        >
+          <span className="group mb-4 flex items-center justify-center space-x-2">
+            <span className="transform transition-all  group-hover:-translate-x-2">
+              <svg
+                className="rotate-90 transform"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M15.101 5.5V23.1094L9.40108 17.4095L8.14807 18.6619L15.9862 26.5L23.852 18.6342L22.5996 17.3817L16.8725 23.1094V5.5H15.101Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </span>
+            <span className="group text-lg font-medium  text-black dark:text-white">
+              Back to overview
+            </span>
+          </span>
+        </CustomLink>
+        <div className="pb-4  dark:border-gray-500">
           <CloudinaryImg
             publicId={frontMatter.image}
             alt="image"
@@ -60,7 +87,7 @@ const Blogpost = ({ code, frontMatter }) => {
           </div>
           <hr className="mt-2 border-gray-700 dark:border-gray-600" />
           <section>
-            <article className="prose mx-auto  mt-4 w-full min-w-full transition-colors dark:prose-invert">
+            <article className="prose dark:prose-invert  mx-auto mt-4 w-full min-w-full transition-colors">
               <Component
                 components={{
                   ...MDXComponents,

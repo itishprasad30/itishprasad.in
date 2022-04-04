@@ -14,7 +14,7 @@ import { Tooltip as TooltipTippy } from "react-tippy";
 
 const ExternalLink = ({ href, children }) => (
   <a
-    className="text-gray-500 transition hover:text-gray-800"
+    className="text-gray-500 transition hover:text-gray-600"
     target="_blank"
     rel="noopener noreferrer"
     href={href}
@@ -25,13 +25,14 @@ const ExternalLink = ({ href, children }) => (
 
 export default function Footer() {
   return (
-    <footer className="mx-auto mt-8 mb-8 flex w-full max-w-4xl flex-col items-start justify-center border-t-2 border-gray-300 dark:border-gray-700">
-      <hr className="border-1 mb-8 w-full border-gray-200 dark:border-gray-800" />
+    <footer className="mx-auto mt-8 mb-8 flex w-full max-w-4xl flex-col items-start justify-center ">
+      <hr className="border-1 mb-8 w-full border-gray-600 dark:border-gray-400" />
       <span className="mb-4 text-base font-semibold">
         Now Playing Showing From My Spotify
       </span>
       <NowPlaying />
-      <hr className="border-1 mb-8 w-full border-gray-200 dark:border-gray-800" />
+      <hr className="border-1 mb-8 w-full border-gray-600 dark:border-gray-400" />
+
       <div className="grid w-full max-w-4xl grid-cols-1 gap-4 pb-16 sm:grid-cols-3">
         <div className="flex flex-col space-y-4">
           <Link href="/home">
@@ -48,7 +49,7 @@ export default function Footer() {
             </a>
           </Link>
         </div>
-        <div className="flex flex-col space-y-4">
+        <div className="flex flex-col space-y-4 ">
           <ExternalLink href="https://itish-umami.herokuapp.com/share/l6tJGuIl/Itishprasad">
             Analytics
           </ExternalLink>

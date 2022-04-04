@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { animate } from "motion";
 import Link from "next/link";
 import { SiSpotify } from "react-icons/si";
+import Image from "next/image";
 
 function AnimatedBars() {
   useEffect(() => {
@@ -119,7 +120,7 @@ export default function NowPlaying() {
               ? data.songUrl
               : "https://open.spotify.com/user/ynskcynfldfgkgdt9osp4s0np"
           }
-          className="relative flex w-72 items-center space-x-4 rounded-md  border-2 border-black p-5 shadow-2xl  transition-shadow  hover:shadow-md hover:ring-1"
+          className="relative flex w-72 items-center space-x-4 rounded-md  border border-black p-5 shadow-2xl transition-shadow hover:shadow-md  dark:border-green-300   "
         >
           <div className="w-20">
             {data?.isPlaying ? (
