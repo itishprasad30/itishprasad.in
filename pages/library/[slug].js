@@ -9,6 +9,7 @@ import ViewCounter from "../../components/ViewCounter";
 import Accent from "../../components/fonts/Accent";
 import Seo from "../../components/layouts/Seo";
 import ScrollToTop from "../../components/ScrollToTop";
+import ArrowLink from "../../components/links/ArrowLink";
 // import TableOfContents from "../../components/content/TableOfContents";
 // import useScrollSpy from "../../hooks/useScrollspy";
 
@@ -44,7 +45,11 @@ export default function SingleLibraryPage({ code, frontmatter }) {
         templateTitle={frontmatter.title}
         description={frontmatter.description}
       />
+
       <main>
+        <ArrowLink href="/library" direction="left">
+          Back to Library
+        </ArrowLink>
         <ScrollToTop smooth />
         <section className="">
           <div className="layout">
@@ -71,7 +76,7 @@ export default function SingleLibraryPage({ code, frontmatter }) {
             <hr className="dark:border-gray-600" />
 
             <section className="lg:grid lg:grid-cols-[auto,250px] lg:gap-8">
-              <article className="prose mx-auto mt-4 w-full transition-colors dark:prose-invert">
+              <article className="prose dark:prose-invert mx-auto mt-4 w-full transition-colors">
                 {/* mdx compoonets */}
                 <Component
                   components={{
@@ -93,8 +98,10 @@ export default function SingleLibraryPage({ code, frontmatter }) {
               </aside> */}
             </section>
           </div>
-          <div>
-            <CustomLink href="/library"> ← Back to Library</CustomLink>
+          <div className="mt-6">
+            <ArrowLink href="/library" direction="left">
+              Back to Library
+            </ArrowLink>
           </div>
         </section>
       </main>

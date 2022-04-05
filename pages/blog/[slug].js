@@ -17,6 +17,7 @@ import ViewCounter from "../../components/ViewCounter";
 import Accent from "../../components/fonts/Accent";
 import Seo from "../../components/layouts/Seo";
 import ScrollToTop from "../../components/ScrollToTop";
+import ArrowLink from "../../components/links/ArrowLink";
 
 const Blogpost = ({ code, frontMatter }) => {
   const Component = React.useMemo(() => getMDXComponent(code), [code]);
@@ -95,8 +96,11 @@ const Blogpost = ({ code, frontMatter }) => {
               />
             </article>
           </section>
-
-          <CustomLink href="/blog"> ← Back to Blog</CustomLink>
+          <div className="mt-6">
+            <ArrowLink href="/library" direction="left">
+              Back to Blog
+            </ArrowLink>
+          </div>
         </div>
       </div>
     </div>
