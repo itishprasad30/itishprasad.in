@@ -14,7 +14,9 @@ import {
 } from "react-twitter-embed";
 
 const tweets = () => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [isLoading, setIsLoading] = React.useState(true);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   React.useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
