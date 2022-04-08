@@ -55,7 +55,12 @@ function FooterLinks() {
     <div className="flex flex-wrap justify-center  gap-y-4 gap-x-8">
       {footerLinks.map(({ href, text, tooltip }) => (
         <Tooltip key={href} interactive={false} content={tooltip}>
-          <UnstyledLink href={href}>{text}</UnstyledLink>
+          <UnstyledLink
+            href={href}
+            onClick={() => trackEvent(`FooterLink: ${text} `, "link")}
+          >
+            {text}
+          </UnstyledLink>
         </Tooltip>
       ))}
     </div>
