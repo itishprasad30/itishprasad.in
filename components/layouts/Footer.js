@@ -9,6 +9,7 @@ import { FiMail } from "react-icons/fi";
 import { SiGithub, SiLinkedin, SiTwitter, SiInstagram } from "react-icons/si";
 import { Tooltip as TooltipTippy } from "react-tippy";
 import { trackEvent } from "../../lib/analytics";
+import UnderLineLink from "../links/UnderlineLink";
 
 // import NowPlaying from "components/NowPlaying";
 
@@ -55,12 +56,12 @@ function FooterLinks() {
     <div className="flex flex-wrap justify-center  gap-y-4 gap-x-8">
       {footerLinks.map(({ href, text, tooltip }) => (
         <Tooltip key={href} interactive={false} content={tooltip}>
-          <UnstyledLink
+          <UnderLineLink
             href={href}
             onClick={() => trackEvent(`FooterLink: ${text} `, "link")}
           >
             {text}
-          </UnstyledLink>
+          </UnderLineLink>
         </Tooltip>
       ))}
     </div>

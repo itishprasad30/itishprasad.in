@@ -18,6 +18,7 @@ import NoSsr from "../components/no-ssr";
 import VoxelDog from "../components/voxel-dog";
 import ViewCounter from "../components/ViewCounter";
 import Seo from "../components/layouts/Seo";
+import { trackEvent } from "../lib/analytics";
 
 export default function Home() {
   const isLoaded = useLoaded();
@@ -78,7 +79,10 @@ export default function Home() {
             </p>
             <div className="flex justify-center ">
               <NextLink href="/projects" className="">
-                <button className="my-4 rounded-lg   bg-gradient-to-r  from-pink-400 to-yellow-500 px-3 py-2 text-white transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:from-green-400 hover:to-blue-400  ">
+                <button
+                  onClick={() => trackEvent("Projects Button", "button")}
+                  className="my-4 rounded-lg   bg-gradient-to-r  from-pink-400 to-yellow-500 px-3 py-2 text-white transition delay-150 duration-300 ease-in-out    "
+                >
                   My PortFolio
                   <i className="ml-2 ">&gt;</i>
                 </button>
@@ -130,6 +134,7 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex flex-row items-center space-x-4"
+                  onClick={() => trackEvent("Social Link: Twitter", "link")}
                 >
                   <div className="my-4 ">&rarr;</div>
                   <IoLogoTwitter className="transition-colors group-hover:text-indigo-500  dark:hover:text-indigo-600" />
@@ -146,6 +151,7 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex flex-row items-center space-x-4"
+                  onClick={() => trackEvent("Social Link: Resume", "link")}
                 >
                   <div className="my-4 ">&rarr;</div>
                   <IoNewspaperSharp className="transition-colors group-hover:text-green-500  dark:hover:text-green-600" />
@@ -159,6 +165,7 @@ export default function Home() {
               <div className="flex flex-row items-center justify-start">
                 <a
                   href={userData.socialLinks.github}
+                  onClick={() => trackEvent("Social Link: Github", "link")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex flex-row items-center space-x-4"
@@ -176,6 +183,7 @@ export default function Home() {
                   href={userData.socialLinks.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackEvent("Social Link: LinkedIn", "link")}
                   className="group flex flex-row items-center space-x-4"
                 >
                   <div className="my-4">&rarr;</div>
@@ -192,6 +200,7 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex flex-row items-center space-x-4"
+                  onClick={() => trackEvent("Social Link:Instagram", "link")}
                 >
                   <div className="my-4">&rarr;</div>
                   <IoLogoInstagram className="transition-colors group-hover:text-pink-500 " />
@@ -204,6 +213,7 @@ export default function Home() {
               <div className="flex flex-row items-center justify-start ">
                 <a
                   href={userData.socialLinks.facebook}
+                  onClick={() => trackEvent("Social Link: FaceBook", "link")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex flex-row items-center space-x-4"
