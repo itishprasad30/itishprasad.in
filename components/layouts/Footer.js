@@ -1,4 +1,3 @@
-import Link from "next/link";
 import NowPlaying from "../NowPlaying";
 import Tooltip from "../Tooltip";
 import UnstyledLink from "../links/UnstyledLink";
@@ -9,6 +8,7 @@ import CopyToClipboard from "react-copy-to-clipboard";
 import { FiMail } from "react-icons/fi";
 import { SiGithub, SiLinkedin, SiTwitter, SiInstagram } from "react-icons/si";
 import { Tooltip as TooltipTippy } from "react-tippy";
+import { trackEvent } from "../../lib/analytics";
 
 // import NowPlaying from "components/NowPlaying";
 
@@ -32,55 +32,8 @@ export default function Footer() {
       </span>
       <NowPlaying />
       <hr className="border-1 mb-8 w-full border-gray-600 dark:border-gray-400" />
-
-      <div className="grid w-full max-w-4xl grid-cols-1 gap-4 pb-16 sm:grid-cols-3">
-        <div className="flex flex-col space-y-4">
-          <Link href="/home">
-            <a className="text-gray-500 transition hover:text-gray-600">Home</a>
-          </Link>
-          <Link href="/about">
-            <a className="text-gray-500 transition hover:text-gray-600">
-              About
-            </a>
-          </Link>
-          <Link href="/projects">
-            <a className="text-gray-500 transition hover:text-gray-600">
-              Projects
-            </a>
-          </Link>
-        </div>
-        <div className="flex flex-col space-y-4 ">
-          <ExternalLink href="https://itish-umami.herokuapp.com/share/l6tJGuIl/Itishprasad">
-            Analytics
-          </ExternalLink>
-          <ExternalLink href="https://github.com/itishprasad30/itishprasad.in">
-            Source Code
-          </ExternalLink>
-          <ExternalLink href="https://www.youtube.com/channel/UCUgpCmLh5k4Sna9azJ269MA">
-            YouTube
-          </ExternalLink>
-        </div>
-        <div className="flex flex-col space-y-4">
-          <Link href="/statistics">
-            <a className="text-gray-500 transition hover:text-gray-600">
-              Statistics
-            </a>
-          </Link>
-          <Link href="/contact">
-            <a className="text-gray-500 transition hover:text-gray-600">
-              Contact Me
-            </a>
-          </Link>
-
-          <Link href="/tweets">
-            <a className="text-gray-500 transition hover:text-gray-600">
-              Tweets Posts
-            </a>
-          </Link>
-        </div>
-      </div>
-
-      <div className="flex  w-full flex-col items-center  border-t pt-6 dark:border-gray-600">
+      <FooterLinks />
+      <div className="flex  w-full flex-col items-center   pt-6 ">
         <p className="mt-12 font-medium text-gray-600 dark:text-gray-300">
           Reach me out
         </p>
@@ -94,6 +47,18 @@ export default function Footer() {
         </p>
       </div>
     </footer>
+  );
+}
+
+function FooterLinks() {
+  return (
+    <div className="flex flex-wrap justify-center  gap-y-4 gap-x-8">
+      {footerLinks.map(({ href, text, tooltip }) => (
+        <Tooltip key={href} interactive={false} content={tooltip}>
+          <UnstyledLink href={href}>{text}</UnstyledLink>
+        </Tooltip>
+      ))}
+    </div>
   );
 }
 
@@ -139,9 +104,7 @@ function SocialLinks() {
           <UnstyledLink
             className="inline-flex items-center justify-center rounded-sm focus:outline-none focus-visible:ring focus-visible:ring-green-300"
             href={social.href}
-            onClick={() => {
-              `Footer Link: ${social.id}`, "link";
-            }}
+            onClick={() => trackEvent(`Footer Link: ${social.id}`, "link")}
           >
             <social.icon className="my-auto h-6 w-6 align-middle text-gray-600 transition-colors hover:text-blue-500 dark:text-gray-300 dark:hover:text-indigo-600" />
           </UnstyledLink>
@@ -150,6 +113,53 @@ function SocialLinks() {
     </div>
   );
 }
+const footerLinks = [
+  {
+    href: "https://github.com/itishprasad30/itishprasad.in",
+    text: "Source Code",
+    tooltip: (
+      <>
+        This website is <strong>open source</strong>!
+      </>
+    ),
+  },
+  {
+    href: "https://github.com/itishprasad30/Docs",
+    text: "Docs",
+    tooltip: "Personal documentation about my best practices on development",
+  },
+  {
+    href: "https://itishprasad30.notion.site/6db2457207e0415ba47173d786eccd6e?v=a6f909a8e73749efab38e651b60a3250",
+    text: "Notion Reading Notes",
+    tooltip: "Note collection of books that I read",
+  },
+  {
+    href: "https://typescript-nextjs-tailwindcss-stater.vercel.app/",
+    text: "Starter Templates",
+    tooltip: "Starter that I build and use throughout my projects",
+  },
+  {
+    href: "https://itish-umami.herokuapp.com/share/l6tJGuIl/Itishprasad",
+    text: "Analytics",
+    tooltip: "tItishPrasad's views and visitors analytics",
+  },
+  {
+    href: "/statistics",
+    text: "Statistics",
+    tooltip: "Blog, Projects, and Library Statistics",
+  },
+  {
+    href: "/guestbook",
+    text: "Guestbook",
+    tooltip:
+      "Leave whatever you like to say—message, appreciation, suggestions",
+  },
+  {
+    href: "/tweets",
+    text: "Tweets",
+    tooltip: " Some of my collection of tweets",
+  },
+];
 
 const socials = [
   {
@@ -190,3 +200,46 @@ const socials = [
     text: <>some social meadia link.</>,
   },
 ];
+
+//  <div className="grid w-full max-w-4xl grid-cols-1 gap-4 pb-16 sm:grid-cols-3">
+//    <div className="flex flex-col space-y-4">
+//      <Link href="/home">
+//        <a className="text-gray-500 transition hover:text-gray-600">Home</a>
+//      </Link>
+//      <Link href="/about">
+//        <a className="text-gray-500 transition hover:text-gray-600">About</a>
+//      </Link>
+//      <Link href="/projects">
+//        <a className="text-gray-500 transition hover:text-gray-600">Projects</a>
+//      </Link>
+//    </div>
+//    <div className="flex flex-col space-y-4 ">
+//      <ExternalLink href="https://itish-umami.herokuapp.com/share/l6tJGuIl/Itishprasad">
+//        Analytics
+//      </ExternalLink>
+//      <ExternalLink href="https://github.com/itishprasad30/itishprasad.in">
+//        Source Code
+//      </ExternalLink>
+//      <ExternalLink href="https://www.youtube.com/channel/UCUgpCmLh5k4Sna9azJ269MA">
+//        YouTube
+//      </ExternalLink>
+//    </div>
+//    <div className="flex flex-col space-y-4">
+//      <Link href="/statistics">
+//        <a className="text-gray-500 transition hover:text-gray-600">
+//          Statistics
+//        </a>
+//      </Link>
+//      <Link href="/contact">
+//        <a className="text-gray-500 transition hover:text-gray-600">
+//          Contact Me
+//        </a>
+//      </Link>
+
+//      <Link href="/tweets">
+//        <a className="text-gray-500 transition hover:text-gray-600">
+//          Tweets Posts
+//        </a>
+//      </Link>
+//    </div>
+//  </div>;
