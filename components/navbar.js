@@ -28,11 +28,9 @@ const LinkItem = ({ href, path, _target, children, ...props }) => {
 
 const Navbar = (props) => {
   const { path } = props;
-  const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
 
   // After mounting, we have access to the theme
-  useEffect(() => setMounted(true), []);
   return (
     <div className="sticky top-0  z-50 mx-auto  mb-4  flex flex-row rounded-md bg-[#F0E7DB]  opacity-90 hover:opacity-100 dark:bg-[#202023]  md:flex md:max-w-4xl md:justify-end  ">
       <div className="flex flex-grow  items-center justify-evenly p-2">
