@@ -130,7 +130,7 @@ const footerLinks = [
     ),
   },
   {
-    href: "https://github.com/itishprasad30/Docs",
+    href: "https://docs-itish.vercel.app/",
     text: "Docs",
     tooltip: "Personal documentation about my best practices on development",
   },
