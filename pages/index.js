@@ -140,7 +140,7 @@ export default function Home() {
                   <IoLogoTwitter className="transition-colors group-hover:text-indigo-500  dark:hover:text-indigo-600" />
 
                   <p className="relative overflow-hidden font-mono  text-lg text-gray-500 hover:text-indigo-500 dark:text-gray-300">
-                    <div className="absolute bottom-0 h-0.5 w-full -translate-x-28 transform bg-gray-400 transition duration-300 group-hover:translate-x-0"></div>
+                    <div className="absolute bottom-0 h-0.5 w-full -translate-x-28 transform bg-indigo-400 transition duration-300 group-hover:translate-x-0"></div>
                     Twitter
                   </p>
                 </a>
@@ -157,7 +157,7 @@ export default function Home() {
                   <IoNewspaperSharp className="transition-colors group-hover:text-green-500  dark:hover:text-green-600" />
 
                   <p className="relative overflow-hidden font-mono text-lg text-gray-500 hover:text-green-600 dark:text-gray-300">
-                    <div className="absolute bottom-0 h-0.5 w-full -translate-x-28 transform bg-gray-400 transition duration-300 group-hover:translate-x-0"></div>
+                    <div className="absolute bottom-0 h-0.5 w-full -translate-x-28 transform bg-green-600 transition duration-300 group-hover:translate-x-0"></div>
                     Resume
                   </p>
                 </a>
@@ -173,7 +173,7 @@ export default function Home() {
                   <div className="my-4">&rarr;</div>
                   <IoLogoGithub className="transition-colors group-hover:text-gray-600 dark:text-gray-300 dark:hover:text-gray-600" />
                   <p className="relative overflow-hidden font-mono text-lg text-gray-500 hover:text-gray-600 dark:text-gray-300">
-                    <div className="absolute bottom-0 h-0.5 w-full -translate-x-24 transform bg-gray-400 transition duration-300 group-hover:translate-x-0"></div>
+                    <div className="absolute bottom-0 h-0.5 w-full -translate-x-24 transform bg-gray-600 transition duration-300 group-hover:translate-x-0"></div>
                     GitHub
                   </p>
                 </a>
@@ -189,7 +189,7 @@ export default function Home() {
                   <div className="my-4">&rarr;</div>
                   <IoLogoLinkedin className="transition-colors group-hover:text-blue-800 " />
                   <p className=" relative overflow-hidden font-mono text-lg text-gray-500 hover:text-blue-800 dark:text-gray-300">
-                    <div className="absolute bottom-0 h-0.5 w-full -translate-x-24 transform bg-gray-400 transition duration-300 group-hover:translate-x-0"></div>
+                    <div className="absolute bottom-0 h-0.5 w-full -translate-x-24 transform bg-blue-700 transition duration-300 group-hover:translate-x-0"></div>
                     LinkedIn
                   </p>
                 </a>
@@ -205,7 +205,7 @@ export default function Home() {
                   <div className="my-4">&rarr;</div>
                   <IoLogoInstagram className="transition-colors group-hover:text-pink-500 " />
                   <p className="relative overflow-hidden font-mono text-lg text-gray-500 hover:text-pink-500 dark:text-gray-300">
-                    <div className="absolute bottom-0 h-0.5 w-full -translate-x-28 transform bg-gray-400 transition duration-300 group-hover:translate-x-0"></div>
+                    <div className="absolute bottom-0 h-0.5 w-full -translate-x-28 transform bg-pink-500 transition duration-300 group-hover:translate-x-0"></div>
                     Instagram
                   </p>
                 </a>
@@ -221,7 +221,7 @@ export default function Home() {
                   <div className="my-4">&rarr;</div>
                   <IoLogoFacebook className="transition-colors group-hover:text-indigo-700 " />
                   <p className="relative overflow-hidden font-mono text-lg text-gray-500 hover:text-blue-800 dark:text-gray-300">
-                    <div className="absolute bottom-0 h-0.5 w-full -translate-x-24 transform bg-gray-400 transition duration-300 group-hover:translate-x-0"></div>
+                    <div className="absolute bottom-0 h-0.5 w-full -translate-x-24 transform bg-blue-500 transition duration-300 group-hover:translate-x-0"></div>
                     Facebook
                   </p>
                 </a>

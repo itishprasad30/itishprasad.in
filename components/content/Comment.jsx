@@ -16,10 +16,9 @@ const Comment = () => {
       reactionsEnabled="1"
       emitMetadata="0"
       theme="dark"
-      term="hello "
     />
   ) : (
-    <h1>hello</h1>
+    <div>comments are goes here</div>
   );
 };
 export default Comment;
