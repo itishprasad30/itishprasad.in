@@ -54,6 +54,9 @@
       max-width: 68rem;
       @apply mx-auto w-11/12;
     }
+    .cursor-newtab {
+      cursor: url('/images/new-tab.png') 10 10, pointer;
+    }
     .scroll-to-top {
       background-color: #383833;
       right: 40px;

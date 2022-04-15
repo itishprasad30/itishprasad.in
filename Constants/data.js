@@ -64,7 +64,7 @@ const userData = {
     {
       title: "Card Swipe Game",
       link: "https://silver-yeot-a3c6fe.netlify.app/",
-      imgUrl: "cardgame.png",
+      imgUrl: "/images/cardgame.png",
       githubLink: "https://github.com/itishprasad30/card-game",
       description:
         " A short project in parallex effect and animation in gesture control.",
