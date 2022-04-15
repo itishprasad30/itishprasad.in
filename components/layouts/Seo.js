@@ -29,7 +29,7 @@ export default function Seo(props) {
       <meta name="description" content={meta.description} />
       <meta name="author" content="itish_prasad" />
       <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-      <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+      <link rel="shortcut icon" href="/images/Logo.png" type="image/x-icon" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@itish_prasad" />
       <meta name="twitter:creator" content="itish prasad" />
