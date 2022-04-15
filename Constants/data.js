@@ -62,6 +62,14 @@ const userData = {
         "A Movie list display app, where you can find all the top rated movie list according to the genre.",
     },
     {
+      title: "Card Swipe Game",
+      link: "https://silver-yeot-a3c6fe.netlify.app/",
+      imgUrl: "cardgame.png",
+      githubLink: "https://github.com/itishprasad30/card-game",
+      description:
+        " A short project in parallex effect and animation in gesture control.",
+    },
+    {
       title: "Amazon-Web-App using React js",
       link: "https://github.com/itishprasad30/Amazon-Clone",
       imgUrl: "/images/amazon.png",
