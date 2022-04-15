@@ -29,3 +29,6 @@ Planning To update this to Typescript ways. it will be great to learn also types
 ## Here is the Home Page image
 
 ![image](https://user-images.githubusercontent.com/60768713/159739689-4c3e7dfe-b443-482c-b08b-579ae3c91a92.png)
+
+
+Typescript is processing.....
