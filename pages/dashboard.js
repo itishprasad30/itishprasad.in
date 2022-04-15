@@ -69,6 +69,20 @@ const dashboard = ({ repositories }) => {
               allowFullScreen
             ></iframe>
           </div>
+          <div className="relative w-full rounded-lg shadow-lg  ">
+            <h3 className="mb-5 text-2xl font-semibold ">
+              Here is my spotify playlist you can play it
+            </h3>
+            <iframe
+              className="rounded-md"
+              src="https://open.spotify.com/embed/playlist/5ngwFNGPxgqKnL4j72tFPl?utm_source=generator"
+              width="100%"
+              height="380"
+              frameBorder="0"
+              allowFullScreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            ></iframe>
+          </div>
         </div>
       </section>
     </div>

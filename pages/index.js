@@ -43,7 +43,7 @@ export default function Home() {
         <div data-fade="2" className=" items-center justify-center md:flex">
           <div className="flex-1">
             <h1 className="mb-1 w-fit rounded bg-gradient-to-r from-pink-400 to-yellow-500 px-2 text-3xl font-bold tracking-tight text-gray-200 hover:from-green-500 hover:to-blue-500 md:text-5xl">
-              Itish Prasad
+              Itish Prasad Sahoo
             </h1>
 
             <p className="mb-4 text-gray-700 dark:text-gray-200">
