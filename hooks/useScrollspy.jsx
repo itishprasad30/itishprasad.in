@@ -5,7 +5,8 @@ import * as React from "react";
 // https://github.com/NotionX/react-notion-x/blob/master/packages/react-notion-x/src/block.tsx#L128-L161
 
 export default function useScrollSpy() {
-  const [activeSection, setActiveSection] = React.useState("");
+  const [activeSection, setActiveSection] = React.useState(null);
+
   const throttleMs = 100;
 
   const actionSectionScrollSpy = throttle(() => {
