@@ -10,6 +10,8 @@ import Accent from "../../components/fonts/Accent";
 import Seo from "../../components/layouts/Seo";
 import ScrollToTop from "../../components/ScrollToTop";
 import ArrowLink from "../../components/links/ArrowLink";
+import useScrollSpy from "../../hooks/useScrollspy";
+import TableOfContents from "../../components/content/TableOfContents";
 // import TableOfContents from "../../components/content/TableOfContents";
 // import useScrollSpy from "../../hooks/useScrollspy";
 
@@ -38,6 +40,27 @@ export default function SingleLibraryPage({ code, frontmatter }) {
   //   setToc(headingArr);
   // }, [frontmatter.slug]);
   // //#endregion  //*======== Scrollspy ===========
+
+  const activeSection = useScrollSpy();
+
+  const [toc, setToc] = React.useState();
+
+  const minLevel =
+    toc?.reduce((min, item) => (item.level < min ? item.level : min), 10) ?? 0;
+
+  React.useEffect(() => {
+    const headings = document.querySelectorAll("h1, h2, h3");
+    const headingArr = [];
+    headings.forEach((heading) => {
+      const id = heading.id;
+      const level = +heading.tagName.replace("H", "");
+      const text = heading.textContent + "";
+
+      headingArr.push({ id, level, text });
+    });
+
+    setToc(headingArr);
+  }, [frontmatter.slug]);
 
   return (
     <div>
@@ -84,18 +107,15 @@ export default function SingleLibraryPage({ code, frontmatter }) {
                   }}
                 />
               </article>
-              {/* <aside className="py-4">
+              <aside className="py-4">
                 <div className="sticky top-36">
                   <TableOfContents
                     toc={toc}
                     minLevel={minLevel}
                     activeSection={activeSection}
                   />
-                  <div className="flex items-center justify-center py-8">
-                    <LikeButton slug={contentSlug} />
-                  </div>
                 </div>
-              </aside> */}
+              </aside>
             </section>
           </div>
           <div className="mt-6">

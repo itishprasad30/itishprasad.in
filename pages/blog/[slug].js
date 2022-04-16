@@ -18,9 +18,31 @@ import Accent from "../../components/fonts/Accent";
 import Seo from "../../components/layouts/Seo";
 import ScrollToTop from "../../components/ScrollToTop";
 import ArrowLink from "../../components/links/ArrowLink";
+import TableOfContents from "../../components/content/TableOfContents";
+import useScrollSpy from "../../hooks/useScrollspy";
 
 const Blogpost = ({ code, frontMatter }) => {
   const Component = React.useMemo(() => getMDXComponent(code), [code]);
+  const activeSection = useScrollSpy();
+
+  const [toc, setToc] = React.useState();
+
+  const minLevel =
+    toc?.reduce((min, item) => (item.level < min ? item.level : min), 10) ?? 0;
+
+  React.useEffect(() => {
+    const headings = document.querySelectorAll("h1, h2, h3");
+    const headingArr = [];
+    headings.forEach((heading) => {
+      const id = heading.id;
+      const level = +heading.tagName.replace("H", "");
+      const text = heading.textContent + "";
+
+      headingArr.push({ id, level, text });
+    });
+
+    setToc(headingArr);
+  }, [frontMatter.slug]);
   return (
     <div>
       <ScrollToTop smooth />
@@ -87,7 +109,7 @@ const Blogpost = ({ code, frontMatter }) => {
             </div>
           </div>
           <hr className="mt-2 border-gray-700 dark:border-gray-600" />
-          <section>
+          <section className="lg:grid lg:grid-cols-[auto,250px] lg:gap-8">
             <article className="prose dark:prose-invert  mx-auto mt-4 w-full min-w-full transition-colors">
               <Component
                 components={{
@@ -95,6 +117,15 @@ const Blogpost = ({ code, frontMatter }) => {
                 }}
               />
             </article>
+            <aside className="py-4">
+              <div className="sticky top-36">
+                <TableOfContents
+                  toc={toc}
+                  minLevel={minLevel}
+                  activeSection={activeSection}
+                />
+              </div>
+            </aside>
           </section>
           <div className="mt-6">
             <ArrowLink href="/library" direction="left">
