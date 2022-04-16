@@ -47,10 +47,10 @@ export default function TableOfContents({ toc, activeSection, minLevel }) {
       </h3>
       <div className="mt-4 flex flex-col space-y-2 text-sm">
         {toc
-          ? toc.map(({ id, level, text }) => (
+          ? toc.map(({ id, level, text }, idx) => (
               <TOCLink
                 id={id}
-                key={id}
+                key={idx}
                 activeSection={activeSection}
                 level={level}
                 minLevel={minLevel}
