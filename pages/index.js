@@ -19,6 +19,7 @@ import VoxelDog from "../components/voxel-dog";
 import ViewCounter from "../components/ViewCounter";
 import Seo from "../components/layouts/Seo";
 import { trackEvent } from "../lib/analytics";
+import ButtonLink from "../components/links/ButtonLink";
 
 export default function Home() {
   const isLoaded = useLoaded();
@@ -78,7 +79,7 @@ export default function Home() {
               {userData.about.description}
             </p>
             <div className="flex justify-center ">
-              <NextLink href="/projects" className="">
+              {/* <NextLink href="/projects" className="">
                 <button
                   onClick={() => trackEvent("Projects Button", "button")}
                   className="my-4 rounded-lg   bg-gradient-to-r  from-pink-400 to-yellow-500 px-3 py-2 text-white transition delay-150 duration-300 ease-in-out    "
@@ -86,7 +87,25 @@ export default function Home() {
                   My PortFolio
                   <i className="ml-2 ">&gt;</i>
                 </button>
-              </NextLink>
+              </NextLink> */}
+
+              <div className="group relative">
+                <div
+                  className={clsx(
+                    "animate-tilt absolute -inset-0.5 mt-6 rounded blur",
+                    "bg-gradient-to-r from-yellow-300 to-green-500",
+                    "dark:from-yellow-400 dark:via-pink-300",
+                    "opacity-75 transition duration-1000 group-hover:opacity-100 group-hover:duration-200"
+                  )}
+                />
+                <ButtonLink
+                  className="relative mt-6 bg-[#F0E7DB] dark:bg-[#202023] dark:text-white"
+                  href="/projects"
+                  variant="light"
+                >
+                  My Project Works
+                </ButtonLink>
+              </div>
             </div>
           </div>
 
