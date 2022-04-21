@@ -1,0 +1,208 @@
+---
+title: "React 18 - New Features & Improvement Strategies"
+description: "what new in the react 18 this will tell you ."
+publishedAt: "2022-04-21"
+image: "https://res.cloudinary.com/itish22/image/upload/v1650550421/itishprasad/blogImage/xxprv5vwfnon4ljqxdmh_hvtoqk.webp"
+---
+
+# React 18 - New Features & Improvement Strategies
+
+On March 29th, the React team released the React 18 officially . The latest release has brought a number of new features that would transform the coding pattern in a number of application. It brings along with it, a couple of performance improvements which I will be covering in this blog.
+
+### Concurrency
+
+Concurrency is a property of systems where several processes are executing at the same time, and may or may not interact with each other. Too complex? Let's break it down. Let's say there is a race that is being conducted. Now, concurrency is how many people are running for a single race in a parallel track.
+
+![phase 1 ](https://res.cloudinary.com/itish22/image/upload/v1650549600/itishprasad/blogImage/1_iqkwdn.png)
+
+Concurrency is a new feature that React 18 has introduced. It is a new behind-the-scene mechanism that enables React to **prepare multiple versions of the UI at the same time**.
+
+In this mechanism, unlike previous cases, React may start the rendering, pause in middle for some critical task and resume rendering again. The only thing to keep in mind is that it may also abandon in process render altogether. React guarantees that the UI appears consistent even though the render is interrupted.
+
+**This gives the capability of React to prepare screens in the background - without blocking the new thread!**
+
+## Suspense for Server Side Rendering
+
+![image suspense ssr](https://res.cloudinary.com/itish22/image/upload/v1650549696/itishprasad/blogImage/2_e6r0b5.png)
+
+React has brought forth the feature of Suspense in Server side rendering frameworks like Next.js, Relay, Hydrogen or Remix. React 18 introduces:  
+**Code splitting on the server** with suspense, and  
+**Streaming rendering on the server**.
+
+## Automatic Batching
+
+Batching is the phenomenon via which React groups multiple state updates into a single re-render for better performance optimisation.
+
+![gif](https://res.cloudinary.com/itish22/image/upload/v1650549761/itishprasad/blogImage/3_r3cypi.gif)
+
+Previous to React 18, batch updates were performed for react-based event handlers. However for **promises, setTimeouts, native event handlers or any other events,** batch updates were not performed. React 18 performs automatic batch updates for the above mentioned cases too.
+
+Let's understand this using a code.
+
+```js
+setTimeout(() => {
+  setCount((count) => count + 1);
+  setFlag((flag) => !flag);
+  // React will only re-render once at the end (that's batching!)
+}, 1000);
+```
+
+Identically, the above code behaves the same as this:
+
+```js
+fetch(/*...*/).then(() => {
+  setCount((counter) => counter + 1);
+  setFlag((flag) => !flag);
+  // React will only re-render once at the end (that's batching!)
+});
+```
+
+_In case, you don't want to batch, you can use `ReactDOM.flushSync()`_ . Let's understand with a bit of code
+
+```js
+import { flushSync } from "react-dom"; // Note: react-dom, not react
+
+function handleFlushesClick() {
+  flushSync(() => {
+    setCounter((counter) => counter + 1);
+  });
+  // React has updated the DOM by now
+  flushSync(() => {
+    setFlag((flag) => !flag);
+  });
+  // React has updated the DOM by now
+}
+```
+
+## Transitions
+
+This feature distinguishes urgent vs non-urgent updates. An urgent update is one which needs immediate response. Urgent updates include actions like clicking, pressing, typing - things that require immediate response or where the _user expects the UI to respond immediately._  
+**No intermediate values are to be displayed on screen.**
+
+![gif](https://res.cloudinary.com/itish22/image/upload/v1650549928/itishprasad/blogImage/4._e0p9gc.gif)
+
+#### A real life example
+
+Considering a real life example, let's think of a debounced typeahead. Now, while you type in the input, you expect the input box to reflect the values typed. However, do you expect the result to appear immediately? No right! It will debounce and then you get result. So , there is some transition time from the time you type your input till the time you get your suggestion. This time frame will be used for transition.
+
+Typically, for best user experience, a single user input should result in both urgent and non-urgent update.
+
+```js
+
+import {startTransition} from 'react';
+
+// Urgent: Show what was typed
+    setInputValue(input);`
+
+// Mark any state updates inside as transitions
+  startTransition(() => {
+     // Transition: Show the autosuggestion based on the input
+        value
+      setSearchQuery(input);
+});
+```
+
+![gif](https://res.cloudinary.com/itish22/image/upload/v1650550076/itishprasad/blogImage/5_byfnku.gif)
+
+#### Another real-time example
+
+```js
+const [isPending, startTransition] = useTransition();
+```
+
+Here the useTransition hook has 2 parameters that is destructured.
+
+`isPending` : to denote if the UI update is still in transition state
+
+`startTransition`: A function that executes code for transactions.
+
+```js
+function handleClick() {
+  startTransition(() => {
+    setTab("comments");
+  });
+}
+```
+
+This function gets called when you want to switch from Photos tab to Comments tab.
+
+```js
+<Suspense fallback={<Spinner />}>
+  <div style={{ opacity: isPending ? 0.8 : 1 }}>
+    {tab === "photos" ? <Photos /> : <Comments />}
+  </div>
+</Suspense>
+```
+
+During the transition phase, while the new UI is being prepared by React, the tab with the Photos UI will be now shown to the user with 80% opacity to give a smooth view of transition.
+
+## Strict Mode in React
+
+The Strict Mode in development server brings forth a couple of interesting changes in React 18. This mode essentially provides out-of-box performance for React.
+
+_This new check will automatically unmount and remount every component, whenever a component mounts for the first time, restoring the previous state on the second mount._
+
+The series of events during mounting now:
+
+I. React mounts the component.
+
+- Layout effects are created.
+- Effects are created.
+
+II. React simulates unmounting the component.
+
+- Layout effects are destroyed.
+- Effects are destroyed.
+
+III. React simulates mounting the component with the previous state.
+
+- Layout effects are created.
+- Effects are created.`
+
+During unmounting, the following events occur
+
+I. Layout effects are destroyed and Effect effects are destroyed.
+
+## New Hooks
+
+![hooks](https://res.cloudinary.com/itish22/image/upload/v1650550122/itishprasad/blogImage/6_wvdldi.jpg)
+
+#### a. useId
+
+useId is a new hook for generating** unique IDs on both the client and server\*\_, while avoiding hydration mismatches. This generates an **unique string containing : which does not collide with css selectors and `querySelectorAll`\_\*
+
+You can also use userId with identifierPrefix in order to prevent collision in multi-root applications. For multiple IDs in the same component, append a suffix using the same id.
+
+#### b. useDeferredValue
+
+useDeferredValue will let you defer re-rendering a non-urgent part of the tree. Remember we talked about non-urgent rendering? **It is no fixed time delay, so React will attempt the deferred render right after the first render is reflected on the screen.**
+
+#### c. useSyncExternalStore
+
+useSyncExternalStore is a new hook that allows external stores to support concurrent reads by forcing updates to the store to be synchronous. **It removes the need for useEffect when implementing subscriptions to external data sources.**
+
+Code snippet:
+
+```js
+   const state = useSyncExternalStore(subscribe, getSnapshot[, getServerSnapshot]);
+```
+
+`subscribe`: function to register a callback that is called whenever the store changes.  
+`getSnapshot`: function that returns the current value of the store.  
+`getServerSnapshot`: function that returns the snapshot used during server rendering.
+
+#### d. useInsertionEffect
+
+`useInsertionEffect(didUpdate);`
+
+useInsertionEffect is a new hook that allows CSS-in-JS libraries to address performance issues of injecting styles in render. **This hook will run after the DOM is mutated, but before layout effects read the new layout.**
+
+This hook will help in calculating layout in sync with the concurrent re-rendering.
+
+## Conclusion
+
+There are others small but significant updates too - for example using the **`createRoot()`** hook rather than **`ReactDOM.render`**. This method will be used to render a DOM element and umount using **`root.unmount()`**
+
+Other than than React also have streaming Suspense support for servers using **`renderToPipeableStream`**& **`renderToReadableStream`**
+
+React developers keeps on focusing on the enhancement and improvement and couple of bug fixes in this released version. The update is not meticulous and can be done in a morning session, itself. So what's the wait for , application developers? Let's upgrade our library and start working! Kudos to the React team!
