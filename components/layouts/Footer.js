@@ -40,8 +40,9 @@ export default function Footer() {
         </p>
         <SocialLinks />
         <p className=" flex flex-col text-sm text-gray-600 dark:text-gray-300 md:flex-row">
-          ©Itish Prasad Sahoo {new Date().getFullYear()} •{"  "}
+          © Itish Prasad Sahoo {new Date().getFullYear()} • {"  "}
           <span className="focus-visible:ring-primary-300 rounded-sm hover:text-gray-800 focus:outline-none focus-visible:ring dark:hover:text-gray-100">
+            {" "}
             Made with ❣️ by{" "}
             <span className="font-mono selection:bg-orange-400">Itish</span>
           </span>

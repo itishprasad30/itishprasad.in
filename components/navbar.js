@@ -5,6 +5,7 @@ import Dropdown from "./Dropdown";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { FiMoon, FiSun } from "react-icons/fi";
+import { black, white } from "tailwindcss/colors";
 
 const LinkItem = ({ href, path, _target, children, ...props }) => {
   const active = path === href;
@@ -64,15 +65,15 @@ const Navbar = (props) => {
             </LinkItem>
           </div>
           <button
-            className="flex h-9 w-9 items-center justify-center rounded-lg bg-gray-200 ring-gray-300  transition-all hover:ring-2  dark:bg-gray-600"
+            className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#202023] ring-gray-300  transition-all hover:ring-2  dark:bg-[#F0E7DB]"
             onClick={() =>
               setTheme(resolvedTheme === "dark" ? "light" : "dark")
             }
           >
             {resolvedTheme === "light" ? (
-              <FiMoon size={20} />
+              <FiMoon size={20} color={white} />
             ) : (
-              <FiSun size={20} />
+              <FiSun size={20} color={black} />
             )}
           </button>
         </div>

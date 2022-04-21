@@ -15,7 +15,6 @@ const blog = ({ posts }) => {
   const [searchValue, setSearchValue] = useState("");
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const isLoaded = useLoaded();
-  // console.log(posts);
 
   const filteredBlogPosts = posts.filter(
     (post) =>
@@ -79,6 +78,7 @@ const blog = ({ posts }) => {
         >
           All Posts
         </h3>
+
         <div
           data-fade="4"
           className=" flex flex-col  justify-center gap-8 md:grid md:grid-cols-2  "
