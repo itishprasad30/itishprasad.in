@@ -25,7 +25,7 @@ const userData = {
     {
       title: "Netflex - Movie Trailer app",
       link: "https://netflix-movie-trailer.vercel.app/",
-      imgUrl: "/imagas/netflex.png",
+      imgUrl: "/images/netflex.png",
       githubLink: "https://github.com/itishprasad30/Nextflix-app",
       description: "All traending movie trailer will show in this.",
     },
