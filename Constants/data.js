@@ -23,6 +23,13 @@ const userData = {
       description: "A guessing Word Game. ",
     },
     {
+      title: "Netflex - Movie Trailer app",
+      link: "https://netflix-movie-trailer.vercel.app/",
+      imgUrl: "/imagas/netflex.png",
+      githubLink: "https://github.com/itishprasad30/Nextflix-app",
+      description: "All traending movie trailer will show in this.",
+    },
+    {
       title: " Joke Teller ",
       link: "https://itishprasad30.github.io/joke-teller/",
       imgUrl: "/images/joke-teller.png",
