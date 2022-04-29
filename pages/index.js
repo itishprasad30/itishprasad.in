@@ -102,6 +102,9 @@ export default function Home() {
                   className="relative mt-6 bg-[#F0E7DB] dark:bg-[#202023] dark:text-white"
                   href="/projects"
                   variant="light"
+                  onClick={() =>
+                    trackEvent("Project Button: Projects", "Button")
+                  }
                 >
                   My Project Works
                 </ButtonLink>
