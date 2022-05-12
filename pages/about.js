@@ -27,7 +27,7 @@ const AboutPage = () => {
           </h2>
           <h1
             data-fade="2"
-            className="mt-1 w-fit cursor-pointer rounded bg-gradient-to-r from-pink-500 to-yellow-500 px-2 text-center text-2xl font-semibold text-white  hover:from-green-500 hover:to-blue-500  md:text-left md:text-4xl"
+            className="mt-1 w-fit cursor-pointer rounded bg-gradient-to-r from-pink-500 to-yellow-500 px-2 text-center text-2xl font-semibold text-white    md:text-left md:text-4xl"
           >
             Itish Prasad Sahoo
           </h1>
