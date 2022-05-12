@@ -30,5 +30,18 @@ Planning To update this to Typescript ways. it will be great to learn also types
 
 ![image](https://user-images.githubusercontent.com/60768713/159739689-4c3e7dfe-b443-482c-b08b-579ae3c91a92.png)
 
+## Blog Post features are in there
+![image](https://user-images.githubusercontent.com/60768713/167574880-0d151c05-d414-41d6-9e66-e27150ce7676.png)
 
-Typescript is processing.....
+## Dashboard Features
+### This is my personal dashboard, built with Next.js API routes deployed as serverless functions. I use this dashboard to track various metrics across platforms like Spotify and Github.
+
+![image](https://user-images.githubusercontent.com/60768713/167575320-cf8dc7c3-578e-490b-9e55-99c5b6693f04.png)
+![image](https://user-images.githubusercontent.com/60768713/167575375-d34357fe-2252-4d49-bccd-01253b960ccd.png)
+
+Now playning feature added via spotify developer account
+if i am playing some music on my device it will show what song i jamming into.'
+![image](https://user-images.githubusercontent.com/60768713/167575450-fb315ef9-712f-45fb-beb0-2fee9dfaa166.png)
+
+
+Getting Typescript to upgrade it getting me time because it's to much componet are there.
