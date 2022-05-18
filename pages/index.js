@@ -75,7 +75,7 @@ export default function Home() {
             <h2 className="mb-6 text-2xl font-bold tracking-tight text-black underline dark:text-white md:text-3xl">
               Works
             </h2>
-            <p className="indent-sm mt-3   break-words text-justify">
+            <p className="mt-3 break-words   text-justify indent-sm">
               {userData.about.description}
             </p>
             <div className="flex justify-center ">
@@ -92,7 +92,7 @@ export default function Home() {
               <div className="group relative">
                 <div
                   className={clsx(
-                    "animate-tilt absolute -inset-0.5 mt-6 rounded blur",
+                    "absolute -inset-0.5 mt-6 animate-tilt rounded blur",
                     "bg-gradient-to-r from-yellow-300 to-green-500",
                     "dark:from-yellow-400 dark:via-pink-300",
                     "opacity-75 transition duration-1000 group-hover:opacity-100 group-hover:duration-200"
@@ -139,7 +139,7 @@ export default function Home() {
             <h2 className="mt-6 text-2xl font-bold tracking-tight text-black underline dark:text-white md:text-3xl  ">
               I 🤍{" "}
             </h2>
-            <p className="indent-sm mt-3">
+            <p className="mt-3 indent-sm">
               Coding , Music ,Watching Movies, Exploring New Technologies
               ,Gaming .
             </p>

@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { FiMoon, FiSun } from "react-icons/fi";
 import { black, white } from "tailwindcss/colors";
+// import MobileMenu from "./MobileMenu";
 
 const LinkItem = ({ href, path, _target, children, ...props }) => {
   const active = path === href;
@@ -80,6 +81,10 @@ const Navbar = (props) => {
         <div className="md:hidden">
           <Dropdown />
         </div>
+
+        {/* <div className="md:hidden">
+          <MobileMenu />
+        </div> */}
       </div>
     </div>
   );

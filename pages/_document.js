@@ -23,6 +23,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <link rel="manifest" href="manifest.json" />
           <script
             async
             defer
