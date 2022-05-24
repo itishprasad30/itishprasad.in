@@ -1,3 +1,16 @@
+import React from "react";
+
+const guestbook = () => {
+  return (
+    <div className="layout flex flex-col items-center justify-center py-20">
+      <h1 className="text-3xl font-bold">This page is being building ...</h1>
+      <p>Thank you for your patience</p>
+    </div>
+  );
+};
+
+export default guestbook;
+
 // import React from "react";
 // import Comment from "../components/content/Comment";
 // import Seo from "../components/layouts/Seo";
