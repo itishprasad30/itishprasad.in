@@ -148,7 +148,7 @@ const footerLinks = [
   {
     href: "https://itish-umami.herokuapp.com/share/l6tJGuIl/Itishprasad",
     text: "Analytics",
-    tooltip: "tItishPrasad's views and visitors analytics",
+    tooltip: "ItishPrasad's views and visitors analytics",
   },
   {
     href: "/statistics",

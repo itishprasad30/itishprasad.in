@@ -40,8 +40,109 @@ function Contact() {
 
   return (
     <div className="flex flex-col space-y-5 ">
-      <h2>Contact Page </h2>
-      <form action="#" className="flex flex-col space-y-5">
+      <h2 className="font-mono text-xl ">
+        Want to hire me as a full-stack developer , Connect with Me below{" "}
+      </h2>
+
+      <div className="mx-auto w-full md:w-96 md:max-w-full">
+        <div className="border border-gray-600 bg-gray-800 p-6 sm:rounded-sm ">
+          <form method="POST">
+            <label className="mb-6 block">
+              <span className="text-gray-300">Your name</span>
+              <input
+                value={name}
+                onChange={(e) => setPost({ ...post, name: e.target.value })}
+                required
+                name="name"
+                type="text"
+                className="
+            mt-1
+            block
+            w-full
+            rounded-md
+            border-gray-600
+            bg-transparent
+            text-gray-300
+            placeholder-gray-600
+            shadow-sm
+            focus:border-indigo-300
+            focus:ring
+            focus:ring-indigo-200
+            focus:ring-opacity-50
+          "
+                placeholder="John Deo"
+              />
+            </label>
+            <label className="mb-6 block">
+              <span className="text-gray-300">Email address</span>
+              <input
+                name="email"
+                type="email"
+                className="
+            mt-1
+            block
+            w-full
+            rounded-md
+            border-gray-600
+            bg-transparent
+            text-gray-300
+            placeholder-gray-600
+            shadow-sm
+            focus:border-indigo-300
+            focus:ring
+            focus:ring-indigo-200
+            focus:ring-opacity-50
+          "
+                placeholder="john.deo@example.com"
+                required
+              />
+            </label>
+            <label className="mb-6 block">
+              <span className="text-gray-300">Message</span>
+              <textarea
+                name="message"
+                className="
+            mt-1
+            block
+            w-full
+            rounded-md
+            border-gray-600
+            bg-transparent
+            text-gray-300
+            placeholder-gray-600
+            shadow-sm
+            focus:border-indigo-300
+            focus:ring
+            focus:ring-indigo-200
+            focus:ring-opacity-50
+          "
+                rows="3"
+                placeholder="Tell us what you're thinking about..."
+              ></textarea>
+            </label>
+            <div className="mb-6">
+              <button
+                type="submit"
+                className="
+            focus:shadow-outline
+            h-10
+            rounded-lg
+            bg-indigo-700
+            px-5
+            text-indigo-100
+            transition-colors
+            duration-150
+            hover:bg-indigo-800
+          "
+              >
+                Connect With Me
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      {/* <form action="#" className="flex flex-col space-y-5">
         <input
           className="w-full rounded-lg p-3"
           placeholder="Name"
@@ -72,7 +173,7 @@ function Contact() {
         >
           Create Post
         </button>
-      </form>
+      </form> */}
 
       <ToastContainer />
 
