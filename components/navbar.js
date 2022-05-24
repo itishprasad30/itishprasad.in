@@ -66,16 +66,18 @@ const Navbar = (props) => {
             </LinkItem>
           </div>
           <button
-            className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#202023] ring-gray-300  transition-all hover:ring-2  dark:bg-[#F0E7DB]"
+            className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#202023]   dark:bg-[#F0E7DB]"
             onClick={() =>
               setTheme(resolvedTheme === "dark" ? "light" : "dark")
             }
           >
-            {resolvedTheme === "light" ? (
-              <FiMoon size={20} color={white} />
-            ) : (
-              <FiSun size={20} color={black} />
-            )}
+            <div className="text-orange-600">
+              {resolvedTheme === "light" ? (
+                <FiMoon size={20} />
+              ) : (
+                <FiSun size={20} />
+              )}
+            </div>
           </button>
         </div>
         <div className="md:hidden">
