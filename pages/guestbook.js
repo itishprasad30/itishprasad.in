@@ -1,10 +1,19 @@
 import React from "react";
+import { trackEvent } from "../lib/analytics";
 
 const guestbook = () => {
   return (
     <div className="layout flex flex-col items-center justify-center py-20">
       <h1 className="text-3xl font-bold">This page is being building ...</h1>
       <p>Thank you for your patience</p>
+
+      <a
+        onClick={() => trackEvent("GuestBook Site:guestbook ", "link")}
+        href="https://guestbook-comment.vercel.app/"
+        className="font-serif text-xl "
+      >
+        GuestBook App
+      </a>
     </div>
   );
 };
