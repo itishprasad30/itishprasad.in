@@ -77,6 +77,25 @@
     .scroll-to-top:active {
       transform: matrix(0.95, 0, 0, 0.95, 0, 0);
     }
+
+        .un {
+          display: inline-block;
+          padding-bottom: 2px;
+          background-image: linear-gradient(#000, #000);
+          background-position: 0 100%;
+          /*OR bottom left*/
+          background-size: 0% 2px;
+          background-repeat: no-repeat;
+          transition:
+            background-size 0.4s,
+            background-position 0s 0.4s;
+        }
+    
+    
+        .un:hover {
+          background-position: 100% 100%;
+          background-size: 100% 2px;
+        }
   }
   @layer utilities {
     .animated-underline {
