@@ -44,7 +44,9 @@ export default function Footer() {
           <span className="focus-visible:ring-primary-300 rounded-sm hover:text-gray-800 focus:outline-none focus-visible:ring dark:hover:text-gray-100">
             {" "}
             Made with ❣️ by{" "}
-            <span className="font-mono selection:bg-orange-400">Itish</span>
+            <span className="un cursor-pointer font-mono selection:bg-orange-400">
+              Itish
+            </span>
           </span>
         </p>
       </div>
@@ -75,8 +77,8 @@ function SocialLinks() {
   );
 
   return (
-    <div className="mt-2 flex space-x-4">
-      <div className="flex items-center justify-center">
+    <div className=" mt-2 flex space-x-4">
+      <div className="un flex items-center justify-center">
         <TooltipTippy
           trigger="mouseenter"
           hideOnClick={false}
@@ -109,7 +111,7 @@ function SocialLinks() {
       {socials.map((social) => (
         <Tooltip interactive={true} key={social.href} content={social.text}>
           <UnstyledLink
-            className="inline-flex items-center justify-center rounded-sm focus:outline-none focus-visible:ring focus-visible:ring-green-300"
+            className=" un inline-flex items-center justify-center rounded-sm focus:outline-none focus-visible:ring focus-visible:ring-green-300"
             href={social.href}
             onClick={() => trackEvent(`Footer Link: ${social.id}`, "link")}
           >

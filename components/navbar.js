@@ -15,9 +15,8 @@ const LinkItem = ({ href, path, _target, children, ...props }) => {
       <a
         className={cn(
           active
-            ? "bg-gradient-to-r from-pink-500 to-yellow-500 text-gray-50 "
-            : "font-normal text-gray-600 ",
-          " hidden rounded-lg p-1 text-sm transition-all hover:bg-slate-700 hover:text-gray-200 dark:text-white  dark:hover:text-gray-100 sm:px-3 sm:py-2 md:inline-block"
+            ? "rounded-lg   bg-gradient-to-r from-pink-500 to-yellow-500 p-1 text-sm font-normal text-gray-50  sm:px-3 sm:py-2 md:inline-block "
+            : "un  p-1 text-sm  font-normal  sm:px-3 sm:py-2 md:inline-block"
         )}
         {...props}
         target={_target}
