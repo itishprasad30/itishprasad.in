@@ -88,7 +88,7 @@ const Blogpost = ({ code, frontMatter }) => {
           </div>
           <hr className="mt-2 border-gray-700 dark:border-gray-600" />
           <section className="lg:grid lg:grid-cols-[auto,250px] lg:gap-8">
-            <article className="prose mx-auto  mt-4 w-full min-w-full transition-colors dark:prose-invert">
+            <article className="prose mx-auto mt-4 w-full  min-w-full font-primary transition-colors selection:bg-red-400 dark:prose-invert dark:selection:bg-yellow-800">
               <Component
                 components={{
                   ...MDXComponents,

@@ -63,7 +63,7 @@ export default function SingleLibraryPage({ code, frontmatter }) {
   }, [frontmatter.slug]);
 
   return (
-    <div>
+    <div className="selection:bg-red-400 dark:selection:bg-yellow-800">
       <Seo
         templateTitle={frontmatter.title}
         description={frontmatter.description}
@@ -99,7 +99,7 @@ export default function SingleLibraryPage({ code, frontmatter }) {
             <hr className="dark:border-gray-600" />
 
             <section className="lg:grid lg:grid-cols-[auto,250px] lg:gap-8">
-              <article className="prose dark:prose-invert mx-auto mt-4 w-full transition-colors">
+              <article className="prose mx-auto mt-4 w-full transition-colors dark:prose-invert">
                 {/* mdx compoonets */}
                 <Component
                   components={{

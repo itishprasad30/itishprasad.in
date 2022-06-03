@@ -9,9 +9,9 @@ module.exports = {
   darkMode: "class", // or 'media' or 'class'
   theme: {
     extend: {
-      // fontFamily: {
-      //   primary: ["Inter", ...fontFamily.sans],
-      // },
+      fontFamily: {
+        primary: ["Inter", ...fontFamily.sans],
+      },
       keyframes: {
         flicker: {
           "0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100%": {

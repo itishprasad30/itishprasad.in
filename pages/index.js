@@ -25,7 +25,7 @@ export default function Home() {
   const isLoaded = useLoaded();
 
   return (
-    <div className=" max-w-4xl ">
+    <div className=" max-w-4xl selection:bg-red-400 dark:selection:bg-yellow-800 ">
       <Seo templateTitle="Home Page " />
       <section className={clsx(isLoaded && "fade-in-start")}>
         <NoSsr>
