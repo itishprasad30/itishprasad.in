@@ -1,6 +1,6 @@
 <div align="center">
   <h1 >Itishprasad-in.vercel.app</h1>
-  <p>💠 Personal website and blog made using Next.js, React.js, Tailwind CSS, MDX Bundler, Firebase, and SWR.</p>
+  <p>💠🟢  Personal website and blog made using Next.js, React.js, Tailwind CSS, MDX Bundler, Firebase, and SWR.</p>
 </div>
 
 ## Want To Run In Your Local Sysyem Please Follow these Steps
