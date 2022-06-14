@@ -30,6 +30,14 @@ const userData = {
       description: "All traending movie trailer will show in this.",
     },
     {
+      title: "Random-Color-Picker",
+      link: "https://itishprasad30.github.io/Random-color-picker/",
+      imgUrl: "/images/RandomColor1.png",
+      githubLink: "https://github.com/itishprasad30/Random-color-picker",
+      description:
+        "A Quick random color picker app that show the hex code of color.",
+    },
+    {
       title: " Joke Teller ",
       link: "https://itishprasad30.github.io/joke-teller/",
       imgUrl: "/images/joke-teller.png",

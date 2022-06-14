@@ -75,7 +75,9 @@ const ProjectCard = ({
         </p>
         <div className="flex w-full space-x-2 rounded-md p-2 ">
           <button className="flex-auto rounded-xl bg-red-500 p-2 font-mono text-white hover:bg-red-600">
-            <Link href={link}>Live Demo</Link>
+            <a target="_blank" rel="noreferrer" href={link}>
+              Live Demo
+            </a>
           </button>
           <button className="flex-auto rounded-xl bg-gray-600 p-2 font-mono text-white hover:bg-slate-700">
             <Link href={sourceCode}>Source Code</Link>

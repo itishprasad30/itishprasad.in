@@ -2,7 +2,6 @@ import NowPlaying from "../NowPlaying";
 import Tooltip from "../Tooltip";
 import UnstyledLink from "../links/UnstyledLink";
 
-// import { FeedbackFish } from "@feedback-fish/react";
 import * as React from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
 import { FiMail } from "react-icons/fi";
