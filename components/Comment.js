@@ -1,10 +1,11 @@
-import { Giscus, Theme } from "@giscus/react";
+import React from "react";
+import Giscus from "@giscus/react";
 import { useTheme } from "next-themes";
-const isProd = process.env.NODE_ENV === "deveslopment";
-const commentFlag = isProd;
+import { commentFlag } from "../Constants/env";
+
 const Comment = () => {
   const { theme } = useTheme();
-  console.log(process.env.NODE_ENV);
+
   return commentFlag ? (
     <Giscus
       key={theme}
@@ -15,10 +16,14 @@ const Comment = () => {
       mapping="pathname"
       reactionsEnabled="1"
       emitMetadata="0"
-      theme="dark"
+      inputPosition="bottom"
+      lang="en"
+      loading="lazy"
+      theme={theme}
     />
   ) : (
-    <div>comments are goes here</div>
+    <h1>Nothing To Show</h1>
   );
 };
+
 export default Comment;
