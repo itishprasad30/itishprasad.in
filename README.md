@@ -43,5 +43,10 @@ Now playning feature added via spotify developer account
 if i am playing some music on my device it will show what song i jamming into.'
 ![image](https://user-images.githubusercontent.com/60768713/167575450-fb315ef9-712f-45fb-beb0-2fee9dfaa166.png)
 
+Guestbook Comment features
+this is from giscus , it uses the github discussion api for retiving the data.
+![image](https://user-images.githubusercontent.com/60768713/174333534-217a5aec-1600-4417-98d7-837508038543.png)
+
+
 
 Getting Typescript to upgrade it getting me time because it's to much componet are there.
