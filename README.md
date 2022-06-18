@@ -42,6 +42,10 @@ Planning To update this to Typescript ways. it will be great to learn also types
 Now playning feature added via spotify developer account
 if i am playing some music on my device it will show what song i jamming into.'
 ![image](https://user-images.githubusercontent.com/60768713/167575450-fb315ef9-712f-45fb-beb0-2fee9dfaa166.png)
+after playing music on spotify .
+
+it is created using spotify developer api , managed to pull data from the api to show my current jamming along with top songs from this month.
+![image](https://user-images.githubusercontent.com/60768713/174417568-2f1de688-4f2b-4c72-bc6b-309dbd267052.png)
 
 Guestbook Comment features
 this is from giscus , it uses the github discussion api for retiving the data.
