@@ -169,8 +169,8 @@ const userData = {
       desc: "I have been graduated from school with 73.5%.",
     },
   ],
+  //  // "https://drive.google.com/file/d/1Ax2GfS2TKIKr4FRkg9yLvBRtYDZn4UZT/view?usp=sharing",
   resumeUrl:
-    // "https://drive.google.com/file/d/1Ax2GfS2TKIKr4FRkg9yLvBRtYDZn4UZT/view?usp=sharing",
     "https://docs.google.com/document/d/1D5r4Rr2vlhYp9Rp9H8tk6WQp0QMM525oVGs0wuh7vpg/edit?usp=sharing",
 
   socialLinks: {
