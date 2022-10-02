@@ -50,7 +50,8 @@
     "react-twitter-embed": "^4.0.4",
     "reading-time": "^1.5.0",
     "swr": "^1.1.0",
-    "three": "^0.134.0"
+    "three": "^0.134.0",
+    "use-delayed-render": "^0.0.7"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.2",
