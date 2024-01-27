@@ -175,10 +175,10 @@ const userData = {
 
   socialLinks: {
     instagram: "https://instagram.com/itishprasad30",
-    twitter: "https://twitter.com/itish_prasad",
+    twitter: "https://twitter.com/itishprasad30",
     linkedin: "https://www.linkedin.com/in/itishprasad",
     github: "https://github.com/itishprasad30",
-    facebook: "https://facebook.com/itishprasad",
+    facebook: "https://www.facebook.com/itishprasad30",
   },
 };
 
