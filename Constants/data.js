@@ -178,7 +178,7 @@ const userData = {
     twitter: "https://twitter.com/itishprasad30",
     linkedin: "https://www.linkedin.com/in/itishprasad",
     github: "https://github.com/itishprasad30",
-    facebook: "https://www.facebook.com/itishprasad30",
+    facebook: "https://www.facebook.com/itishprasad30/",
   },
 };
 
